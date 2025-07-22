@@ -1,4 +1,4 @@
-import { MessageCircle, Send, Facebook } from "lucide-react";
+import { MessageCircle, Send, Facebook, ExternalLink } from "lucide-react";
 
 interface ContactCard {
   platform: string;
@@ -33,6 +33,14 @@ const contactMethods: ContactCard[] = [
     username: "Virgil Chu",
     description: "Connect on Facebook",
     color: "#0084ff"
+  },
+  {
+    platform: "Linktree",
+    icon: <ExternalLink className="w-8 h-8" />,
+    link: "https://linktr.ee/VEEMOo?fbclid=IwY2xjawLsUXdleHRuA2FlbQIxMABicmlkETFKcFdCU3lQZm5acUZYUU1WAR4SaB1huxi455-QfI-nEAWwuUgm10SEg_NH6YLMwEX9zixxER0dvrd8MdUygw_aem_FVDPF-OSA-zViFHJun12RA",
+    username: "VEEMOo",
+    description: "All my social links in one place",
+    color: "#39e75f"
   }
 ];
 
@@ -50,7 +58,7 @@ export default function ContactSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
           {contactMethods.map((contact, index) => (
             <ContactCard key={contact.platform} contact={contact} index={index} />
           ))}
