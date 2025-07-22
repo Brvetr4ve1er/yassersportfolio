@@ -51,33 +51,33 @@ export class MemStorage implements IStorage {
     // Sample projects
     const sampleProjects: InsertProject[] = [
       {
-        title: "ShopAnalytics Pro",
-        description: "A comprehensive analytics dashboard for e-commerce platforms with real-time insights and predictive analytics.",
-        category: "E-commerce",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-        technologies: ["React", "TypeScript", "D3.js"],
-        liveUrl: "https://demo.shopanalytics.com",
-        githubUrl: "https://github.com/alexmorgan/shopanalytics",
+        title: "Artiland Studio Social Media Campaign",
+        description: "Designed and created attention-grabbing social media content for student outreach, practicing audience-specific communication and visual teaching.",
+        category: "Social Media Design",
+        image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+        technologies: ["Adobe Photoshop", "Adobe Illustrator", "Social Media Marketing"],
+        liveUrl: null,
+        githubUrl: null,
         featured: true
       },
       {
-        title: "FitTracker Mobile",
-        description: "A beautiful, intuitive fitness tracking app with social features and personalized workout recommendations.",
-        category: "Mobile App",
-        image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-        technologies: ["React Native", "Figma", "Firebase"],
-        liveUrl: "https://fittracker.app",
-        githubUrl: "https://github.com/alexmorgan/fittracker",
+        title: "Digital Art & NFT Trading Portfolio",
+        description: "Built and managed online businesses in crypto/NFT space, created and sold digital artworks, achieving 11 ETH (~$34,000) in earnings from initial $800 investment.",
+        category: "Digital Art & Crypto",
+        image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+        technologies: ["Digital Art", "Blockchain", "NFT Trading", "Concept Art"],
+        liveUrl: "https://br4vetraveler.exe/behance.com",
+        githubUrl: null,
         featured: true
       },
       {
-        title: "PayFlow Platform",
-        description: "A modern payment processing platform with advanced security features and seamless integration capabilities.",
-        category: "FinTech",
-        image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-        technologies: ["Next.js", "Tailwind", "Stripe"],
-        liveUrl: "https://payflow.platform",
-        githubUrl: "https://github.com/alexmorgan/payflow",
+        title: "Chess Club Coordination & Training",
+        description: "Facilitated peer learning, logic training, and inclusive competition. Led workshops teaching students to use design software and break language barriers.",
+        category: "Education & Training",
+        image: "https://images.unsplash.com/photo-1560439514-e960a3ef5019?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+        technologies: ["Teaching", "Leadership", "Chess Strategy", "Educational Design"],
+        liveUrl: null,
+        githubUrl: null,
         featured: true
       }
     ];
@@ -85,30 +85,30 @@ export class MemStorage implements IStorage {
     // Sample blog posts
     const sampleBlogPosts: InsertBlogPost[] = [
       {
-        title: "The Future of Design Systems: Beyond Components",
-        excerpt: "Exploring how design systems are evolving beyond simple component libraries to become comprehensive design languages...",
-        content: "Full article content here...",
-        category: "Design",
-        image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=300",
-        publishedAt: new Date("2023-12-15"),
+        title: "How Language Can Transform Your Worldview",
+        excerpt: "I believe language can change a person's way of thinking and allow them to reframe their character through multiple cultural lenses, opening them up for a universe of opportunity beyond their isolated town.",
+        content: "Full article content about multilingual communication and cultural exchange...",
+        category: "Language & Culture",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=300",
+        publishedAt: new Date("2024-11-15"),
         featured: true
       },
       {
-        title: "Building Accessible React Components from Scratch",
-        excerpt: "A comprehensive guide to creating React components that work for everyone, with practical examples and testing strategies...",
-        content: "Full article content here...",
-        category: "Development",
-        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=300",
-        publishedAt: new Date("2023-12-08"),
+        title: "From Zelda to Education: My Creative Journey",
+        excerpt: "My journey began with video games like The Legend of Zelda: Ocarina of Time, where I discovered the magic of language and design to evoke emotion...",
+        content: "Full article about the intersection of gaming, storytelling, and education...",
+        category: "Personal Journey",
+        image: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=300",
+        publishedAt: new Date("2024-10-20"),
         featured: true
       },
       {
-        title: "Remote User Testing: Tools and Best Practices for 2024",
-        excerpt: "How remote work has changed user research and the new tools that are making remote testing more effective than ever...",
-        content: "Full article content here...",
-        category: "UX Research",
-        image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=300",
-        publishedAt: new Date("2023-11-30"),
+        title: "Building Cross-Cultural Communication Skills",
+        excerpt: "Exploring cultures through language and leveraging digital tools to break language barriers in educational environments...",
+        content: "Full article about cross-cultural communication strategies...",
+        category: "Education",
+        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=300",
+        publishedAt: new Date("2024-09-10"),
         featured: true
       }
     ];
@@ -138,7 +138,13 @@ export class MemStorage implements IStorage {
 
   async createProject(insertProject: InsertProject): Promise<Project> {
     const id = this.currentProjectId++;
-    const project: Project = { ...insertProject, id };
+    const project: Project = { 
+      ...insertProject, 
+      id,
+      liveUrl: insertProject.liveUrl || null,
+      githubUrl: insertProject.githubUrl || null,
+      featured: insertProject.featured || false
+    };
     this.projects.set(id, project);
     return project;
   }
@@ -163,7 +169,11 @@ export class MemStorage implements IStorage {
 
   async createBlogPost(insertBlogPost: InsertBlogPost): Promise<BlogPost> {
     const id = this.currentBlogPostId++;
-    const blogPost: BlogPost = { ...insertBlogPost, id };
+    const blogPost: BlogPost = { 
+      ...insertBlogPost, 
+      id,
+      featured: insertBlogPost.featured || false
+    };
     this.blogPosts.set(id, blogPost);
     return blogPost;
   }

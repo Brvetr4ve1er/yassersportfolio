@@ -3,6 +3,8 @@ import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import AboutSection from "@/components/about-section";
 import WorkSection from "@/components/work-section";
+import EducationSection from "@/components/education-section";
+import HobbiesSection from "@/components/hobbies-section";
 import BlogSection from "@/components/blog-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
@@ -51,6 +53,8 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <WorkSection />
+        <EducationSection />
+        <HobbiesSection />
         <BlogSection />
         <ContactSection />
       </main>

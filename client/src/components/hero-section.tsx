@@ -1,4 +1,4 @@
-import { ArrowRight, Github, Linkedin, ExternalLink, Twitter } from "lucide-react";
+import { ArrowRight, Linkedin, ExternalLink, Twitter, Palette } from "lucide-react";
 import { personalInfo, socialLinks } from "@/lib/constants";
 
 export default function HeroSection() {
@@ -29,8 +29,8 @@ export default function HeroSection() {
               Hi, I'm{" "}
               <span className="text-brand-accent">{personalInfo.firstName}</span>
               <br />
-              Product Designer & <br />
-              Frontend Developer
+              English Language Instructor & <br />
+              Creative Digital Artist
             </h1>
             
             <p className="text-xl text-brand-secondary mb-8 leading-relaxed max-w-lg">
@@ -55,14 +55,6 @@ export default function HeroSection() {
 
             <div className="mt-12 flex space-x-6">
               <a
-                href={socialLinks.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-brand-secondary hover:text-brand-accent transition-colors duration-200"
-              >
-                <Github className="h-6 w-6" />
-              </a>
-              <a
                 href={socialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -71,7 +63,15 @@ export default function HeroSection() {
                 <Linkedin className="h-6 w-6" />
               </a>
               <a
-                href={socialLinks.dribbble}
+                href={socialLinks.behance}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-secondary hover:text-brand-accent transition-colors duration-200"
+              >
+                <Palette className="h-6 w-6" />
+              </a>
+              <a
+                href={socialLinks.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-brand-secondary hover:text-brand-accent transition-colors duration-200"

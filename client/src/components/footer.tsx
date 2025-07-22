@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <p className="text-slate-400 text-sm">
-              © 2023 {personalInfo.name}. Built with passion and lots of coffee ☕
+              © 2024 {personalInfo.name}. Built with passion and love for computers 💻
             </p>
           </div>
           <div className="flex items-center space-x-6">

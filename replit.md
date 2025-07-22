@@ -1,12 +1,14 @@
-# Portfolio Website
+# Mohamed Yasser Hamisse Portfolio Website
 
 ## Overview
 
-This is a full-stack React portfolio website built with Express.js backend and Vite frontend. The application showcases a professional portfolio with sections for projects, blog posts, and contact form functionality. It's designed as a single-page application with smooth scrolling navigation and responsive design.
+A professional portfolio website for Mohamed Yasser Hamisse, an English Language Instructor and Creative Digital Artist from Algiers, Algeria. Built as a full-stack React application with Express.js backend and Vite frontend, showcasing his multilingual communication skills, creative design work, educational experience, and cross-cultural expertise.
 
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Portfolio Owner: Mohamed Yasser Hamisse
+Focus: Education, Digital Art, Language Instruction, Cross-cultural Communication
 
 ## System Architecture
 
@@ -60,9 +62,9 @@ Preferred communication style: Simple, everyday language.
 
 ### Database Schema
 Three main entities:
-- **Projects**: Portfolio projects with title, description, technologies, links
-- **Blog Posts**: Articles with content, categories, and publication dates
-- **Contact Submissions**: Form submissions from visitors
+- **Projects**: Portfolio projects including social media campaigns, digital art/NFT work, educational coordination
+- **Blog Posts**: Articles about language learning, cultural exchange, creative journey, and educational insights
+- **Contact Submissions**: Form submissions from potential clients, students, or collaborators
 
 ### State Management
 - TanStack Query handles server state, caching, and API calls
@@ -108,7 +110,12 @@ Three main entities:
 - Replit-specific plugins and configurations for cloud deployment
 
 ### Key Features
-- Server-side static file serving in production
-- Request/response logging with performance metrics
-- Error handling middleware for API routes
-- CORS and security considerations built-in
+- **Professional Hero Section**: Showcasing Mohamed Yasser's trilingual skills and creative background
+- **About Section**: Personal story from gaming inspiration to education and digital art
+- **Work Portfolio**: Featured projects including Artiland Studio campaigns, NFT trading success, and educational coordination
+- **Education & Certifications**: University degree, Duolingo certification, digital art training, and achievements
+- **Hobbies & Interests**: Personal interests from gaming to psychology, with cultural quote
+- **Blog Section**: Articles on language transformation, creative journey, and cross-cultural communication
+- **Contact Form**: Professional contact with social media links (LinkedIn, Behance)
+- **Responsive Design**: Mobile-first approach with smooth scrolling navigation
+- **SEO Optimization**: Dynamic meta tags and Open Graph integration

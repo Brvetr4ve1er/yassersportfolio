@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink, Twitter, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, ExternalLink, Twitter, Send, Palette } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -112,14 +112,6 @@ export default function ContactSection() {
               <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 <a
-                  href={socialLinks.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center text-white hover:bg-brand-accent transition-colors duration-200"
-                >
-                  <Github className="h-5 w-5" />
-                </a>
-                <a
                   href={socialLinks.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -128,7 +120,15 @@ export default function ContactSection() {
                   <Linkedin className="h-5 w-5" />
                 </a>
                 <a
-                  href={socialLinks.dribbble}
+                  href={socialLinks.behance}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center text-white hover:bg-brand-accent transition-colors duration-200"
+                >
+                  <Palette className="h-5 w-5" />
+                </a>
+                <a
+                  href={socialLinks.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center text-white hover:bg-brand-accent transition-colors duration-200"
