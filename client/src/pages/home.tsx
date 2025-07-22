@@ -3,12 +3,16 @@ import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import AboutSection from "@/components/about-section";
 import WorkSection from "@/components/work-section";
+import SkillsSection from "@/components/skills-section";
 import EducationSection from "@/components/education-section";
+import TestimonialsSection from "@/components/testimonials-section";
 import HobbiesSection from "@/components/hobbies-section";
 import BlogSection from "@/components/blog-section";
 import ContactSection from "@/components/contact-section";
+import ResumeDownload from "@/components/resume-download";
 import Footer from "@/components/footer";
 import FluidBackground from "@/components/fluid-background";
+import CustomCursor from "@/components/custom-cursor";
 import { personalInfo } from "@/lib/constants";
 
 export default function Home() {
@@ -49,16 +53,22 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-brand-bg relative">
+      <CustomCursor />
       <FluidBackground />
       <Navigation />
       <main>
         <HeroSection />
         <AboutSection />
         <WorkSection />
+        <SkillsSection />
         <EducationSection />
+        <TestimonialsSection />
         <HobbiesSection />
         <BlogSection />
         <ContactSection />
+        <div className="max-w-4xl mx-auto px-4 pb-20">
+          <ResumeDownload />
+        </div>
       </main>
       <Footer />
     </div>
