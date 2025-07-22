@@ -1,6 +1,6 @@
 import { ArrowRight, Linkedin, ExternalLink, Twitter, Palette } from "lucide-react";
 import { personalInfo, socialLinks } from "@/lib/constants";
-import avatarImage from "@assets/Untitled-1 (1)_1753181417706.jpg";
+import AvatarBuyCard from "@/components/avatar-buy-card";
 
 export default function HeroSection() {
   const scrollToSection = (href: string) => {
@@ -91,18 +91,7 @@ export default function HeroSection() {
           </div>
 
           <div className="order-1 lg:order-2 flex justify-center">
-            <div className="relative">
-              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-brand-accent/20">
-                <img
-                  src={avatarImage}
-                  alt="Mohamed Yasser Hamisse - English Language Instructor & Creative Digital Artist"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-brand-accent rounded-full flex items-center justify-center shadow-lg">
-                <div className="text-white text-2xl font-mono">&lt;/&gt;</div>
-              </div>
-            </div>
+            <AvatarBuyCard />
           </div>
         </div>
       </div>
