@@ -88,7 +88,8 @@ function ContactCard({ contact, index }: { contact: ContactCard; index: number }
         className="contact-card group cursor-pointer"
         onClick={handleClick}
         style={{
-          animationDelay: `${index * 200}ms`
+          animationDelay: `${index * 200}ms`,
+          borderColor: contact.color,
         }}
       >
         <div className="contact-content-box">
@@ -98,7 +99,7 @@ function ContactCard({ contact, index }: { contact: ContactCard; index: number }
           <span className="contact-title">{contact.platform}</span>
           <p className="contact-username">{contact.username}</p>
           <p className="contact-description">{contact.description}</p>
-          <span className="contact-action">Connect Now</span>
+          <span className="contact-action" style={{ color: contact.color }}>Connect Now</span>
         </div>
         <div className="contact-badge" style={{ borderColor: contact.color }}>
           <span className="contact-status">ONLINE</span>
