@@ -49,7 +49,7 @@ export default function EducationSection() {
   ];
 
   return (
-    <section id="education" className="py-20 bg-slate-50">
+    <section id="education" className="py-20 bg-brand-bg-secondary">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-brand-primary mb-4">
@@ -69,7 +69,7 @@ export default function EducationSection() {
             </h3>
             <div className="space-y-6">
               {education.map((edu, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm border">
+                <div key={index} className="bg-brand-surface p-6 rounded-lg shadow-sm border border-brand-secondary/20 hover:bg-brand-surface-hover transition-colors">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-brand-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
                       <edu.icon className="w-6 h-6 text-brand-accent" />
@@ -105,7 +105,7 @@ export default function EducationSection() {
             </h3>
             <div className="space-y-4">
               {certifications.map((cert, index) => (
-                <div key={index} className="bg-white p-5 rounded-lg shadow-sm border">
+                <div key={index} className="bg-brand-surface p-5 rounded-lg shadow-sm border border-brand-secondary/20 hover:bg-brand-surface-hover transition-colors">
                   <div className="flex items-start space-x-3">
                     <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
                       <cert.icon className="w-5 h-5 text-green-600" />
@@ -139,7 +139,7 @@ export default function EducationSection() {
             Notable Achievements
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow-sm border text-center">
+            <div className="bg-brand-surface p-6 rounded-lg shadow-sm border border-brand-secondary/20 text-center hover:bg-brand-surface-hover transition-colors">
               <div className="w-16 h-16 bg-brand-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🎨</span>
               </div>
@@ -151,7 +151,7 @@ export default function EducationSection() {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm border text-center">
+            <div className="bg-brand-surface p-6 rounded-lg shadow-sm border border-brand-secondary/20 text-center hover:bg-brand-surface-hover transition-colors">
               <div className="w-16 h-16 bg-brand-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">💬</span>
               </div>
@@ -163,7 +163,7 @@ export default function EducationSection() {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm border text-center">
+            <div className="bg-brand-surface p-6 rounded-lg shadow-sm border border-brand-secondary/20 text-center hover:bg-brand-surface-hover transition-colors">
               <div className="w-16 h-16 bg-brand-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">₿</span>
               </div>

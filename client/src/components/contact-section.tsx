@@ -52,13 +52,13 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-brand-primary">
+    <section id="contact" className="py-20 bg-brand-bg">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-brand-primary mb-4">
             Let's Work Together
           </h2>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+          <p className="text-xl text-brand-secondary max-w-2xl mx-auto">
             Have a project in mind or just want to chat? I'd love to hear from you.
           </p>
         </div>

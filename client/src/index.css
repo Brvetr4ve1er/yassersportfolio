@@ -3,31 +3,35 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(210, 20%, 98%);
-  --foreground: hsl(220, 39%, 11%);
-  --muted: hsl(210, 20%, 95%);
-  --muted-foreground: hsl(220, 14%, 41%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(220, 39%, 11%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(220, 39%, 11%);
-  --border: hsl(220, 13%, 91%);
-  --input: hsl(220, 13%, 91%);
-  --primary: hsl(221, 83%, 53%);
-  --primary-foreground: hsl(210, 40%, 98%);
-  --secondary: hsl(210, 20%, 95%);
-  --secondary-foreground: hsl(220, 9%, 46%);
-  --accent: hsl(210, 20%, 95%);
-  --accent-foreground: hsl(220, 9%, 46%);
-  --destructive: hsl(0, 84%, 60%);
-  --destructive-foreground: hsl(210, 40%, 98%);
-  --ring: hsl(220, 39%, 11%);
-  --radius: 0.5rem;
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 6%, 10%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 6%, 10%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(142, 76%, 36%);
+  --primary-foreground: hsl(240, 10%, 3.9%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(142, 76%, 36%);
+  --accent-foreground: hsl(240, 10%, 3.9%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(142, 76%, 36%);
+  --radius: 0.75rem;
   
-  /* Custom brand colors */
-  --brand-primary: hsl(218, 54%, 20%);
-  --brand-secondary: hsl(214, 13%, 46%);
-  --brand-accent: hsl(221, 83%, 53%);
+  /* Dark theme brand colors */
+  --brand-primary: hsl(0, 0%, 98%);
+  --brand-secondary: hsl(240, 5%, 64.9%);
+  --brand-accent: hsl(142, 76%, 36%);
+  --brand-surface: hsl(240, 6%, 10%);
+  --brand-surface-hover: hsl(240, 3.7%, 15.9%);
+  --brand-bg: hsl(240, 10%, 3.9%);
+  --brand-bg-secondary: hsl(240, 6%, 6%);
 }
 
 .dark {
@@ -63,6 +67,11 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Dark theme utilities */
 @layer utilities {
   .text-brand-primary {
     color: var(--brand-primary);
@@ -88,6 +97,22 @@
     background-color: var(--brand-accent);
   }
   
+  .bg-brand-surface {
+    background-color: var(--brand-surface);
+  }
+  
+  .bg-brand-surface-hover {
+    background-color: var(--brand-surface-hover);
+  }
+  
+  .bg-brand-bg {
+    background-color: var(--brand-bg);
+  }
+  
+  .bg-brand-bg-secondary {
+    background-color: var(--brand-bg-secondary);
+  }
+  
   .border-brand-accent {
     border-color: var(--brand-accent);
   }
@@ -104,7 +129,53 @@
     background-color: var(--brand-accent);
   }
   
+  .hover\:bg-brand-surface-hover:hover {
+    background-color: var(--brand-surface-hover);
+  }
+  
   .hover\:border-brand-accent:hover {
     border-color: var(--brand-accent);
+  }
+  
+  /* Dark theme specific styles */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(142, 76%, 36%) 0%, hsl(197, 76%, 50%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .dark-gradient {
+    background: linear-gradient(135deg, hsl(240, 10%, 3.9%) 0%, hsl(240, 6%, 6%) 100%);
+  }
+  
+  .glow-green {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+  }
+  
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  
+  /* Animation improvements */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
   }
 }

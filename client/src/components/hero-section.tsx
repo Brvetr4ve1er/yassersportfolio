@@ -12,7 +12,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="pt-16 min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100"
+      className="pt-16 min-h-screen flex items-center justify-center bg-brand-bg relative overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -27,7 +27,7 @@ export default function HeroSection() {
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-primary mb-6 leading-tight">
               Hi, I'm{" "}
-              <span className="text-brand-accent">{personalInfo.firstName}</span>
+              <span className="gradient-text">{personalInfo.firstName}</span>
               <br />
               English Language Instructor & <br />
               Creative Digital Artist
@@ -40,14 +40,14 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 onClick={() => scrollToSection("#work")}
-                className="inline-flex items-center justify-center px-8 py-4 bg-brand-accent text-white rounded-lg hover:bg-blue-600 transition-colors duration-200 font-medium"
+                className="inline-flex items-center justify-center px-8 py-4 bg-brand-accent text-black rounded-lg hover:bg-green-600 transition-all duration-200 font-medium glow-green"
               >
                 View My Work
                 <ArrowRight className="ml-2 h-4 w-4" />
               </button>
               <button
                 onClick={() => scrollToSection("#contact")}
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-brand-secondary text-brand-secondary rounded-lg hover:border-brand-accent hover:text-brand-accent transition-colors duration-200 font-medium"
+                className="inline-flex items-center justify-center px-8 py-4 border-2 border-brand-accent text-brand-accent rounded-lg hover:bg-brand-accent hover:text-black transition-all duration-200 font-medium"
               >
                 Get In Touch
               </button>

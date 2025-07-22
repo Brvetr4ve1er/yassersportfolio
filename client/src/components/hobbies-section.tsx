@@ -12,7 +12,7 @@ export default function HobbiesSection() {
   ];
 
   return (
-    <section id="hobbies" className="py-20 bg-white">
+    <section id="hobbies" className="py-20 bg-brand-bg">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-brand-primary mb-4">
@@ -29,7 +29,7 @@ export default function HobbiesSection() {
             const IconComponent = iconData.icon;
 
             return (
-              <div key={index} className="bg-slate-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
+              <div key={index} className="bg-brand-surface p-6 rounded-xl hover:bg-brand-surface-hover transition-all duration-300 border border-brand-secondary/20">
                 <div className="flex items-start space-x-4">
                   <div className={`w-12 h-12 ${iconData.bg} rounded-lg flex items-center justify-center flex-shrink-0`}>
                     <IconComponent className={`w-6 h-6 ${iconData.color}`} />
@@ -47,13 +47,13 @@ export default function HobbiesSection() {
 
         {/* Personal Quote */}
         <div className="mt-16 text-center">
-          <div className="max-w-4xl mx-auto bg-brand-primary p-8 rounded-2xl">
-            <blockquote className="text-xl text-white italic leading-relaxed">
+          <div className="max-w-4xl mx-auto bg-brand-accent/10 p-8 rounded-2xl border border-brand-accent/20">
+            <blockquote className="text-xl text-brand-primary italic leading-relaxed">
               "I believe language can change a person's way of thinking and allow them to reframe their 
               character through multiple cultural lenses, opening them up for a universe of opportunity 
               beyond their isolated town."
             </blockquote>
-            <cite className="text-slate-300 mt-4 block font-medium">
+            <cite className="text-brand-accent mt-4 block font-medium">
               — Mohamed Yasser Hamisse
             </cite>
           </div>
