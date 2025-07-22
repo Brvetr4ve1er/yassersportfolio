@@ -5,10 +5,10 @@ export default function ContactSection() {
     <section id="contact" className="py-20 px-4 relative">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-brand-primary mb-6">
+          <h2 className="text-4xl lg:text-5xl font-black text-brand-primary mb-6 tracking-tight">
             Let's Connect
           </h2>
-          <p className="text-xl text-brand-secondary max-w-3xl mx-auto">
+          <p className="text-xl text-brand-secondary max-w-3xl mx-auto leading-relaxed">
             Ready to discuss your next project, explore collaboration opportunities, or just say hello? 
             Hover over the button below to connect with me on your preferred platform.
           </p>

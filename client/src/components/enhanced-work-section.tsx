@@ -146,20 +146,20 @@ export default function EnhancedWorkSection() {
     <section id="work" className="py-20 bg-brand-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-brand-primary mb-4">
+          <h2 className="text-3xl sm:text-4xl font-black text-brand-primary mb-6 tracking-tight">
             Featured Work
           </h2>
-          <p className="text-xl text-brand-secondary max-w-3xl mx-auto">
+          <p className="text-xl text-brand-secondary max-w-3xl mx-auto leading-relaxed">
             A selection of projects showcasing my expertise in design, development, and creative problem-solving
           </p>
         </div>
 
         {/* Portfolio Projects */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-brand-primary mb-8 text-center">
+          <h3 className="text-2xl font-black text-brand-primary mb-8 text-center tracking-tight">
             Portfolio Projects
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {portfolioProjects?.map((project) => (
               <Card3D key={project.id} intensity={0.5}>
                 <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full bg-brand-surface border-brand-accent/20">
@@ -199,7 +199,7 @@ export default function EnhancedWorkSection() {
                           )}
                         </div>
                       </div>
-                      <h3 className="text-xl font-bold text-brand-primary mb-2">
+                      <h3 className="text-xl font-black text-brand-primary mb-2 tracking-tight">
                         {project.title}
                       </h3>
                       <p className="text-brand-secondary text-sm mb-4">
@@ -231,10 +231,10 @@ export default function EnhancedWorkSection() {
         {/* GitHub Repositories */}
         {githubRepos && githubRepos.length > 0 && (
           <div className="mb-16">
-            <h3 className="text-2xl font-bold text-brand-primary mb-8 text-center">
+            <h3 className="text-2xl font-black text-brand-primary mb-8 text-center tracking-tight">
               GitHub Repositories
             </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {githubRepos.slice(0, 6).map((repo) => (
                 <Card3D key={repo.id} intensity={0.5}>
                   <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full bg-brand-surface border-brand-accent/20">
@@ -257,7 +257,7 @@ export default function EnhancedWorkSection() {
                         </a>
                       </div>
                       
-                      <h3 className="text-xl font-bold text-brand-primary mb-2">
+                      <h3 className="text-xl font-black text-brand-primary mb-2 tracking-tight">
                         {repo.name}
                       </h3>
                       
@@ -298,10 +298,10 @@ export default function EnhancedWorkSection() {
 
         {/* Behance Projects */}
         <div>
-          <h3 className="text-2xl font-bold text-brand-primary mb-8 text-center">
+          <h3 className="text-2xl font-black text-brand-primary mb-8 text-center tracking-tight">
             Design Portfolio
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {mockBehanceProjects.map((project) => (
               <Card3D key={project.id} intensity={0.5}>
                 <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full bg-brand-surface border-brand-accent/20">
@@ -326,7 +326,7 @@ export default function EnhancedWorkSection() {
                       </a>
                     </div>
                     
-                    <h3 className="text-xl font-bold text-brand-primary mb-2">
+                    <h3 className="text-xl font-black text-brand-primary mb-2 tracking-tight">
                       {project.name}
                     </h3>
                     

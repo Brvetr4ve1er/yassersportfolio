@@ -16,8 +16,8 @@ export default function HeroSection() {
       className="pt-16 min-h-screen flex items-center justify-center bg-brand-bg relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid lg:grid-cols-2 gap-16 items-center justify-items-center">
-          <div className="order-2 lg:order-1 text-center lg:text-left">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="order-2 lg:order-1 text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
             {personalInfo.availableForWork && (
               <div className="inline-block mb-6">
                 <span className="px-6 py-3 bg-brand-accent/10 text-brand-accent rounded-full text-sm font-medium border border-brand-accent/20">
@@ -26,12 +26,12 @@ export default function HeroSection() {
               </div>
             )}
             
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-primary mb-8 leading-tight max-w-4xl">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-brand-primary mb-8 leading-tight tracking-tight">
               Hi, I'm{" "}
-              <span className="gradient-text">{personalInfo.firstName}</span>
+              <span className="gradient-text font-black">{personalInfo.firstName}</span>
               <br />
-              <span className="text-brand-accent">Art Director & Designer</span> <br />
-              <span className="text-brand-secondary">Customization Wizard with Tech Skills</span>
+              <span className="text-brand-accent font-black">Art Director & Designer</span> <br />
+              <span className="text-brand-secondary font-bold text-2xl sm:text-3xl lg:text-4xl">Customization Wizard with Tech Skills</span>
             </h1>
             
             <p className="text-xl text-brand-secondary mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0">
@@ -96,7 +96,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+          <div className="order-1 lg:order-2 flex justify-center">
             <AvatarBuyCard />
           </div>
         </div>
