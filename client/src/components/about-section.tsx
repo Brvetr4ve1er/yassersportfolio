@@ -62,15 +62,15 @@ export default function AboutSection() {
                 return (
                   <Card3D key={index} intensity={0.3}>
                     <div className="text-center p-6 bg-brand-surface rounded-lg border border-brand-accent/20 h-full">
+                      <IconComponent className="w-8 h-8 text-brand-accent mx-auto mb-3" />
+                      <h4 className="font-semibold text-brand-primary mb-2">
+                        {skill.category}
+                      </h4>
+                      <p className="text-sm text-brand-secondary">
+                        {skill.description}
+                      </p>
+                    </div>
                   </Card3D>
-                    <IconComponent className="w-8 h-8 text-brand-accent mx-auto mb-3" />
-                    <h4 className="font-semibold text-brand-primary mb-2">
-                      {skill.category}
-                    </h4>
-                    <p className="text-sm text-brand-secondary">
-                      {skill.description}
-                    </p>
-                  </div>
                 );
               })}
             </div>
