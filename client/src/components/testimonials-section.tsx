@@ -79,10 +79,10 @@ export default function TestimonialsSection() {
     <section id="testimonials" className="py-20 px-4 relative">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl lg:text-5xl font-black text-brand-primary mb-6 tracking-tight">
             Client Testimonials
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-brand-secondary max-w-3xl mx-auto leading-relaxed">
             Real feedback from satisfied clients, students, and collaborators who have experienced 
             the quality and dedication I bring to every project.
           </p>

@@ -52,10 +52,10 @@ export default function EducationSection() {
     <section id="education" className="py-20 bg-brand-bg-secondary">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-brand-primary mb-4">
+          <h2 className="text-4xl lg:text-5xl font-black text-brand-primary mb-6 tracking-tight">
             Education & Certifications
           </h2>
-          <p className="text-xl text-brand-secondary max-w-3xl mx-auto">
+          <p className="text-xl text-brand-secondary max-w-3xl mx-auto leading-relaxed">
             Academic background and professional development journey
           </p>
         </div>
@@ -63,7 +63,7 @@ export default function EducationSection() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Education */}
           <div>
-            <h3 className="text-2xl font-bold text-brand-primary mb-8 flex items-center">
+            <h3 className="text-2xl font-black text-brand-primary mb-8 flex items-center tracking-tight">
               <GraduationCap className="mr-3 h-6 w-6 text-brand-accent" />
               Education
             </h3>

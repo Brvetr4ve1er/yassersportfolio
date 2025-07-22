@@ -43,7 +43,14 @@ export default function Navigation() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          
+          <div className="flex-shrink-0">
+            <button
+              onClick={() => scrollToSection("#home")}
+              className="text-xl font-black text-brand-primary hover:text-brand-accent transition-colors duration-200 tracking-tight"
+            >
+              {personalInfo.name}
+            </button>
+          </div>
 
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
@@ -76,7 +83,7 @@ export default function Navigation() {
         {/* Mobile menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-b border-slate-200">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-brand-surface border-b border-brand-secondary/20">
               {navLinks.map((link) => (
                 <button
                   key={link.href}

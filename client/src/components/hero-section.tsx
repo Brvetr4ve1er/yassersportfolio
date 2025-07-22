@@ -76,11 +76,11 @@ export default function HeroSection() {
                 <Palette className="h-7 w-7" />
               </a>
               <a
-                href={socialLinks.instagram}
+                href={socialLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-brand-secondary hover:text-brand-accent transition-all duration-300 p-3 rounded-full hover:bg-brand-accent/10"
-                aria-label="Instagram"
+                aria-label="GitHub Profile"
               >
                 <ExternalLink className="h-7 w-7" />
               </a>

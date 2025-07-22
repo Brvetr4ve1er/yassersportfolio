@@ -74,10 +74,10 @@ export default function SkillsSection() {
     <section id="skills" className="py-20 px-4 relative">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl lg:text-5xl font-black text-brand-primary mb-6 tracking-tight">
             Skills & Expertise
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-brand-secondary max-w-3xl mx-auto leading-relaxed">
             Multi-disciplinary expertise spanning Art Direction, Web Development, Task Automation, 
             Psychology Advice, and Social Media Management. Driven by an addiction to learning and 
             passion for customizing everything with advanced tech skills.

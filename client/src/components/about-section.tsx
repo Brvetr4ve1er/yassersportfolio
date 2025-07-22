@@ -14,7 +14,7 @@ export default function AboutSection() {
     <section id="about" className="py-20 bg-brand-bg-secondary">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-black text-brand-primary mb-6 tracking-tight">
+          <h2 className="text-4xl lg:text-5xl font-black text-brand-primary mb-6 tracking-tight">
             About Me
           </h2>
           <p className="text-xl text-brand-secondary max-w-3xl mx-auto leading-relaxed">
