@@ -1,4 +1,5 @@
-import { MessageCircle, Send, Facebook, ExternalLink } from "lucide-react";
+import { MessageCircle, Send, Facebook, ExternalLink, ChevronDown, ChevronUp, Palette, Briefcase, Users, Globe } from "lucide-react";
+import { useState } from "react";
 
 interface ContactCard {
   platform: string;
@@ -9,42 +10,116 @@ interface ContactCard {
   color: string;
 }
 
-const contactMethods: ContactCard[] = [
+interface ContactCategory {
+  title: string;
+  icon: React.ReactNode;
+  description: string;
+  color: string;
+  platforms: ContactCard[];
+}
+
+const contactCategories: ContactCategory[] = [
   {
-    platform: "WhatsApp",
-    icon: <MessageCircle className="w-8 h-8" />,
-    link: "https://wa.me/213123456789", // Replace with actual WhatsApp number
-    username: "+213 123 456 789",
-    description: "Quick messages and voice calls",
-    color: "#25D366"
+    title: "Messaging",
+    icon: <MessageCircle className="w-6 h-6" />,
+    description: "Direct communication channels",
+    color: "#22c55e",
+    platforms: [
+      {
+        platform: "WhatsApp",
+        icon: <MessageCircle className="w-8 h-8" />,
+        link: "https://wa.me/213123456789",
+        username: "+213 123 456 789",
+        description: "Quick messages and voice calls",
+        color: "#25D366"
+      },
+      {
+        platform: "Telegram",
+        icon: <Send className="w-8 h-8" />,
+        link: "https://t.me/nobodysamsa",
+        username: "@nobodysamsa",
+        description: "Secure messaging and file sharing",
+        color: "#0088cc"
+      }
+    ]
   },
   {
-    platform: "Telegram",
-    icon: <Send className="w-8 h-8" />,
-    link: "https://t.me/nobodysamsa",
-    username: "@nobodysamsa",
-    description: "Secure messaging and file sharing",
-    color: "#0088cc"
+    title: "Social Media",
+    icon: <Users className="w-6 h-6" />,
+    description: "Connect on social platforms",
+    color: "#3b82f6",
+    platforms: [
+      {
+        platform: "Facebook",
+        icon: <Facebook className="w-8 h-8" />,
+        link: "https://www.facebook.com/virgil.chu.71/",
+        username: "Virgil Chu",
+        description: "Connect on Facebook",
+        color: "#0084ff"
+      },
+      {
+        platform: "Instagram",
+        icon: <Globe className="w-8 h-8" />,
+        link: "https://instagram.com/veemoo",
+        username: "@veemoo",
+        description: "Visual stories and updates",
+        color: "#E4405F"
+      }
+    ]
   },
   {
-    platform: "Facebook",
-    icon: <Facebook className="w-8 h-8" />,
-    link: "https://www.facebook.com/virgil.chu.71/",
-    username: "Virgil Chu",
-    description: "Connect on Facebook",
-    color: "#0084ff"
+    title: "Professional",
+    icon: <Briefcase className="w-6 h-6" />,
+    description: "Business and career networks",
+    color: "#8b5cf6",
+    platforms: [
+      {
+        platform: "LinkedIn",
+        icon: <ExternalLink className="w-8 h-8" />,
+        link: "https://linkedin.com/in/mohamedyasser",
+        username: "Mohamed Yasser",
+        description: "Professional networking",
+        color: "#0077B5"
+      },
+      {
+        platform: "Behance",
+        icon: <Palette className="w-8 h-8" />,
+        link: "https://behance.net/mohamedyasser",
+        username: "Mohamed Yasser",
+        description: "Creative portfolio showcase",
+        color: "#1769ff"
+      }
+    ]
   },
   {
-    platform: "Linktree",
-    icon: <ExternalLink className="w-8 h-8" />,
-    link: "https://linktr.ee/VEEMOo?fbclid=IwY2xjawLsUXdleHRuA2FlbQIxMABicmlkETFKcFdCU3lQZm5acUZYUU1WAR4SaB1huxi455-QfI-nEAWwuUgm10SEg_NH6YLMwEX9zixxER0dvrd8MdUygw_aem_FVDPF-OSA-zViFHJun12RA",
-    username: "VEEMOo",
-    description: "All my social links in one place",
-    color: "#39e75f"
+    title: "All Links",
+    icon: <Globe className="w-6 h-6" />,
+    description: "Centralized link hub",
+    color: "#f59e0b",
+    platforms: [
+      {
+        platform: "Linktree",
+        icon: <ExternalLink className="w-8 h-8" />,
+        link: "https://linktr.ee/VEEMOo?fbclid=IwY2xjawLsUXdleHRuA2FlbQIxMABicmlkETFKcFdCU3lQZm5acUZYUU1WAR4SaB1huxi455-QfI-nEAWwuUgm10SEg_NH6YLMwEX9zixxER0dvrd8MdUygw_aem_FVDPF-OSA-zViFHJun12RA",
+        username: "VEEMOo",
+        description: "All my social links in one place",
+        color: "#39e75f"
+      }
+    ]
   }
 ];
 
 export default function ContactSection() {
+  const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
+
+  const toggleCategory = (categoryTitle: string) => {
+    setExpandedCategories(prev => 
+      prev.includes(categoryTitle)
+        ? prev.filter(title => title !== categoryTitle)
+        : [...prev, categoryTitle]
+    );
+  };
+
   return (
     <section id="contact" className="py-20 px-4 relative">
       <div className="max-w-6xl mx-auto">
@@ -58,9 +133,15 @@ export default function ContactSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
-          {contactMethods.map((contact, index) => (
-            <ContactCard key={contact.platform} contact={contact} index={index} />
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {contactCategories.map((category, categoryIndex) => (
+            <CategoryDrawer
+              key={category.title}
+              category={category}
+              isExpanded={expandedCategories.includes(category.title)}
+              onToggle={() => toggleCategory(category.title)}
+              index={categoryIndex}
+            />
           ))}
         </div>
 
@@ -85,18 +166,77 @@ export default function ContactSection() {
   );
 }
 
-function ContactCard({ contact, index }: { contact: ContactCard; index: number }) {
+function CategoryDrawer({ 
+  category, 
+  isExpanded, 
+  onToggle, 
+  index 
+}: { 
+  category: ContactCategory; 
+  isExpanded: boolean; 
+  onToggle: () => void; 
+  index: number; 
+}) {
+  return (
+    <div 
+      className="category-drawer"
+      style={{ animationDelay: `${index * 100}ms` }}
+    >
+      <div 
+        className="category-header"
+        onClick={onToggle}
+        style={{ borderColor: category.color }}
+      >
+        <div className="category-info">
+          <div className="category-icon" style={{ color: category.color }}>
+            {category.icon}
+          </div>
+          <div>
+            <h3 className="category-title">{category.title}</h3>
+            <p className="category-description">{category.description}</p>
+          </div>
+        </div>
+        <div className="category-toggle" style={{ color: category.color }}>
+          {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+        </div>
+      </div>
+      
+      <div className={`category-content ${isExpanded ? 'expanded' : ''}`}>
+        <div className="platforms-grid">
+          {category.platforms.map((platform, platformIndex) => (
+            <ContactCard 
+              key={platform.platform} 
+              contact={platform} 
+              index={platformIndex}
+              isCompact={true}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ContactCard({ 
+  contact, 
+  index, 
+  isCompact = false 
+}: { 
+  contact: ContactCard; 
+  index: number; 
+  isCompact?: boolean; 
+}) {
   const handleClick = () => {
     window.open(contact.link, '_blank', 'noopener,noreferrer');
   };
 
   return (
-    <div className="contact-card-parent">
+    <div className={`contact-card-parent ${isCompact ? 'compact' : ''}`}>
       <div 
         className="contact-card group cursor-pointer"
         onClick={handleClick}
         style={{
-          animationDelay: `${index * 200}ms`,
+          animationDelay: `${index * 100}ms`,
           borderColor: contact.color,
         }}
       >
@@ -106,7 +246,7 @@ function ContactCard({ contact, index }: { contact: ContactCard; index: number }
           </div>
           <span className="contact-title">{contact.platform}</span>
           <p className="contact-username">{contact.username}</p>
-          <p className="contact-description">{contact.description}</p>
+          {!isCompact && <p className="contact-description">{contact.description}</p>}
           <span className="contact-action" style={{ color: contact.color }}>Connect Now</span>
         </div>
         <div className="contact-badge" style={{ borderColor: contact.color }}>
