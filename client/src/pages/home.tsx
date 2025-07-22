@@ -8,6 +8,7 @@ import HobbiesSection from "@/components/hobbies-section";
 import BlogSection from "@/components/blog-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
+import FluidBackground from "@/components/fluid-background";
 import { personalInfo } from "@/lib/constants";
 
 export default function Home() {
@@ -47,7 +48,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-brand-bg relative">
+      <FluidBackground />
       <Navigation />
       <main>
         <HeroSection />
