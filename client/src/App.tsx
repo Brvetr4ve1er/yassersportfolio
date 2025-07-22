@@ -5,6 +5,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
+import AudioPlayer from "@/components/audio-player";
+import ThemeToggle from "@/components/theme-toggle";
+import ColorPicker from "@/components/color-picker";
 
 function Router() {
   return (
@@ -21,6 +24,17 @@ function App() {
       <TooltipProvider>
         <Toaster />
         <Router />
+        
+        {/* Advanced Features */}
+        <AudioPlayer 
+          src="/background-music.mp3"
+          title="Portfolio Ambient"
+          artist="Background Music"
+          autoPlay={false}
+          loop={true}
+        />
+        <ThemeToggle />
+        <ColorPicker />
       </TooltipProvider>
     </QueryClientProvider>
   );

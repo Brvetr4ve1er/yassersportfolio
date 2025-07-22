@@ -5,13 +5,11 @@ export default function AvatarBuyCard() {
   return (
     <div className="avatar-buy-card">
       <div className="card-pattern-grid"></div>
-      <div className="card-overlay-dots"></div>
-      
+      <div className="card-overlay-dots pt-[9px] pb-[9px]"></div>
       <div className="card-title-area">
         <span>Mohamed Yasser</span>
         <div className="card-tag">VIP</div>
       </div>
-
       <div className="card-body">
         <div className="avatar-container">
           <img 
@@ -72,10 +70,8 @@ export default function AvatarBuyCard() {
           </button>
         </div>
       </div>
-
       <div className="accent-shape"></div>
       <div className="corner-slice"></div>
-      
       <div className="stamp">
         <span className="stamp-text">Pro</span>
       </div>

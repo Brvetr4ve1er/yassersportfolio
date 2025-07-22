@@ -1,5 +1,6 @@
 import { Palette, Code, Globe, Users } from "lucide-react";
 import { skills, experience } from "@/lib/constants";
+import Card3D from "@/components/card-3d";
 
 const iconMap = {
   palette: Palette,
@@ -59,10 +60,9 @@ export default function AboutSection() {
               {skills.map((skill, index) => {
                 const IconComponent = iconMap[skill.icon as keyof typeof iconMap];
                 return (
-                  <div
-                    key={index}
-                    className="text-center p-6 bg-slate-50 rounded-lg"
-                  >
+                  <Card3D key={index} intensity={0.3}>
+                    <div className="text-center p-6 bg-brand-surface rounded-lg border border-brand-accent/20 h-full">
+                  </Card3D>
                     <IconComponent className="w-8 h-8 text-brand-accent mx-auto mb-3" />
                     <h4 className="font-semibold text-brand-primary mb-2">
                       {skill.category}
