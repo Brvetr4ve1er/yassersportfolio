@@ -91,10 +91,10 @@ export default function HeroSection() {
 
           <div className="order-1 lg:order-2 flex justify-center">
             <div className="relative">
-              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl">
+              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-brand-accent/20">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800"
-                  alt="Professional headshot"
+                  src="/attached_assets/IMG_20210124_212311_645_1753181168840.jpg"
+                  alt="Mohamed Yasser Hamisse - English Language Instructor & Creative Digital Artist"
                   className="w-full h-full object-cover"
                 />
               </div>
