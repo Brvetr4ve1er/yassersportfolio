@@ -178,4 +178,140 @@ html {
   .animate-fade-in-up {
     animation: fadeInUp 0.6s ease-out forwards;
   }
+
+  /* Contact Card Styles */
+  .contact-card-parent {
+    width: 320px;
+    padding: 20px;
+    perspective: 1000px;
+  }
+
+  .contact-card {
+    padding-top: 50px;
+    border: 3px solid hsl(240, 10%, 3.9%);
+    transform-style: preserve-3d;
+    background: linear-gradient(135deg, transparent 18.75%, hsl(240, 6%, 6%) 0 31.25%, transparent 0),
+      repeating-linear-gradient(45deg, hsl(240, 6%, 6%) -6.25% 6.25%, hsl(240, 10%, 3.9%) 0 18.75%);
+    background-size: 60px 60px;
+    background-position: 0 0, 0 0;
+    background-color: hsl(240, 10%, 3.9%);
+    width: 100%;
+    box-shadow: rgba(34, 197, 94, 0.2) 0px 30px 30px -10px;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .contact-card:hover {
+    background-position: -100px 100px, -100px 100px;
+    transform: rotate3d(0.5, 1, 0, 30deg);
+    box-shadow: rgba(34, 197, 94, 0.4) 0px 40px 40px -10px;
+  }
+
+  .contact-content-box {
+    background: hsl(142, 76%, 36%);
+    transition: all 0.5s ease-in-out;
+    padding: 60px 25px 25px 25px;
+    transform-style: preserve-3d;
+  }
+
+  .contact-icon {
+    display: inline-block;
+    margin-bottom: 15px;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 50px);
+  }
+
+  .contact-icon:hover {
+    transform: translate3d(0px, 0px, 70px);
+  }
+
+  .contact-content-box .contact-title {
+    display: block;
+    color: hsl(240, 10%, 3.9%);
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 50px);
+  }
+
+  .contact-content-box .contact-title:hover {
+    transform: translate3d(0px, 0px, 60px);
+  }
+
+  .contact-content-box .contact-username {
+    font-size: 16px;
+    font-weight: 700;
+    color: hsl(240, 10%, 3.9%);
+    margin-bottom: 8px;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 40px);
+  }
+
+  .contact-content-box .contact-description {
+    font-size: 12px;
+    font-weight: 600;
+    color: hsl(240, 10%, 3.9%);
+    margin-bottom: 15px;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 30px);
+  }
+
+  .contact-content-box .contact-description:hover {
+    transform: translate3d(0px, 0px, 50px);
+  }
+
+  .contact-content-box .contact-action {
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 900;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: hsl(142, 76%, 36%);
+    background: hsl(240, 10%, 3.9%);
+    padding: 0.6rem 1rem;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 20px);
+  }
+
+  .contact-content-box .contact-action:hover {
+    transform: translate3d(0px, 0px, 60px);
+    background: hsl(240, 6%, 6%);
+  }
+
+  .contact-badge {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 60px;
+    width: 60px;
+    background: hsl(240, 10%, 3.9%);
+    border: 2px solid hsl(142, 76%, 36%);
+    padding: 10px;
+    transform: translate3d(0px, 0px, 80px);
+    box-shadow: rgba(34, 197, 94, 0.3) 0px 17px 10px -10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact-badge .contact-status {
+    color: hsl(142, 76%, 36%);
+    font-size: 8px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .contact-badge .contact-dot {
+    font-size: 16px;
+    margin-top: 2px;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
 }
