@@ -43,14 +43,7 @@ export default function Navigation() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex-shrink-0">
-            <button
-              onClick={() => scrollToSection("#home")}
-              className="text-xl font-bold text-brand-primary hover:text-brand-accent transition-colors duration-200"
-            >
-              {personalInfo.name}
-            </button>
-          </div>
+          
 
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
