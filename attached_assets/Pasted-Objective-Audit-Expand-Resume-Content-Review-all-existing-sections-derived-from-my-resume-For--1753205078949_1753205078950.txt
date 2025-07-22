@@ -1,0 +1,35 @@
+Objective:
+
+Audit + Expand Resume Content: Review all existing sections derived from my resume. For each bullet, expand with credible details—what I did, how, tools used, metrics or impact, timeframes. Ensure consistency in tone and format across the site.
+
+Features To Add:
+2. MP3 Background Player: Add a small audio player that automatically loads and plays a looping MP3 when a user lands on the site. Include play/pause controls, muted option, and accessibility labels.
+
+3D Hover Cards: Make all .card elements react to mouse hover with a smooth 3D tilt effect. Provide CSS + JS (or React/React-Spring/Framer-Motion) to achieve responsive perspective and rotate based on cursor position.
+
+Dynamic Accent Color Picker: Add a floating color wheel button that opens a color picker UI. When a color is selected, update --accent-color CSS variable and persist choice in localStorage. Ensure the picker's position and styling are responsive and mobile-friendly.
+
+Light / Dark Theme Toggle: Add a toggle button that switches between themes using CSS variables (--bg-color, --text-color, etc.). Prefetch the user's last choice from localStorage and update on toggle. Include smooth transition animations.
+
+Auditing Best Practices:
+• Structure: Include audit of header, hero, about, services/projects, contact—check for missing CTAs, phone/email links, scroll performance.
+• Accessibility: Focus on ARIA labels for the audio player and theme buttons; check contrast ratios.
+• Performance: Suggest lazy-loading MP3 (or preload logic), minify CSS/JS, defer non-critical JS—provide Lighthouse tips.
+• UX: Ensure audio player is unobtrusive, autoplay is optional or muted by default, and user can control it easily.
+• Consistency: Ensure new components blend with existing visual style—fonts, spacing, shadows.
+• Code Delivery: Return a detailed audit list, then code snippets (HTML/JS/CSS) ready to copy‑paste. Mark where to insert each snippet in the Replit project.
+
+Return Format:
+
+Audit Summary Table (section-by-section: existing strengths, weaknesses, missing resume details, accessibility/performance risks).
+
+Feature-by-feature implementation plan + code blocks.
+
+Final checklist: what to test locally (UX, mobile, Lighthouse >90, accessibility).
+
+Constraints:
+• Use plain Vanilla JS (no jQuery) or React code, matching existing tech stack.
+• Keep CSS minimal; use CSS variables and BEM or existing naming conventions.
+• Comments in code to explain purpose.
+
+Let’s break it down in your answer exactly that way.
