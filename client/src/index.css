@@ -106,6 +106,303 @@
   .tracking-tight {
     letter-spacing: -0.025em;
   }
+
+  /* Performance optimizations */
+  * {
+    will-change: auto;
+  }
+  
+  img {
+    content-visibility: auto;
+    loading: lazy;
+  }
+  
+  /* Reduce motion for performance */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Enhanced Contact Card - Cassette Tape Design */
+.enhanced-contact-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.cassette-card {
+  width: 400px;
+  height: 280px;
+  background: #252525;
+  border-radius: 12px;
+  box-shadow: 
+    rgba(0, 0, 0, 0.4) 0px 2px 4px, 
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, 
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset,
+    0 0 30px rgba(34, 197, 94, 0.2);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.cassette-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 
+    rgba(0, 0, 0, 0.4) 0px 8px 16px, 
+    rgba(0, 0, 0, 0.3) 0px 15px 25px -5px, 
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset,
+    0 0 50px rgba(34, 197, 94, 0.4);
+}
+
+.screws-top, .screws-bottom {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.screws-top {
+  top: 15px;
+}
+
+.screws-bottom {
+  bottom: 15px;
+}
+
+.screw {
+  width: 12px;
+  height: 12px;
+  background-color: #a8a8a8;
+  border: 1px solid #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.screw::before {
+  content: "×";
+  color: #333;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.cassette-body {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 200px;
+}
+
+.tape-label {
+  width: 100%;
+  height: 80px;
+  background-color: #FFFDD0;
+  clip-path: polygon(5% 0, 95% 0, 100% 10%, 100% 100%, 0 100%, 0 10%);
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.label-line {
+  width: 280px;
+  height: 1px;
+  background-color: #333;
+  margin: 5px 0;
+}
+
+.contact-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  margin-top: 8px;
+  letter-spacing: 1px;
+}
+
+.reel-section {
+  width: 100%;
+  height: 80px;
+  background-color: rgb(242, 188, 0);
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.reel-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+  height: 50px;
+}
+
+.reel {
+  width: 50px;
+  height: 50px;
+  background-color: #171717;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.reel-spokes {
+  width: 35px;
+  height: 35px;
+  border: 2px dashed #fff;
+  box-shadow: 0 0 0 3px #fff;
+  border-radius: 50%;
+  animation: rotate 3s linear infinite;
+}
+
+.tape-segment {
+  width: 60px;
+  height: 30px;
+  background-color: #252525;
+  position: absolute;
+  left: 20px;
+}
+
+.tape-window {
+  width: 80px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 0 10px;
+  border-radius: 3px;
+}
+
+.cassette-number {
+  position: absolute;
+  right: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+.cassette-bottom {
+  width: 100%;
+  height: 25px;
+  background-color: rgb(241, 90, 37);
+  margin-top: 5px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cassette-time {
+  font-size: 12px;
+  color: white;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
+
+.social-section {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 20px;
+  background: rgba(37, 37, 37, 0.95);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.social-icon-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #333, #555);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icon-btn:hover {
+  transform: translateY(-3px) scale(1.1);
+  border-color: var(--social-color);
+  background: linear-gradient(135deg, var(--social-color), rgba(255,255,255,0.1));
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3), 0 0 20px var(--social-color);
+}
+
+.social-icon-btn:active {
+  transform: translateY(-1px) scale(1.05);
+}
+
+.social-icon-btn svg {
+  transition: all 0.3s ease;
+}
+
+.social-icon-btn:hover svg {
+  color: white;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.8));
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .cassette-card {
+    width: 350px;
+    height: 250px;
+  }
+  
+  .cassette-body {
+    width: 280px;
+    height: 170px;
+  }
+  
+  .social-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 15px;
+  }
+  
+  .social-icon-btn {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .contact-text {
+    font-size: 16px;
+  }
 }
 
 html {

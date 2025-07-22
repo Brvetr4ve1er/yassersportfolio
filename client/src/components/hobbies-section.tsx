@@ -15,10 +15,10 @@ export default function HobbiesSection() {
     <section id="hobbies" className="py-20 bg-brand-bg">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-brand-primary mb-4">
+          <h2 className="text-4xl lg:text-5xl font-black text-brand-primary mb-6 tracking-tight">
             Interests & Hobbies
           </h2>
-          <p className="text-xl text-brand-secondary max-w-3xl mx-auto">
+          <p className="text-xl text-brand-secondary max-w-3xl mx-auto leading-relaxed">
             Beyond work, I explore diverse interests that fuel my creativity and perspective
           </p>
         </div>
@@ -35,8 +35,11 @@ export default function HobbiesSection() {
                     <IconComponent className={`w-6 h-6 ${iconData.color}`} />
                   </div>
                   <div className="flex-1">
+                    <h3 className="text-lg font-black text-brand-primary mb-2 tracking-tight">
+                      {hobby.title}
+                    </h3>
                     <p className="text-brand-secondary leading-relaxed">
-                      {hobby}
+                      {hobby.description}
                     </p>
                   </div>
                 </div>

@@ -31,14 +31,18 @@ interface BehanceProject {
   fields: string[];
 }
 
-// Third-party API service for GitHub pinned repos (no auth required)
+// Optimized GitHub API service with better error handling and caching
 const fetchGitHubRepos = async (): Promise<GitHubRepo[]> => {
   try {
     // Using a third-party service that doesn't require authentication
-    const response = await fetch('https://gh-pinned-repos-5l2i19um3.vercel.app/?username=hamisseyasser');
+    const response = await fetch('https://gh-pinned-repos-5l2i19um3.vercel.app/?username=hamisseyasser', {
+      signal: AbortSignal.timeout(5000) // 5 second timeout
+    });
     if (!response.ok) {
       // Fallback to regular repos if pinned repos service fails
-      const fallbackResponse = await fetch('https://api.github.com/users/hamisseyasser/repos?sort=updated&per_page=6');
+      const fallbackResponse = await fetch('https://api.github.com/users/hamisseyasser/repos?sort=updated&per_page=6', {
+        signal: AbortSignal.timeout(5000)
+      });
       if (!fallbackResponse.ok) throw new Error('Failed to fetch repos');
       return fallbackResponse.json();
     }
@@ -104,6 +108,9 @@ export default function EnhancedWorkSection() {
     queryKey: ["github-repos"],
     queryFn: fetchGitHubRepos,
     staleTime: 5 * 60 * 1000, // 5 minutes
+    gcTime: 10 * 60 * 1000, // 10 minutes cache
+    retry: 2,
+    retryDelay: 1000,
   });
 
   const formatNumber = (num: number): string => {

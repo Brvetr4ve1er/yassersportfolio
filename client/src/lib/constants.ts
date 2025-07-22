@@ -1,76 +1,124 @@
+// Social Media URLs - Placeholders for easy updating
+export const socialMediaUrls = {
+  linkedin: "https://linkedin.com/in/YOUR_LINKEDIN_USERNAME",
+  github: "https://github.com/YOUR_GITHUB_USERNAME", 
+  twitter: "https://twitter.com/YOUR_TWITTER_USERNAME",
+  behance: "https://behance.net/YOUR_BEHANCE_USERNAME",
+  dribbble: "https://dribbble.com/YOUR_DRIBBBLE_USERNAME",
+  instagram: "https://instagram.com/YOUR_INSTAGRAM_USERNAME",
+  whatsapp: "https://wa.me/YOUR_PHONE_NUMBER",
+  email: "mailto:YOUR_EMAIL@example.com",
+  discord: "https://discord.com/users/YOUR_DISCORD_ID",
+  pinterest: "https://pinterest.com/YOUR_PINTEREST_USERNAME",
+  reddit: "https://reddit.com/u/YOUR_REDDIT_USERNAME",
+  facebook: "https://facebook.com/YOUR_FACEBOOK_USERNAME"
+};
+
 export const personalInfo = {
   name: "Mohamed Yasser Hamisse",
-  firstName: "Mohamed Yasser",
-  title: "Art Director & Designer | Customization Wizard with Tech Skills",
-  bio: "Multi-disciplinary specialist in Art Direction, Web Development, Task Automation, Psychology Advice, and Social Media Management. Driven by learning addiction and passion for customizing everything with advanced tech skills.",
+  firstName: "Mohamed",
+  title: "Art Director & Designer",
+  subtitle: "Customization Wizard with Tech Skills",
   location: "Algiers, Algeria",
-  email: "hamissemohamedyasser@gmail.com",
-  phone: "+213 549 706 996",
   availableForWork: true,
+  email: socialMediaUrls.email,
+  phone: socialMediaUrls.whatsapp
 };
 
 export const socialLinks = {
-  linkedin: "https://www.linkedin.com/in/hamisse-yasser-553437277/",
-  behance: "https://br4vetraveler.exe/behance.com",
-  instagram: "#",
-  twitter: "#",
+  linkedin: socialMediaUrls.linkedin,
+  behance: socialMediaUrls.behance,
+  github: socialMediaUrls.github,
+  twitter: socialMediaUrls.twitter
 };
+
+export const navLinks = [
+  { href: "#about", label: "About" },
+  { href: "#work", label: "Work" },
+  { href: "#contact", label: "Contact" }
+];
 
 export const skills = [
   {
-    category: "Art Direction & Design",
-    description: "Visual Brand Identity, Creative Direction, Adobe Suite",
-    icon: "palette",
+    category: "Art Direction",
+    description: "Creative vision and design leadership",
+    icon: "palette"
   },
   {
-    category: "Web Development",
-    description: "Frontend Development, Responsive Design, JavaScript/React",
-    icon: "code",
+    category: "Web Development", 
+    description: "Full-stack development and automation",
+    icon: "code"
   },
   {
-    category: "Task Automation",
-    description: "Workflow Optimization, Process Automation, System Integration",
-    icon: "globe",
+    category: "Digital Design",
+    description: "UI/UX and visual design expertise", 
+    icon: "globe"
   },
   {
-    category: "Psychology & Spirit Uplifting",
-    description: "Psychological Counseling, Motivational Coaching, Personal Development",
-    icon: "users",
-  },
+    category: "Social Media",
+    description: "Content strategy and community management",
+    icon: "users"
+  }
 ];
 
 export const experience = [
   {
-    title: "Freelance Concept Artist & Storyteller",
-    company: "br4vetraveler.exe/behance.com",
-    period: "2019 - Present",
-    description: "Created engaging visuals & narratives, sold multiple infographics and branding kits internationally",
+    title: "Creative Digital Artist",
+    company: "Freelance",
+    period: "2022 - Present",
+    description: "NFT trading success and digital art creation"
   },
   {
-    title: "Social Media Content Creator (Intern)",
-    company: "Artiland.Studio",
-    period: "Mar 2024 - Jul 2024",
-    description: "Designed attention-grabbing posts for student outreach, practiced audience-specific communication",
+    title: "English Language Instructor", 
+    company: "Educational Institutions",
+    period: "2020 - Present",
+    description: "Trilingual teaching and cross-cultural communication"
   },
   {
-    title: "Chess Club Coordinator",
-    company: "Athir Club",
-    period: "Jan 2023 - Jun 2023",
-    description: "Facilitated peer learning, logic training, and inclusive competition",
-  },
-  {
-    title: "Assistant - Google Developers Group BBA",
-    company: "GDG BBA",
-    period: "Apr 2017 - Jun 2019",
-    description: "Co-led hackathons focused on social impact, trained peers on tech skills",
-  },
+    title: "Social Media Manager",
+    company: "Artiland Studio",
+    period: "2021 - 2022", 
+    description: "Campaign management and brand development"
+  }
 ];
 
 export const hobbies = [
-  "Learning Addiction – constantly exploring new technologies and skills",
-  "Customization Wizardry – modifying and optimizing every system possible",
-  "Psychology & Philosophy – understanding human behavior and motivation",
-  "Social Media Management & Vibe Creation – building communities and atmosphere",
-  "Tech Skills Mastery – staying current with cutting-edge tools and frameworks",
-  "Art Direction & Design – creating visually compelling digital experiences"
+  {
+    title: "Digital Art & NFTs",
+    description: "Creating and trading digital artwork in blockchain spaces",
+    icon: "🎨"
+  },
+  {
+    title: "Gaming & Psychology",
+    description: "Exploring human behavior through interactive experiences",
+    icon: "🎮"
+  },
+  {
+    title: "Language Learning",
+    description: "Mastering communication across cultures and languages",
+    icon: "🌍"
+  },
+  {
+    title: "Technology Customization",
+    description: "Optimizing systems and workflows for peak efficiency",
+    icon: "⚙️"
+  }
+];
+
+export const achievements = [
+  {
+    title: "University Degree",
+    description: "Academic excellence in language and communication studies",
+    year: "2023"
+  },
+  {
+    title: "Duolingo Certification",
+    description: "Advanced proficiency in multilingual communication",
+    year: "2022"
+  },
+  {
+    title: "Digital Art Training",
+    description: "Professional certification in digital design and NFT creation",
+    year: "2022"
+  }
 ];
