@@ -182,10 +182,12 @@ function CategoryDrawer({
       className="category-drawer"
       style={{ animationDelay: `${index * 100}ms` }}
     >
-      <div 
+      <button 
         className="category-header"
         onClick={onToggle}
         style={{ borderColor: category.color }}
+        aria-expanded={isExpanded}
+        aria-controls={`category-content-${category.title.toLowerCase().replace(/\s+/g, '-')}`}
       >
         <div className="category-info">
           <div className="category-icon" style={{ color: category.color }}>
@@ -199,9 +201,13 @@ function CategoryDrawer({
         <div className="category-toggle" style={{ color: category.color }}>
           {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
         </div>
-      </div>
+      </button>
       
-      <div className={`category-content ${isExpanded ? 'expanded' : ''}`}>
+      <div 
+        className={`category-content ${isExpanded ? 'expanded' : ''}`}
+        id={`category-content-${category.title.toLowerCase().replace(/\s+/g, '-')}`}
+        style={{ borderColor: category.color }}
+      >
         <div className="platforms-grid">
           {category.platforms.map((platform, platformIndex) => (
             <ContactCard 
@@ -232,13 +238,14 @@ function ContactCard({
 
   return (
     <div className={`contact-card-parent ${isCompact ? 'compact' : ''}`}>
-      <div 
+      <button 
         className="contact-card group cursor-pointer"
         onClick={handleClick}
         style={{
           animationDelay: `${index * 100}ms`,
           borderColor: contact.color,
         }}
+        aria-label={`Connect with ${contact.platform} - ${contact.username}`}
       >
         <div className="contact-content-box">
           <div className="contact-icon" style={{ color: contact.color }}>
@@ -253,7 +260,7 @@ function ContactCard({
           <span className="contact-status">ONLINE</span>
           <span className="contact-dot" style={{ backgroundColor: contact.color }}>●</span>
         </div>
-      </div>
+      </button>
     </div>
   );
 }

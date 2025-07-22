@@ -202,6 +202,8 @@ html {
     opacity: 0;
     animation: fadeInUp 0.8s ease-out forwards;
     cursor: pointer;
+    text-align: left;
+    position: relative;
   }
 
   .contact-card:hover {
@@ -344,6 +346,8 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    text-align: left;
   }
 
   .category-header:hover {
@@ -389,16 +393,17 @@ html {
     transition: max-height 0.4s ease, padding 0.4s ease;
     background: hsl(240, 8%, 4%);
     border-radius: 0 0 12px 12px;
-    border-left: 2px solid;
-    border-right: 2px solid;
-    border-bottom: 2px solid;
+    border-left: 2px solid hsl(240, 10%, 3.9%);
+    border-right: 2px solid hsl(240, 10%, 3.9%);
+    border-bottom: 2px solid hsl(240, 10%, 3.9%);
     border-top: none;
     margin-top: -2px;
   }
 
   .category-content.expanded {
-    max-height: 800px;
+    max-height: 1000px;
     padding: 1.5rem;
+    border-color: inherit;
   }
 
   .platforms-grid {
