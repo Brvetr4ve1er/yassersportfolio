@@ -93,7 +93,7 @@ export default function HeroSection() {
             <div className="relative">
               <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-brand-accent/20">
                 <img
-                  src="/attached_assets/IMG_20210124_212311_645_1753181168840.jpg"
+                  src="/attached_assets/Untitled-1 (1)_1753181417706.jpg"
                   alt="Mohamed Yasser Hamisse - English Language Instructor & Creative Digital Artist"
                   className="w-full h-full object-cover"
                 />
