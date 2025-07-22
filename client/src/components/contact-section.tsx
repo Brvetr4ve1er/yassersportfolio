@@ -21,17 +21,17 @@ const contactMethods: ContactCard[] = [
   {
     platform: "Telegram",
     icon: <Send className="w-8 h-8" />,
-    link: "https://t.me/mohamedyasser", // Replace with actual Telegram username
-    username: "@mohamedyasser",
+    link: "https://t.me/nobodysamsa",
+    username: "@nobodysamsa",
     description: "Secure messaging and file sharing",
     color: "#0088cc"
   },
   {
-    platform: "Messenger",
+    platform: "Facebook",
     icon: <Facebook className="w-8 h-8" />,
-    link: "https://m.me/mohamedyasser.hamisse", // Replace with actual Facebook username
-    username: "Mohamed Yasser",
-    description: "Facebook Messenger chat",
+    link: "https://www.facebook.com/virgil.chu.71/",
+    username: "Virgil Chu",
+    description: "Connect on Facebook",
     color: "#0084ff"
   }
 ];
