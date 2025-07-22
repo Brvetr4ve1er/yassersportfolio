@@ -105,7 +105,7 @@ export default function FluidBackground({ className = '' }: FluidBackgroundProps
         const dy = mouseRef.current.y - particle.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
         
-        if (distance < 200) {
+        if (distance < 200 && distance > 0) {
           const force = (200 - distance) / 200;
           particle.vx += (dx / distance) * force * 0.01;
           particle.vy += (dy / distance) * force * 0.01;
@@ -118,20 +118,20 @@ export default function FluidBackground({ className = '' }: FluidBackgroundProps
           const clickDistance = Math.sqrt(clickDx * clickDx + clickDy * clickDy);
           const clickAge = now - click.time;
           
-          if (clickDistance < 300 && clickAge < 1000) {
+          if (clickDistance < 300 && clickAge < 1000 && clickDistance > 0) {
             const rippleForce = (1 - clickAge / 1000) * 0.02;
             particle.vx += (clickDx / clickDistance) * rippleForce;
             particle.vy += (clickDy / clickDistance) * rippleForce;
           }
         });
 
-        // Update position
-        particle.x += particle.vx;
-        particle.y += particle.vy;
+        // Update position with bounds checking
+        particle.x += isFinite(particle.vx) ? particle.vx : 0;
+        particle.y += isFinite(particle.vy) ? particle.vy : 0;
         
         // Damping
-        particle.vx *= 0.99;
-        particle.vy *= 0.99;
+        particle.vx = isFinite(particle.vx) ? particle.vx * 0.99 : 0;
+        particle.vy = isFinite(particle.vy) ? particle.vy * 0.99 : 0;
         
         // Boundaries
         if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -0.8;
@@ -150,20 +150,23 @@ export default function FluidBackground({ className = '' }: FluidBackgroundProps
         }
         
         // Draw particle
-        const alpha = particle.life / particle.maxLife;
+        const alpha = Math.max(0, Math.min(1, particle.life / particle.maxLife));
         const colorIndex = Math.floor((particle.x + particle.y) / 200) % colors.length;
         
-        ctx.beginPath();
-        const gradient = ctx.createRadialGradient(
-          particle.x, particle.y, 0,
-          particle.x, particle.y, particle.size
-        );
-        gradient.addColorStop(0, colors[colorIndex].replace('0.3', (alpha * 0.4).toString()));
-        gradient.addColorStop(1, colors[colorIndex].replace('0.3', '0'));
-        
-        ctx.fillStyle = gradient;
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fill();
+        // Ensure values are finite and valid
+        if (isFinite(particle.x) && isFinite(particle.y) && isFinite(particle.size) && particle.size > 0) {
+          ctx.beginPath();
+          const gradient = ctx.createRadialGradient(
+            particle.x, particle.y, 0,
+            particle.x, particle.y, Math.max(1, particle.size)
+          );
+          gradient.addColorStop(0, colors[colorIndex].replace('0.3', (alpha * 0.4).toString()));
+          gradient.addColorStop(1, colors[colorIndex].replace('0.3', '0'));
+          
+          ctx.fillStyle = gradient;
+          ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
       }
 
       // Add new particles occasionally
