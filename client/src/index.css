@@ -189,6 +189,7 @@ html {
   .contact-card {
     padding-top: 50px;
     border: 3px solid;
+    border-radius: 10px;
     transform-style: preserve-3d;
     background: linear-gradient(135deg, transparent 18.75%, hsl(240, 6%, 6%) 0 31.25%, transparent 0),
       repeating-linear-gradient(45deg, hsl(240, 6%, 6%) -6.25% 6.25%, hsl(240, 10%, 3.9%) 0 18.75%);
@@ -200,16 +201,18 @@ html {
     transition: all 0.5s ease-in-out;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out forwards;
+    cursor: pointer;
   }
 
   .contact-card:hover {
     background-position: -100px 100px, -100px 100px;
-    transform: rotate3d(0.5, 1, 0, 30deg);
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 40px 40px -10px;
+    transform: rotate3d(0.5, 1, 0, 30deg) translateY(-10px);
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 50px 50px -15px;
   }
 
   .contact-content-box {
     background: hsl(240, 6%, 6%);
+    border-radius: 10px 100px 10px 10px;
     transition: all 0.5s ease-in-out;
     padding: 60px 25px 25px 25px;
     transform-style: preserve-3d;
@@ -222,8 +225,8 @@ html {
     transform: translate3d(0px, 0px, 50px);
   }
 
-  .contact-icon:hover {
-    transform: translate3d(0px, 0px, 70px);
+  .contact-card:hover .contact-icon {
+    transform: translate3d(0px, 0px, 80px) scale(1.1);
   }
 
   .contact-content-box .contact-title {
@@ -236,8 +239,8 @@ html {
     transform: translate3d(0px, 0px, 50px);
   }
 
-  .contact-content-box .contact-title:hover {
-    transform: translate3d(0px, 0px, 60px);
+  .contact-card:hover .contact-content-box .contact-title {
+    transform: translate3d(0px, 0px, 70px);
   }
 
   .contact-content-box .contact-username {
@@ -258,8 +261,12 @@ html {
     transform: translate3d(0px, 0px, 30px);
   }
 
-  .contact-content-box .contact-description:hover {
-    transform: translate3d(0px, 0px, 50px);
+  .contact-card:hover .contact-content-box .contact-username {
+    transform: translate3d(0px, 0px, 60px);
+  }
+
+  .contact-card:hover .contact-content-box .contact-description {
+    transform: translate3d(0px, 0px, 60px);
   }
 
   .contact-content-box .contact-action {
@@ -274,8 +281,8 @@ html {
     transform: translate3d(0px, 0px, 20px);
   }
 
-  .contact-content-box .contact-action:hover {
-    transform: translate3d(0px, 0px, 60px);
+  .contact-card:hover .contact-content-box .contact-action {
+    transform: translate3d(0px, 0px, 80px);
     background: hsl(240, 6%, 6%);
   }
 
@@ -287,6 +294,7 @@ html {
     width: 60px;
     background: hsl(240, 6%, 6%);
     border: 2px solid;
+    border-radius: 10px;
     padding: 10px;
     transform: translate3d(0px, 0px, 80px);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 17px 10px -10px;
@@ -294,6 +302,11 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .contact-card:hover .contact-badge {
+    transform: translate3d(0px, 0px, 100px) scale(1.05);
   }
 
   .contact-badge .contact-status {
