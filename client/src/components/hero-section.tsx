@@ -30,12 +30,14 @@ export default function HeroSection() {
               Hi, I'm{" "}
               <span className="gradient-text">{personalInfo.firstName}</span>
               <br />
-              English Language Instructor & <br />
-              Creative Digital Artist
+              Art Director & Designer <br />
+              Customization Wizard with Tech Skills
             </h1>
             
             <p className="text-xl text-brand-secondary mb-8 leading-relaxed max-w-lg">
-              {personalInfo.bio}
+              Specializing in Art Direction & Design, Web Development, Task Automation, 
+              Psychology Advice, Social Media Management, and Vibe Creation. 
+              Driven by learning addiction and customization wizardry.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">

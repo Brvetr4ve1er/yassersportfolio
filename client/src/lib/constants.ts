@@ -1,8 +1,8 @@
 export const personalInfo = {
   name: "Mohamed Yasser Hamisse",
   firstName: "Mohamed Yasser",
-  title: "English Language Instructor & Creative Digital Artist",
-  bio: "A multilingual creative communicator with a passion for storytelling, education, and cross-cultural exchange. I bring a fusion of digital creativity, patience, and human-centered design into the learning space.",
+  title: "Art Director & Designer | Customization Wizard with Tech Skills",
+  bio: "Multi-disciplinary specialist in Art Direction, Web Development, Task Automation, Psychology Advice, and Social Media Management. Driven by learning addiction and passion for customizing everything with advanced tech skills.",
   location: "Algiers, Algeria",
   email: "hamissemohamedyasser@gmail.com",
   phone: "+213 549 706 996",
@@ -18,23 +18,23 @@ export const socialLinks = {
 
 export const skills = [
   {
-    category: "Languages",
-    description: "Trilingual: English, Arabic, French",
-    icon: "globe",
-  },
-  {
-    category: "Creative Design",
-    description: "Adobe Suite, Digital Illustration, Concept Art",
+    category: "Art Direction & Design",
+    description: "Visual Brand Identity, Creative Direction, Adobe Suite",
     icon: "palette",
   },
   {
-    category: "Tech & Development",
-    description: "Web Design, Software Development, AI Prompt Engineering",
+    category: "Web Development",
+    description: "Frontend Development, Responsive Design, JavaScript/React",
     icon: "code",
   },
   {
-    category: "Teaching & Communication",
-    description: "Public Speaking, Mentoring, Cross-cultural Exchange",
+    category: "Task Automation",
+    description: "Workflow Optimization, Process Automation, System Integration",
+    icon: "globe",
+  },
+  {
+    category: "Psychology & Spirit Uplifting",
+    description: "Psychological Counseling, Motivational Coaching, Personal Development",
     icon: "users",
   },
 ];
@@ -67,10 +67,10 @@ export const experience = [
 ];
 
 export const hobbies = [
-  "Werewolves Community Game – storytelling and strategy",
-  "Digital Illustration & Concept Art",
-  "Psychology, Philosophy, and Education",
-  "Exploring cultures through language",
-  "Public speaking, chess, community projects",
-  "Singing and exploring the music world to add color to life"
+  "Learning Addiction – constantly exploring new technologies and skills",
+  "Customization Wizardry – modifying and optimizing every system possible",
+  "Psychology & Philosophy – understanding human behavior and motivation",
+  "Social Media Management & Vibe Creation – building communities and atmosphere",
+  "Tech Skills Mastery – staying current with cutting-edge tools and frameworks",
+  "Art Direction & Design – creating visually compelling digital experiences"
 ];

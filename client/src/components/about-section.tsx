@@ -17,8 +17,8 @@ export default function AboutSection() {
             About Me
           </h2>
           <p className="text-xl text-brand-secondary max-w-3xl mx-auto">
-            A passionate designer and developer with a track record of creating
-            impactful digital experiences
+            Multi-disciplinary specialist driven by learning addiction and passion for 
+            customizing everything with advanced tech skills
           </p>
         </div>
 
@@ -29,21 +29,22 @@ export default function AboutSection() {
             </h3>
             <div className="prose prose-lg text-brand-secondary space-y-4">
               <p>
-                My journey began with video games like The Legend of Zelda: Ocarina of Time, 
-                where I discovered the magic of language and design to evoke emotion. That 
-                passion for storytelling evolved into a career spanning education, digital art, 
-                and cross-cultural communication.
+                My journey began with an insatiable curiosity and addiction to learning that has evolved 
+                into expertise across Art Direction & Design, Web Development, and Task Automation. 
+                What started as a passion for customizing everything I could get my hands on 
+                transformed into professional mastery across multiple disciplines.
               </p>
               <p>
-                Today, I apply that same creative energy to teaching, helping learners improve 
-                their English fluency while building confidence and curiosity. I bring a fusion 
-                of digital creativity, patience, and human-centered design into the learning space, 
-                ensuring that language becomes a tool of expression—not a barrier.
+                Today, I channel my customization wizardry and tech skills into creating exceptional 
+                digital experiences, providing psychology advice and spirit uplifting, while managing 
+                social media presence and vibe creation. My diverse skill set allows me to approach 
+                every project with both technical precision and creative vision.
               </p>
               <p>
-                When I'm not teaching or creating digital art, you'll find me exploring 
-                psychology and philosophy, playing chess, or working on my next creative 
-                project. I also happen to love computers more than sleep!
+                When I'm not designing or developing, you'll find me exploring new technologies to master, 
+                customizing systems for optimal efficiency, or providing psychological support and 
+                motivation to uplift others. I'm driven by my learning addiction and love for making 
+                everything work better through smart customization!
               </p>
             </div>
           </div>

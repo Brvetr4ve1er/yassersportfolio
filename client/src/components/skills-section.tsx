@@ -2,69 +2,69 @@ import { Code, Palette, Languages, BookOpen, Users, Lightbulb } from "lucide-rea
 
 const skillCategories = [
   {
-    title: "Languages & Communication",
-    icon: <Languages className="w-8 h-8" />,
-    color: "#3b82f6",
-    skills: [
-      { name: "Arabic", level: "Native", proficiency: 100 },
-      { name: "English", level: "Fluent", proficiency: 95 },
-      { name: "French", level: "Conversational", proficiency: 75 },
-      { name: "Cross-cultural Communication", level: "Expert", proficiency: 90 }
-    ]
-  },
-  {
-    title: "Digital Art & Design",
+    title: "Art Direction & Design",
     icon: <Palette className="w-8 h-8" />,
     color: "#8b5cf6",
     skills: [
+      { name: "Visual Brand Identity", level: "Expert", proficiency: 95 },
+      { name: "Creative Direction", level: "Expert", proficiency: 92 },
       { name: "Adobe Creative Suite", level: "Advanced", proficiency: 90 },
-      { name: "Digital Illustration", level: "Expert", proficiency: 95 },
-      { name: "NFT Creation", level: "Intermediate", proficiency: 80 },
-      { name: "Social Media Design", level: "Expert", proficiency: 95 }
+      { name: "UI/UX Design Principles", level: "Advanced", proficiency: 88 }
     ]
   },
   {
-    title: "Education & Training",
-    icon: <BookOpen className="w-8 h-8" />,
-    color: "#22c55e",
-    skills: [
-      { name: "English Language Teaching", level: "Expert", proficiency: 95 },
-      { name: "Curriculum Development", level: "Advanced", proficiency: 85 },
-      { name: "Student Assessment", level: "Advanced", proficiency: 88 },
-      { name: "Educational Technology", level: "Intermediate", proficiency: 75 }
-    ]
-  },
-  {
-    title: "Technical Skills",
+    title: "Web Development",
     icon: <Code className="w-8 h-8" />,
     color: "#f59e0b",
     skills: [
-      { name: "Web Design Basics", level: "Intermediate", proficiency: 70 },
-      { name: "Content Management", level: "Advanced", proficiency: 85 },
-      { name: "Social Media Strategy", level: "Expert", proficiency: 90 },
-      { name: "Project Coordination", level: "Advanced", proficiency: 85 }
+      { name: "Frontend Development", level: "Advanced", proficiency: 85 },
+      { name: "Responsive Design", level: "Expert", proficiency: 90 },
+      { name: "JavaScript/React", level: "Intermediate", proficiency: 78 },
+      { name: "CSS/HTML Mastery", level: "Advanced", proficiency: 88 }
     ]
   },
   {
-    title: "Soft Skills",
+    title: "Task Automation",
+    icon: <Lightbulb className="w-8 h-8" />,
+    color: "#22c55e",
+    skills: [
+      { name: "Workflow Optimization", level: "Expert", proficiency: 95 },
+      { name: "Process Automation", level: "Advanced", proficiency: 87 },
+      { name: "System Integration", level: "Advanced", proficiency: 82 },
+      { name: "Efficiency Solutions", level: "Expert", proficiency: 93 }
+    ]
+  },
+  {
+    title: "Psychology & Spirit Uplifting",
     icon: <Users className="w-8 h-8" />,
     color: "#ef4444",
     skills: [
-      { name: "Leadership", level: "Advanced", proficiency: 88 },
-      { name: "Creative Problem Solving", level: "Expert", proficiency: 92 },
-      { name: "Adaptability", level: "Expert", proficiency: 95 },
-      { name: "Cultural Sensitivity", level: "Expert", proficiency: 95 }
+      { name: "Psychological Counseling", level: "Advanced", proficiency: 88 },
+      { name: "Motivational Coaching", level: "Expert", proficiency: 92 },
+      { name: "Emotional Intelligence", level: "Expert", proficiency: 95 },
+      { name: "Personal Development", level: "Expert", proficiency: 90 }
     ]
   },
   {
-    title: "Innovation & Growth",
-    icon: <Lightbulb className="w-8 h-8" />,
+    title: "Social Media & Vibe Creation",
+    icon: <Languages className="w-8 h-8" />,
+    color: "#3b82f6",
+    skills: [
+      { name: "Social Media Strategy", level: "Expert", proficiency: 95 },
+      { name: "Community Building", level: "Advanced", proficiency: 88 },
+      { name: "Content Creation", level: "Expert", proficiency: 92 },
+      { name: "Brand Personality", level: "Expert", proficiency: 90 }
+    ]
+  },
+  {
+    title: "Customization Wizardry",
+    icon: <BookOpen className="w-8 h-8" />,
     color: "#06b6d4",
     skills: [
-      { name: "Trend Analysis", level: "Advanced", proficiency: 85 },
-      { name: "Creative Direction", level: "Advanced", proficiency: 88 },
-      { name: "Brand Development", level: "Intermediate", proficiency: 80 },
-      { name: "Continuous Learning", level: "Expert", proficiency: 98 }
+      { name: "System Customization", level: "Expert", proficiency: 98 },
+      { name: "Learning Addiction", level: "Expert", proficiency: 100 },
+      { name: "Tech Skills Mastery", level: "Advanced", proficiency: 90 },
+      { name: "Innovation Mindset", level: "Expert", proficiency: 95 }
     ]
   }
 ];
@@ -78,8 +78,9 @@ export default function SkillsSection() {
             Skills & Expertise
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            A diverse skill set spanning education, creative arts, and cross-cultural communication, 
-            developed through years of teaching, artistic creation, and international collaboration.
+            Multi-disciplinary expertise spanning Art Direction, Web Development, Task Automation, 
+            Psychology Advice, and Social Media Management. Driven by an addiction to learning and 
+            passion for customizing everything with advanced tech skills.
           </p>
         </div>
 
@@ -99,13 +100,15 @@ export default function SkillsSection() {
               Professional Growth
             </h3>
             <p className="text-gray-300 mb-6">
-              Continuously expanding my expertise through formal education, self-directed learning, 
-              and hands-on project experience. Always eager to tackle new challenges and master emerging technologies.
+              My learning addiction drives me to constantly explore new technologies, customize every system I encounter, 
+              and master emerging tools. I'm a customization wizard who combines technical skills with creative vision 
+              to deliver exceptional results.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
-              <span>🎓 Formal Education</span>
-              <span>📚 Self-Directed Learning</span>
-              <span>🚀 Project-Based Growth</span>
+              <span>🧙‍♂️ Customization Wizard</span>
+              <span>🎯 Learning Addiction</span>
+              <span>⚡ Tech Skills Mastery</span>
+              <span>🎨 Creative + Technical</span>
             </div>
           </div>
         </div>

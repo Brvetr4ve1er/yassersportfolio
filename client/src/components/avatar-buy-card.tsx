@@ -22,34 +22,34 @@ export default function AvatarBuyCard() {
         </div>
         
         <p className="card-description">
-          Trilingual creative professional specializing in English instruction, 
-          digital art, and cross-cultural communication from Algiers, Algeria.
+          Multi-disciplinary specialist in Art Direction, Web Development, 
+          Psychology Advice, and Customization Wizardry from Algiers, Algeria.
         </p>
 
         <div className="feature-grid">
           <div className="feature-item">
             <div className="feature-icon">
-              <Globe />
+              <Palette />
             </div>
-            <span className="feature-text">3 Languages</span>
+            <span className="feature-text">Art Direction</span>
           </div>
           <div className="feature-item">
             <div className="feature-icon">
-              <Palette />
+              <Globe />
             </div>
-            <span className="feature-text">Digital Artist</span>
+            <span className="feature-text">Web Development</span>
           </div>
           <div className="feature-item">
             <div className="feature-icon">
               <Users />
             </div>
-            <span className="feature-text">200+ Students</span>
+            <span className="feature-text">Psychology Advice</span>
           </div>
           <div className="feature-item">
             <div className="feature-icon">
               <Award />
             </div>
-            <span className="feature-text">Certified</span>
+            <span className="feature-text">Vibe Creation</span>
           </div>
         </div>
 
