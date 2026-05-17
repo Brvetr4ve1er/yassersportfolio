@@ -1,4 +1,4 @@
-export type Locale = "fr" | "ar";
+export type Locale = "fr" | "en" | "ar";
 
 export type AccommodationType = "chalet" | "tent" | "glamping";
 

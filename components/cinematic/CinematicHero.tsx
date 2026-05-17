@@ -4,50 +4,54 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin } from "lucide-react";
 import { BrandMark } from "@/components/brand/BrandMark";
-import { useI18n } from "@/components/i18n/I18nProvider";
 
 /**
- * CinematicHero — full-bleed atmospheric hero.
+ * CinematicHero — golden-hour atmospheric stage.
  *
- * Layout:
- *  - Full-viewport-height stage (clamped on tall screens)
- *  - Photographic photo-zone backdrop with Ken-Burns drift
- *  - Top-left wordmark/seal, top-right meta (location, season)
- *  - Bottom-left: eyebrow + display headline + minimal action row
- *  - Bottom-right: vertical "scroll" hint
- *
- * Designed so the only attention-grabbing element is the typography over
- * the photograph — no cards, no widgets, no decorative noise.
+ * Family-warm, not noir. The backdrop suggests late afternoon light
+ * filtering through olive trees rather than midnight cinema. A trilingual
+ * tag-line tells every visitor — French, English, Arabic speaker — that
+ * this place was built for them.
  */
 export function CinematicHero({ locale }: { locale: string }) {
-  const { t } = useI18n();
-
   return (
-    <section className="relative isolate flex min-h-[92vh] flex-col overflow-hidden bg-noir text-cream">
-      {/* Backdrop — photo zone with slow zoom */}
+    <section className="relative isolate flex min-h-[94vh] flex-col overflow-hidden bg-terracotta text-cream">
+      {/* Backdrop — warm photo zone with slow drift */}
       <div className="absolute inset-0 -z-10">
-        <div className="photo-zone ken-burns absolute inset-0" />
-        {/* Top fade so the header is legible */}
-        <div className="absolute inset-0 bg-noir-fade-top" />
-        {/* Vignette */}
-        <div className="absolute inset-0 bg-noir-vignette" />
+        <div className="photo-zone photo-zone--orchard ken-burns absolute inset-0" />
+        {/* Top warm fade for header legibility */}
+        <div
+          className="absolute inset-x-0 top-0 h-48"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(40, 22, 14, 0.7) 0%, transparent 100%)",
+          }}
+        />
+        {/* Bottom warm fade for typography legibility */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-2/3"
+          style={{
+            background:
+              "linear-gradient(to top, rgba(40, 22, 14, 0.92) 0%, rgba(40, 22, 14, 0.45) 50%, transparent 100%)",
+          }}
+        />
       </div>
 
       {/* Top meta row */}
-      <div className="relative z-10 flex items-start justify-between px-6 pt-6 md:px-12 md:pt-10">
+      <div className="relative z-10 flex items-start justify-between px-6 pt-24 md:px-12 md:pt-28">
         <motion.div
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
           className="flex items-center gap-3"
         >
-          <BrandMark variant="mark" tone="bronze" className="h-8 w-8" />
+          <BrandMark variant="mark" tone="bronze" className="h-9 w-9" />
           <div className="hidden flex-col leading-tight md:flex">
-            <span className="text-xs uppercase tracking-widest text-bronze">
+            <span className="text-[11px] uppercase tracking-[0.22em] text-bronze">
               L'Étoile de l'Est
             </span>
-            <span className="text-[10px] uppercase tracking-widest text-cream/50">
-              Maison agrotouristique · est. 2019
+            <span className="text-[10px] uppercase tracking-[0.22em] text-cream/55">
+              Maison familiale · depuis 1989
             </span>
           </div>
         </motion.div>
@@ -56,64 +60,78 @@ export function CinematicHero({ locale }: { locale: string }) {
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15 }}
-          className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-cream/60"
+          className="flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-cream/65"
         >
           <MapPin className="h-3 w-3 text-bronze" />
-          36°23′N · 6°56′E
-          <span className="hidden text-cream/30 md:inline">·</span>
-          <span className="hidden md:inline">Ain Abid</span>
+          <span className="hidden sm:inline">36°23′N · 6°56′E</span>
+          <span className="hidden text-cream/30 sm:inline">·</span>
+          <span>Ain Abid</span>
         </motion.div>
       </div>
 
-      {/* Center spacer */}
       <div className="flex-1" />
 
       {/* Bottom — display block */}
-      <div className="relative z-10 px-6 pb-14 md:px-12 md:pb-20">
+      <div className="relative z-10 px-6 pb-16 md:px-12 md:pb-24">
+        {/* Trilingual welcome strip — appears subtly above the display title */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.4 }}
+          className="mb-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-[10px] uppercase tracking-[0.25em] text-bronze"
+        >
+          <span className="flex items-center gap-2">
+            <span className="h-px w-8 bg-bronze/50" />
+            Bienvenue
+          </span>
+          <span className="text-cream/40">·</span>
+          <span>Welcome</span>
+          <span className="text-cream/40">·</span>
+          <span className="font-arabic" dir="rtl">
+            أهلًا بكم
+          </span>
+        </motion.div>
+
         <div className="grid items-end gap-10 md:grid-cols-12">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
             className="md:col-span-9"
           >
-            <div className="mb-6 flex items-center gap-3 text-eyebrow text-bronze">
-              <span className="h-px w-12 bg-bronze/60" />
-              {t("home.hero.eyebrow")}
-            </div>
-
             <h1 className="display-serif text-stage text-cream">
-              <span className="block">Vingt-cinq hectares</span>
-              <span className="block italic text-cream/90">
-                de silence&nbsp;choisi.
+              <span className="block">Trois générations,</span>
+              <span className="block italic text-bronze">
+                un seul ciel.
               </span>
             </h1>
 
-            <p className="mt-8 max-w-xl text-base leading-relaxed text-cream/70 md:text-lg">
-              Une maison agrotouristique au pied des hauteurs de Constantine —
-              chalets, écurie, vergers et rucheries, ouverte toute l'année.
+            <p className="mt-8 max-w-2xl text-base leading-relaxed text-cream/80 md:text-lg">
+              Vingt-cinq hectares de vergers, d'écuries et de rires d'enfants —
+              à trente minutes de Constantine, ouverts toute l'année à toutes
+              les familles. Une vraie maison, pas un hôtel.
             </p>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.7 }}
             className="md:col-span-3 md:text-end"
           >
             <div className="flex flex-col items-start gap-3 md:items-end">
               <Link
                 href={`/${locale}/reservation`}
-                className="group inline-flex items-center gap-3 border-b border-bronze/60 pb-1 text-sm uppercase tracking-widest text-bronze transition-colors hover:text-cream"
+                className="group inline-flex items-center gap-3 rounded-full bg-bronze px-6 py-3.5 text-[11px] uppercase tracking-[0.22em] text-terracotta transition hover:bg-cream"
               >
                 <span>Réserver vos nuits</span>
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
+                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
               </Link>
               <Link
                 href={`/${locale}/hebergement`}
-                className="text-xs uppercase tracking-widest text-cream/50 hover:text-cream/80"
+                className="text-[10px] uppercase tracking-[0.22em] text-cream/55 hover:text-cream"
               >
-                Voir les hébergements
+                Voir les maisons
               </Link>
             </div>
           </motion.div>
@@ -123,21 +141,24 @@ export function CinematicHero({ locale }: { locale: string }) {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 0.8 }}
-          className="mt-16 grid grid-cols-3 gap-6 border-t border-bronze/20 pt-6 text-cream/80 md:grid-cols-4"
+          transition={{ duration: 1.2, delay: 0.9 }}
+          className="mt-16 grid grid-cols-2 gap-6 border-t border-bronze/25 pt-7 text-cream/85 sm:grid-cols-4"
         >
           {[
-            { v: "25", l: "Hectares" },
-            { v: "106", l: "Lits" },
-            { v: "12", l: "Activités" },
-            { v: "365", l: "Jours d'ouverture" },
+            { v: "25", l: "Hectares", s: "Vergers · écuries · piscine" },
+            { v: "106", l: "Lits", s: "Pour familles & tribus" },
+            { v: "12", l: "Activités", s: "Équitation à quad" },
+            { v: "37", l: "Ans", s: "Ouvert depuis 1989" },
           ].map((s) => (
             <div key={s.l}>
               <div className="font-serif text-3xl font-light text-cream md:text-4xl">
                 {s.v}
               </div>
-              <div className="mt-1 text-[10px] uppercase tracking-widest text-cream/50">
+              <div className="mt-1 text-[10px] uppercase tracking-[0.22em] text-bronze">
                 {s.l}
+              </div>
+              <div className="mt-0.5 hidden text-[10px] text-cream/45 md:block">
+                {s.s}
               </div>
             </div>
           ))}
@@ -149,9 +170,9 @@ export function CinematicHero({ locale }: { locale: string }) {
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-2 text-[10px] uppercase tracking-widest text-cream/40"
+          className="flex flex-col items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-cream/45"
         >
-          <span>Scroll</span>
+          <span>Découvrir</span>
           <span className="block h-8 w-px bg-cream/30" />
         </motion.div>
       </div>

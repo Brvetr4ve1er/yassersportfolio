@@ -14,6 +14,13 @@ const SECTION_LABELS: Record<Locale, Record<string, string>> = {
     desserts: "Desserts",
     drinks: "Boissons",
   },
+  en: {
+    starters: "Starters",
+    mains: "Main dishes",
+    grills: "Grilled meats",
+    desserts: "Desserts",
+    drinks: "Drinks",
+  },
   ar: {
     starters: "المقبلات",
     mains: "الأطباق الرئيسية",

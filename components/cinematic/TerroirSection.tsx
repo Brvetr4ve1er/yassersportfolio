@@ -2,60 +2,96 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { Clock } from "lucide-react";
 
 /**
- * 04 · Le terroir — orchard, beehive, restaurant.
+ * 04 · Du verger à la table — the day's harvest, the night's dinner.
  *
- * Three columns, each with a small photo zone and editorial copy.
- * Communicates that the food and produce are LOCAL — a luxury signal,
- * not an "amenity."
+ * The narrative spine is TIME: children cueillent at 10h, honey arrives
+ * at midi, the table serves at 20h. Same product, traceable in a single
+ * day. Speaks to families who want to show their kids where food comes
+ * from, not just to consumers who want farm-to-table marketing.
  */
 
 const PASSAGES = [
   {
     chapter: "i",
-    title: "Le verger",
+    time: "10h",
+    title: "Les enfants cueillent",
+    enTitle: "The children pick",
     body:
-      "Pommes, poires, figues, grenades — onze hectares plantés et entretenus depuis trois générations. Cueillette ouverte aux résidents le vendredi.",
+      "Cueillette ouverte aux enfants chaque matin du vendredi au dimanche. Pommes en automne, figues en été, grenades en octobre. Un panier par enfant, à rapporter à la cuisine.",
     photoClass: "photo-zone photo-zone--orchard",
     href: "/activites/cueillette-verger",
   },
   {
     chapter: "ii",
-    title: "Les ruches",
+    time: "midi",
+    title: "Le miel arrive",
+    enTitle: "The honey arrives",
     body:
-      "Quarante ruches. Un apiculteur qui parle aux abeilles. Le miel d'oranger sert au petit-déjeuner et se vend à l'épicerie de la maison.",
+      "Notre apiculteur revient des ruchers vers midi avec les pots du jour. Miel d'oranger au printemps, de jujubier en été, de romarin en automne. Servi au petit-déjeuner, vendu à l'épicerie de la maison.",
     photoClass: "photo-zone",
     href: "/activites/visite-rucher",
   },
   {
     chapter: "iii",
-    title: "La table",
+    time: "20h",
+    title: "La table sert",
+    enTitle: "The table serves",
     body:
-      "Couscous au mouton, chorba frik, tajines aux fruits du verger. Tout ce qui est servi vient d'ici, du marché d'Ain Abid, ou de chez nos voisins.",
-    photoClass: "photo-zone",
+      "Couscous au mouton qui mijote depuis le matin. Tajine d'agneau aux pruneaux du verger. Rechta traditionnelle. Pain cuit dans le four à bois. Tout vient d'ici, du marché d'Ain Abid, ou de chez nos voisins.",
+    photoClass: "photo-zone photo-zone--table",
     href: "/restaurant",
   },
 ];
 
 export function TerroirSection({ locale }: { locale: string }) {
   return (
-    <section className="relative bg-noir py-32 text-cream md:py-44">
-      <div className="container">
-        <div className="mb-16 max-w-3xl">
-          <div className="mb-6 flex items-center gap-4">
-            <span className="chapter-num">04</span>
-            <span className="h-px w-12 bg-bronze/40" />
-            <span className="eyebrow">Le terroir</span>
+    <section className="relative bg-sunlit-noon py-32 text-terracotta md:py-44">
+      {/* Sun glow */}
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-64"
+        style={{
+          backgroundImage:
+            "radial-gradient(ellipse 70% 50% at 50% 0%, rgba(245, 200, 130, 0.18), transparent 60%)",
+        }}
+      />
+
+      <div className="container relative">
+        <div className="mb-20 grid items-end gap-8 md:grid-cols-12">
+          <div className="md:col-span-7">
+            <div className="mb-6 flex items-center gap-4">
+              <span className="font-mono text-[11px] uppercase tracking-widest text-clay-700">
+                04
+              </span>
+              <span className="h-px w-12 bg-clay-500/40" />
+              <span className="text-[11px] uppercase tracking-[0.25em] text-clay-700">
+                Du verger à la table
+              </span>
+            </div>
+            <h2
+              className="display-serif text-terracotta"
+              style={{
+                fontSize: "clamp(2.5rem, 6.5vw, 5.5rem)",
+                lineHeight: "0.95",
+                letterSpacing: "-0.025em",
+                fontWeight: 300,
+              }}
+            >
+              Une seule journée
+              <span className="block italic text-clay-600">
+                entre l'arbre et l'assiette.
+              </span>
+            </h2>
           </div>
-          <h2 className="display-serif text-cinema text-cream">
-            La terre, <em className="text-bronze">d'abord</em>.
-          </h2>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-cream/70 md:text-lg">
-            Cuisine du domaine, miel des ruchers, fruits cueillis le matin
-            même. L'agrotourisme n'est pas un thème ici — c'est l'économie
-            quotidienne de la maison.
-          </p>
+          <div className="md:col-span-5 md:text-end">
+            <p className="max-w-md text-base leading-relaxed text-terracotta/70 md:ms-auto md:text-lg">
+              L'agrotourisme n'est pas un décor ici — c'est l'économie
+              quotidienne de la maison. Tout ce que vos enfants mangent le soir
+              a poussé à moins d'un kilomètre.
+            </p>
+          </div>
         </div>
 
         <div className="grid gap-10 md:grid-cols-3">
@@ -71,24 +107,41 @@ export function TerroirSection({ locale }: { locale: string }) {
                 ease: [0.16, 1, 0.3, 1],
               }}
             >
-              <Link
-                href={`/${locale}${p.href}`}
-                className="group block"
-              >
+              <Link href={`/${locale}${p.href}`} className="group block">
                 <div
                   className={`relative aspect-[4/5] overflow-hidden rounded-sm ${p.photoClass}`}
                 >
-                  <span className="absolute end-4 top-4 z-10 font-serif text-3xl font-light italic text-bronze/80">
+                  {/* Chapter numeral */}
+                  <span className="absolute end-5 top-5 z-10 font-serif text-4xl font-light italic text-bronze">
                     {p.chapter}
                   </span>
-                  <div className="absolute inset-x-0 bottom-0 z-0 h-1/2 bg-gradient-to-t from-noir to-transparent" />
+
+                  {/* Time stamp top-left — feels like a film cue */}
+                  <div className="absolute start-5 top-5 z-10 inline-flex items-center gap-1.5 rounded-full bg-terracotta/60 px-3 py-1 text-[10px] uppercase tracking-[0.22em] text-bronze backdrop-blur">
+                    <Clock className="h-2.5 w-2.5" />
+                    {p.time}
+                  </div>
+
+                  {/* Bottom gradient */}
+                  <div
+                    className="absolute inset-x-0 bottom-0 z-0 h-2/3"
+                    style={{
+                      background:
+                        "linear-gradient(to top, rgba(40, 22, 14, 0.95) 0%, rgba(40, 22, 14, 0.55) 45%, transparent 100%)",
+                    }}
+                  />
+
+                  {/* Bottom label */}
                   <div className="absolute inset-x-0 bottom-0 z-10 p-6">
                     <h3 className="font-serif text-2xl font-light text-cream md:text-3xl">
                       {p.title}
                     </h3>
+                    <p className="mt-1 text-[10px] uppercase tracking-[0.22em] text-bronze/80">
+                      {p.enTitle}
+                    </p>
                   </div>
                 </div>
-                <p className="mt-5 max-w-md text-sm leading-relaxed text-cream/65">
+                <p className="mt-5 max-w-md text-sm leading-relaxed text-terracotta/70">
                   {p.body}
                 </p>
               </Link>

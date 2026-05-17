@@ -2,20 +2,37 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { Check } from "lucide-react";
 import { BrandMark } from "@/components/brand/BrandMark";
 
 /**
- * 07 · Réservation — closing CTA.
+ * 08 · Réservation — the closing invitation.
  *
- * Restrained. No big shouty button. A confident sentence, a hairline rule,
- * a single action. The brand mark at the bottom acts as a seal/signature.
+ * Direct, family-targeted. Not "secure your stay" corporate language. The
+ * promise is concrete: three minutes, WhatsApp confirmation, QR at the
+ * gate. The brand mark signs the bottom like a seal.
  */
+
+const PROMISES = [
+  "Trois minutes pour réserver",
+  "Confirmation WhatsApp au numéro de la famille",
+  "Paiement BaridiMob ou carte CIB — pas de frais cachés",
+  "Code QR à l'arrivée, même sans réseau",
+  "Annulation gratuite jusqu'à 7 jours avant",
+];
+
 export function ReservationCta({ locale }: { locale: string }) {
   return (
-    <section className="relative isolate overflow-hidden bg-noir text-cream">
+    <section className="relative isolate overflow-hidden text-cream">
       <div className="absolute inset-0 -z-10">
-        <div className="photo-zone absolute inset-0" />
-        <div className="absolute inset-0 bg-noir-vignette opacity-80" />
+        <div className="photo-zone photo-zone--orchard absolute inset-0 ken-burns" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, transparent 30%, rgba(40, 22, 14, 0.85) 100%)",
+          }}
+        />
       </div>
 
       <div className="container py-32 md:py-44">
@@ -27,47 +44,88 @@ export function ReservationCta({ locale }: { locale: string }) {
             transition={{ duration: 0.8 }}
             className="space-y-10"
           >
-            <div className="eyebrow">
-              <span className="me-3 h-px w-12 bg-bronze/60" />
+            <div className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.25em] text-bronze">
+              <span className="h-px w-12 bg-bronze/60" />
               Vingt-cinq hectares vous attendent
-              <span className="ms-3 h-px w-12 bg-bronze/60" />
+              <span className="h-px w-12 bg-bronze/60" />
             </div>
 
-            <h2 className="display-serif text-cream" style={{ fontSize: "clamp(3rem, 8vw, 6.5rem)", lineHeight: "0.95", letterSpacing: "-0.03em", fontWeight: 300 }}>
-              Choisissez
-              <span className="block italic text-bronze">vos nuits.</span>
+            <h2
+              className="display-serif text-cream"
+              style={{
+                fontSize: "clamp(3rem, 8.5vw, 7rem)",
+                lineHeight: "0.92",
+                letterSpacing: "-0.03em",
+                fontWeight: 300,
+              }}
+            >
+              Réservez les vacances
+              <span className="block italic text-bronze">
+                qu'ils raconteront.
+              </span>
             </h2>
 
-            <p className="mx-auto max-w-xl text-cream/70 md:text-lg">
-              Réservation en moins de trois minutes. Confirmation par WhatsApp.
-              Paiement par BaridiMob ou carte CIB. Code QR à l'arrivée — qui
-              fonctionne, même sans réseau.
+            <p className="mx-auto max-w-2xl text-base leading-relaxed text-cream/85 md:text-lg">
+              Une vraie maison vous attend, ouverte à toutes les familles
+              algériennes — qu'elles viennent de Constantine, d'Alger, de
+              Paris ou de plus loin encore.
             </p>
+
+            {/* Promises */}
+            <ul className="mx-auto inline-flex max-w-xl flex-col items-start gap-3 text-start">
+              {PROMISES.map((p, i) => (
+                <motion.li
+                  key={p}
+                  initial={{ opacity: 0, x: -8 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
+                  className="flex items-center gap-3 text-sm text-cream/80"
+                >
+                  <Check className="h-4 w-4 shrink-0 text-bronze" />
+                  {p}
+                </motion.li>
+              ))}
+            </ul>
 
             <div className="flex flex-col items-center gap-6 pt-4">
               <Link
                 href={`/${locale}/reservation`}
-                className="group relative inline-flex items-center gap-4 rounded-full border border-bronze/80 bg-bronze px-10 py-4 text-sm uppercase tracking-widest text-noir transition hover:bg-cream hover:border-cream"
+                className="group relative inline-flex items-center gap-4 rounded-full border border-bronze bg-bronze px-10 py-4 text-[11px] uppercase tracking-[0.22em] text-terracotta transition hover:bg-cream hover:border-cream"
               >
                 Commencer la réservation
-                <span className="transition-transform group-hover:translate-x-1 rtl:rotate-180">→</span>
+                <span className="transition-transform group-hover:translate-x-1 rtl:rotate-180">
+                  →
+                </span>
               </Link>
 
-              <Link
-                href={`/${locale}/restaurant`}
-                className="text-xs uppercase tracking-widest text-cream/50 hover:text-cream/80"
-              >
-                Ou réserver seulement la table
-              </Link>
+              <div className="flex flex-wrap items-center justify-center gap-6 text-[10px] uppercase tracking-[0.22em] text-cream/55">
+                <Link
+                  href={`/${locale}/restaurant`}
+                  className="hover:text-cream"
+                >
+                  Réserver seulement la table
+                </Link>
+                <span className="text-cream/30">·</span>
+                <a
+                  href="https://wa.me/213555000000"
+                  className="hover:text-cream"
+                >
+                  WhatsApp +213 555 00 00 00
+                </a>
+              </div>
             </div>
 
             {/* Seal as signature */}
-            <div className="flex justify-center pt-12">
+            <div className="flex flex-col items-center gap-2 pt-12">
               <BrandMark
                 variant="mark"
                 tone="bronze"
-                className="h-8 w-8 opacity-60"
+                className="h-9 w-9 opacity-70"
               />
+              <span className="text-[10px] uppercase tracking-[0.25em] text-bronze/60">
+                Maison Sahraoui · depuis 1989
+              </span>
             </div>
           </motion.div>
         </div>

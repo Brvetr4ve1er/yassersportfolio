@@ -36,34 +36,34 @@
     --radius: 0.5rem;
   }
 
-  /* Cinematic mode — applied on the homepage to swap the system into noir */
+  /* Cinematic mode — warm clay terracotta canvas, family-warm not noir */
   .theme-cinematic {
-    --background: 75 7% 5%;
-    --foreground: 42 36% 93%;
+    --background: 22 50% 17%;       /* warm terracotta brown */
+    --foreground: 36 47% 92%;       /* antique cream */
 
-    --card: 75 6% 7%;
-    --card-foreground: 42 36% 93%;
+    --card: 22 35% 12%;
+    --card-foreground: 36 47% 92%;
 
-    --popover: 75 6% 7%;
-    --popover-foreground: 42 36% 93%;
+    --popover: 22 35% 12%;
+    --popover-foreground: 36 47% 92%;
 
-    --primary: 38 49% 57%;
-    --primary-foreground: 75 7% 5%;
+    --primary: 38 49% 57%;          /* bronze */
+    --primary-foreground: 22 50% 12%;
 
-    --secondary: 75 4% 11%;
-    --secondary-foreground: 42 36% 93%;
+    --secondary: 22 30% 22%;
+    --secondary-foreground: 36 47% 92%;
 
-    --muted: 75 4% 13%;
-    --muted-foreground: 42 12% 65%;
+    --muted: 22 25% 25%;
+    --muted-foreground: 36 18% 75%;
 
     --accent: 38 49% 57%;
-    --accent-foreground: 75 7% 5%;
+    --accent-foreground: 22 50% 12%;
 
     --destructive: 9 75% 50%;
-    --destructive-foreground: 42 36% 93%;
+    --destructive-foreground: 36 47% 92%;
 
-    --border: 75 4% 17%;
-    --input: 75 4% 17%;
+    --border: 38 30% 30%;
+    --input: 38 30% 30%;
     --ring: 38 49% 57%;
   }
 
@@ -141,46 +141,69 @@
     @apply font-serif font-light leading-[0.95] tracking-tightest;
   }
 
-  /* Atmospheric photograph zone — replaces the bright SVG gradients */
+  /* Atmospheric photograph zone — sun-warmed default (family canvas) */
   .photo-zone {
-    @apply relative overflow-hidden bg-noir;
+    @apply relative overflow-hidden;
+    background-color: #3d2418;
     background-image:
-      radial-gradient(ellipse 80% 60% at 30% 30%, rgba(201, 163, 91, 0.18), transparent 60%),
-      radial-gradient(ellipse 60% 80% at 80% 75%, rgba(31, 80, 40, 0.30), transparent 60%),
-      linear-gradient(180deg, #161814 0%, #0c0d0a 100%);
+      radial-gradient(ellipse 75% 60% at 30% 30%, rgba(245, 200, 130, 0.55), transparent 60%),
+      radial-gradient(ellipse 65% 70% at 80% 75%, rgba(181, 110, 60, 0.45), transparent 60%),
+      linear-gradient(180deg, #5a3625 0%, #3d2418 60%, #28160e 100%);
   }
 
   .photo-zone::after {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.95  0 0 0 0 0.91  0 0 0 0 0.84  0 0 0 0.05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-    opacity: 0.5;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.95  0 0 0 0 0.91  0 0 0 0 0.84  0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    opacity: 0.45;
     pointer-events: none;
     mix-blend-mode: overlay;
   }
 
-  /* Sunset Pool atmosphere variant */
+  /* Sunset Pool — warm golden hour, kids by the water */
   .photo-zone--sunset {
+    background-color: #4a1d12;
     background-image:
-      radial-gradient(ellipse 70% 60% at 50% 35%, rgba(245, 162, 109, 0.45), transparent 60%),
-      radial-gradient(ellipse 60% 60% at 50% 80%, rgba(212, 99, 59, 0.55), transparent 60%),
-      linear-gradient(180deg, #2a1410 0%, #4a1d12 50%, #0c0d0a 100%);
+      radial-gradient(ellipse 70% 55% at 50% 30%, rgba(255, 200, 130, 0.65), transparent 60%),
+      radial-gradient(ellipse 80% 60% at 50% 80%, rgba(212, 99, 59, 0.65), transparent 60%),
+      linear-gradient(180deg, #c5562a 0%, #6f3015 60%, #2a1410 100%);
   }
 
-  /* Equestrian variant — colder, with bronze glow */
+  /* Equestrian — warm afternoon light, golden hour on horses */
   .photo-zone--equestrian {
+    background-color: #2a1f10;
     background-image:
-      radial-gradient(ellipse 60% 70% at 70% 40%, rgba(201, 163, 91, 0.25), transparent 55%),
-      linear-gradient(180deg, #0c0d0a 0%, #15170f 50%, #0c0d0a 100%);
+      radial-gradient(ellipse 60% 65% at 70% 40%, rgba(245, 180, 100, 0.50), transparent 55%),
+      radial-gradient(ellipse 70% 70% at 20% 80%, rgba(181, 110, 60, 0.35), transparent 60%),
+      linear-gradient(180deg, #4a2e18 0%, #2a1f10 100%);
   }
 
-  /* Verger / orchard variant */
+  /* Orchard — bright olive grove with sunlight through leaves */
   .photo-zone--orchard {
+    background-color: #2c311b;
     background-image:
-      radial-gradient(ellipse 70% 50% at 50% 70%, rgba(45, 122, 79, 0.30), transparent 60%),
-      radial-gradient(ellipse 50% 50% at 50% 0%, rgba(201, 163, 91, 0.20), transparent 60%),
-      linear-gradient(180deg, #15170f 0%, #0c0d0a 100%);
+      radial-gradient(ellipse 70% 55% at 50% 75%, rgba(107, 122, 69, 0.65), transparent 60%),
+      radial-gradient(ellipse 55% 55% at 30% 15%, rgba(245, 200, 130, 0.55), transparent 60%),
+      radial-gradient(ellipse 40% 40% at 80% 20%, rgba(201, 163, 91, 0.35), transparent 60%),
+      linear-gradient(180deg, #414929 0%, #2c311b 100%);
+  }
+
+  /* Pool — sunlit teal water, children's hours */
+  .photo-zone--pool {
+    background-color: #1d3a48;
+    background-image:
+      radial-gradient(ellipse 70% 50% at 50% 70%, rgba(74, 127, 163, 0.60), transparent 60%),
+      radial-gradient(ellipse 60% 55% at 50% 20%, rgba(245, 200, 130, 0.50), transparent 60%),
+      linear-gradient(180deg, #3f6b82 0%, #1d3a48 100%);
+  }
+
+  /* Table / restaurant — candlelit warmth, family dinner */
+  .photo-zone--table {
+    background-color: #2a160c;
+    background-image:
+      radial-gradient(ellipse 60% 55% at 50% 50%, rgba(245, 180, 100, 0.70), transparent 60%),
+      linear-gradient(180deg, #4a2818 0%, #2a160c 100%);
   }
 
   /* Cinematic divider — gold hairline + center diamond */

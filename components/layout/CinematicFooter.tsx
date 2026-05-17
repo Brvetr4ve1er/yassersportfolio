@@ -12,7 +12,7 @@ export function CinematicFooter({ locale }: { locale: Locale }) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-noir-700 text-cream">
+    <footer className="relative bg-terracotta-dark text-cream">
       {/* Top thin gold rule */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-bronze/50 to-transparent" />
 

@@ -2,6 +2,7 @@ import type { Locale } from "./config";
 
 const localeMap: Record<Locale, string> = {
   fr: "fr-FR",
+  en: "en-GB",
   ar: "ar-DZ",
 };
 

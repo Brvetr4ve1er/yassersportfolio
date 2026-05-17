@@ -42,7 +42,7 @@ export function CinematicHeader({ locale }: { locale: Locale }) {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
         scrolled
-          ? "border-b border-bronze/15 bg-noir/85 backdrop-blur-md"
+          ? "border-b border-bronze/15 bg-terracotta/90 backdrop-blur-md"
           : "bg-transparent",
       )}
     >
@@ -70,11 +70,11 @@ export function CinematicHeader({ locale }: { locale: Locale }) {
 
         <div className="flex items-center gap-3">
           <div className="hidden md:block">
-            <LangSwitcher current={locale} />
+            <LangSwitcher current={locale} tone="dark" />
           </div>
           <Link
             href={`/${locale}/reservation`}
-            className="hidden rounded-full border border-bronze/60 px-5 py-2 text-[11px] uppercase tracking-widest text-bronze transition hover:border-bronze hover:bg-bronze hover:text-noir sm:inline-flex"
+            className="hidden rounded-full border border-bronze/60 px-5 py-2 text-[11px] uppercase tracking-widest text-bronze transition hover:border-bronze hover:bg-bronze hover:text-terracotta sm:inline-flex"
           >
             Réserver
           </Link>
@@ -91,7 +91,7 @@ export function CinematicHeader({ locale }: { locale: Locale }) {
 
       {open && (
         <div
-          className="fixed inset-0 z-50 bg-noir/95 backdrop-blur-xl md:hidden"
+          className="fixed inset-0 z-50 bg-terracotta/97 backdrop-blur-xl md:hidden"
           onClick={() => setOpen(false)}
         >
           <div className="container flex h-16 items-center justify-between">
@@ -125,12 +125,12 @@ export function CinematicHeader({ locale }: { locale: Locale }) {
             <Link
               href={`/${locale}/reservation`}
               onClick={() => setOpen(false)}
-              className="mt-8 inline-flex w-fit items-center gap-3 rounded-full border border-bronze bg-bronze px-6 py-3 text-xs uppercase tracking-widest text-noir"
+              className="mt-8 inline-flex w-fit items-center gap-3 rounded-full border border-bronze bg-bronze px-6 py-3 text-xs uppercase tracking-widest text-terracotta"
             >
               Réserver
             </Link>
             <div className="mt-8">
-              <LangSwitcher current={locale} />
+              <LangSwitcher current={locale} tone="dark" />
             </div>
           </nav>
         </div>
