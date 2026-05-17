@@ -1,0 +1,56 @@
+{
+  "account": {
+    "dashboard": {
+      "title": "Bonjour, {{name}}",
+      "subtitle": "Voici un aperçu de votre compte.",
+      "upcoming": "Prochaine réservation",
+      "loyalty": "Étoiles fidélité",
+      "tier": "Niveau {{tier}}",
+      "quickActions": {
+        "qr": "Afficher mon QR",
+        "reservations": "Mes réservations",
+        "fidelity": "Mes étoiles",
+        "profile": "Modifier mon profil"
+      }
+    },
+    "reservations": {
+      "title": "Mes réservations",
+      "upcoming": "À venir",
+      "past": "Passées",
+      "cancelled": "Annulées",
+      "empty": "Aucune réservation pour le moment."
+    },
+    "qrCheckin": {
+      "title": "Code QR d'accueil",
+      "subtitle": "Présentez ce code à l'accueil pour valider votre arrivée.",
+      "offlineNote": "Disponible hors ligne",
+      "validFor": "Valide pour {{date}}"
+    },
+    "loyalty": {
+      "title": "Étoiles Fidélité",
+      "balance": "Solde",
+      "tier": "Niveau actuel",
+      "nextTier": "Prochain niveau dans {{points}} points",
+      "history": "Historique",
+      "rewards": "Récompenses disponibles",
+      "rewardsList": [
+        { "cost": 500, "label": "Réduction de 500 DA" },
+        { "cost": 2000, "label": "1 session d'activité offerte" },
+        { "cost": 5000, "label": "1 nuit offerte (chalet standard, semaine)" }
+      ],
+      "tiers": {
+        "bronze": "Bronze · 0 – 999 pts",
+        "silver": "Argent · 1 000 – 4 999 pts",
+        "gold": "Or · 5 000+ pts · accès prioritaire week-ends"
+      }
+    },
+    "profile": {
+      "title": "Mon profil",
+      "fullName": "Nom complet",
+      "phone": "Téléphone",
+      "email": "Email (optionnel)",
+      "lang": "Langue préférée",
+      "save": "Enregistrer les modifications"
+    }
+  }
+}

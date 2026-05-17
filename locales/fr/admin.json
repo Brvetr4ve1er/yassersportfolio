@@ -1,0 +1,61 @@
+{
+  "admin": {
+    "title": "Tableau de bord",
+    "occupancy": "Taux d'occupation",
+    "revenueWeek": "Revenu semaine",
+    "revenueMonth": "Revenu mois",
+    "guestsToday": "Arrivées aujourd'hui",
+    "pendingPayments": "Paiements en attente",
+    "tabs": {
+      "bookings": "Réservations",
+      "scan": "Scan QR",
+      "agenda": "Agenda",
+      "content": "Contenu",
+      "notifications": "Notifications"
+    },
+    "bookings": {
+      "title": "Gestion des réservations",
+      "columns": {
+        "ref": "Référence",
+        "guest": "Client",
+        "type": "Type",
+        "dates": "Dates",
+        "amount": "Montant",
+        "payment": "Paiement",
+        "status": "Statut",
+        "actions": "Actions"
+      },
+      "actions": {
+        "confirm": "Confirmer",
+        "cancel": "Annuler",
+        "markPaid": "Marquer payé",
+        "viewQr": "QR"
+      }
+    },
+    "scan": {
+      "title": "Scanner un code QR",
+      "subtitle": "Pointez la caméra vers le code QR du client.",
+      "permission": "Veuillez autoriser l'accès à la caméra.",
+      "matched": "Réservation trouvée",
+      "notFound": "Réservation introuvable.",
+      "alreadyCheckedIn": "Déjà arrivé"
+    },
+    "agenda": {
+      "title": "Calendrier des réservations"
+    },
+    "content": {
+      "title": "Gestion du contenu",
+      "accommodations": "Hébergements",
+      "activities": "Activités",
+      "packages": "Forfaits"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "segment": "Segment",
+      "channel": "Canal",
+      "channels": { "push": "Push", "whatsapp": "WhatsApp", "sms": "SMS" },
+      "message": "Message",
+      "send": "Envoyer"
+    }
+  }
+}

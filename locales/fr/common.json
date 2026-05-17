@@ -1,0 +1,69 @@
+{
+  "common": {
+    "brand": {
+      "name": "L'Étoile de l'Est",
+      "tagline": "Complexe Agrotouristique — Ain Abid, Constantine"
+    },
+    "nav": {
+      "home": "Accueil",
+      "accommodations": "Hébergement",
+      "activities": "Activités",
+      "packages": "Forfaits",
+      "restaurant": "Restaurant",
+      "gallery": "Galerie",
+      "blog": "Blog",
+      "account": "Mon compte",
+      "admin": "Admin",
+      "book": "Réserver",
+      "login": "Se connecter",
+      "logout": "Se déconnecter"
+    },
+    "footer": {
+      "address": "Route nationale, Ain Abid, Constantine, Algérie",
+      "openHours": "Ouvert tous les jours · 8h00 – 22h00",
+      "contact": "Nous contacter",
+      "follow": "Nous suivre",
+      "legal": "Mentions légales",
+      "privacy": "Confidentialité",
+      "rights": "© {{year}} L'Étoile de l'Est. Tous droits réservés."
+    },
+    "cta": {
+      "bookNow": "Réserver maintenant",
+      "discover": "Découvrir",
+      "viewDetails": "Voir les détails",
+      "viewAll": "Tout voir",
+      "learnMore": "En savoir plus",
+      "contact": "Nous contacter",
+      "back": "Retour",
+      "next": "Suivant",
+      "previous": "Précédent",
+      "confirm": "Confirmer",
+      "cancel": "Annuler",
+      "save": "Enregistrer",
+      "install": "Installer l'application"
+    },
+    "actions": {
+      "switchLang": "Changer de langue",
+      "openMenu": "Ouvrir le menu",
+      "closeMenu": "Fermer le menu"
+    },
+    "states": {
+      "loading": "Chargement…",
+      "empty": "Aucun résultat",
+      "error": "Une erreur est survenue",
+      "offline": "Mode hors ligne"
+    },
+    "amenities": {
+      "wifi": "Wi-Fi",
+      "ac": "Climatisation",
+      "heating": "Chauffage",
+      "kitchen": "Cuisine équipée",
+      "tv": "Télévision",
+      "parking": "Parking privé",
+      "terrace": "Terrasse",
+      "view": "Vue panoramique",
+      "pool_access": "Accès piscine",
+      "breakfast": "Petit-déjeuner inclus"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "activity": {
+    "listTitle": "الأنشطة في نجمة الشرق",
+    "listSubtitle": "يوم واحد لا يكفي.",
+    "details": {
+      "duration": "المدة",
+      "participants": "المشاركون",
+      "availableDays": "الأيام المتاحة",
+      "pricePerPerson": "للشخص",
+      "bookFromHere": "احجز هذا النشاط"
+    },
+    "minutes": "د",
+    "personMin": "الأدنى {{n}}",
+    "personMax": "الأقصى {{n}}",
+    "days": {
+      "monday": "الإثنين",
+      "tuesday": "الثلاثاء",
+      "wednesday": "الأربعاء",
+      "thursday": "الخميس",
+      "friday": "الجمعة",
+      "saturday": "السبت",
+      "sunday": "الأحد"
+    }
+  }
+}

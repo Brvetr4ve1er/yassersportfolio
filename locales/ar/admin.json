@@ -1,0 +1,61 @@
+{
+  "admin": {
+    "title": "لوحة التحكم",
+    "occupancy": "نسبة الإشغال",
+    "revenueWeek": "إيرادات الأسبوع",
+    "revenueMonth": "إيرادات الشهر",
+    "guestsToday": "وصول اليوم",
+    "pendingPayments": "مدفوعات معلقة",
+    "tabs": {
+      "bookings": "الحجوزات",
+      "scan": "مسح QR",
+      "agenda": "الأجندة",
+      "content": "المحتوى",
+      "notifications": "الإشعارات"
+    },
+    "bookings": {
+      "title": "إدارة الحجوزات",
+      "columns": {
+        "ref": "المرجع",
+        "guest": "الزبون",
+        "type": "النوع",
+        "dates": "التواريخ",
+        "amount": "المبلغ",
+        "payment": "الدفع",
+        "status": "الحالة",
+        "actions": "إجراءات"
+      },
+      "actions": {
+        "confirm": "تأكيد",
+        "cancel": "إلغاء",
+        "markPaid": "وضع كمدفوع",
+        "viewQr": "QR"
+      }
+    },
+    "scan": {
+      "title": "مسح رمز QR",
+      "subtitle": "وجّه الكاميرا نحو رمز الزبون.",
+      "permission": "يرجى السماح للكاميرا.",
+      "matched": "تم العثور على الحجز",
+      "notFound": "لم يُعثر على الحجز.",
+      "alreadyCheckedIn": "تم الوصول مسبقًا"
+    },
+    "agenda": {
+      "title": "تقويم الحجوزات"
+    },
+    "content": {
+      "title": "إدارة المحتوى",
+      "accommodations": "الإقامات",
+      "activities": "الأنشطة",
+      "packages": "العروض"
+    },
+    "notifications": {
+      "title": "الإشعارات",
+      "segment": "الفئة",
+      "channel": "القناة",
+      "channels": { "push": "Push", "whatsapp": "واتساب", "sms": "SMS" },
+      "message": "الرسالة",
+      "send": "إرسال"
+    }
+  }
+}

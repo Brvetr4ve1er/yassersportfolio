@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 42 36% 93%;
+    --foreground: 60 8% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 60 8% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 60 8% 10%;
+
+    --primary: 130 51% 9%;
+    --primary-foreground: 42 36% 93%;
+
+    --secondary: 42 24% 90%;
+    --secondary-foreground: 60 8% 10%;
+
+    --muted: 42 24% 90%;
+    --muted-foreground: 40 6% 40%;
+
+    --accent: 41 48% 47%;
+    --accent-foreground: 42 36% 93%;
+
+    --destructive: 9 75% 43%;
+    --destructive-foreground: 42 36% 93%;
+
+    --border: 42 18% 84%;
+    --input: 42 18% 84%;
+    --ring: 41 48% 47%;
+
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    --background: 130 51% 6%;
+    --foreground: 42 36% 93%;
+
+    --card: 130 40% 9%;
+    --card-foreground: 42 36% 93%;
+
+    --popover: 130 40% 9%;
+    --popover-foreground: 42 36% 93%;
+
+    --primary: 41 48% 47%;
+    --primary-foreground: 130 51% 9%;
+
+    --secondary: 130 30% 14%;
+    --secondary-foreground: 42 36% 93%;
+
+    --muted: 130 24% 14%;
+    --muted-foreground: 40 14% 65%;
+
+    --accent: 41 48% 47%;
+    --accent-foreground: 130 51% 9%;
+
+    --destructive: 9 75% 43%;
+    --destructive-foreground: 42 36% 93%;
+
+    --border: 130 24% 18%;
+    --input: 130 24% 18%;
+    --ring: 41 48% 47%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  [dir="rtl"] body {
+    @apply font-arabic;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif tracking-tight;
+  }
+
+  [dir="rtl"] h1,
+  [dir="rtl"] h2,
+  [dir="rtl"] h3,
+  [dir="rtl"] h4 {
+    @apply font-arabic font-bold;
+  }
+}
+
+@layer components {
+  .container-prose {
+    @apply mx-auto max-w-3xl px-4 sm:px-6;
+  }
+
+  .surface-card {
+    @apply rounded-xl border border-border/60 bg-card shadow-sm;
+  }
+
+  .badge-soft {
+    @apply inline-flex items-center gap-1 rounded-full bg-gold/10 px-2.5 py-0.5 text-xs font-medium text-gold-700;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-gold/30;
+  }
+}
+
+@keyframes count-up {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.loyalty-star {
+  animation: count-up 600ms ease-out both;
+}

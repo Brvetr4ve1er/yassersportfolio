@@ -1,0 +1,77 @@
+{
+  "home": {
+    "hero": {
+      "eyebrow": "Agrotourisme · 25 hectares · Constantine",
+      "title": "Là où la nature algérienne se savoure lentement",
+      "subtitle": "Chalets, équitation, piscine, vergers et ruches d'abeilles — à 30 minutes de Constantine, ouvert toute l'année.",
+      "ctaPrimary": "Réserver un séjour",
+      "ctaSecondary": "Découvrir nos activités",
+      "stat1": { "value": "106", "label": "Lits disponibles" },
+      "stat2": { "value": "25 ha", "label": "De vergers et verdure" },
+      "stat3": { "value": "12+", "label": "Activités sur place" }
+    },
+    "values": {
+      "title": "Une autre idée du séjour",
+      "subtitle": "Loin du bruit, près de l'essentiel.",
+      "items": [
+        {
+          "title": "Hébergements pensés pour les familles",
+          "body": "Chalets standards, familiaux, tentes berbères et glamping — pour 2 à 8 personnes."
+        },
+        {
+          "title": "Activités pour tous les âges",
+          "body": "Équitation, quad, piscine, cueillette dans les vergers, visite des ruchers."
+        },
+        {
+          "title": "Cuisine du terroir",
+          "body": "Grillades, plats traditionnels et produits frais de nos jardins."
+        },
+        {
+          "title": "Réservation simple et rapide",
+          "body": "Confirmation par WhatsApp, paiement BaridiMob, code QR à l'arrivée."
+        }
+      ]
+    },
+    "featuredAccommodations": {
+      "title": "Nos hébergements",
+      "subtitle": "Quatre formules, un seul esprit : le calme.",
+      "cta": "Voir tous les hébergements"
+    },
+    "featuredActivities": {
+      "title": "Activités à vivre",
+      "subtitle": "Du verger aux écuries, en passant par la piscine.",
+      "cta": "Voir toutes les activités"
+    },
+    "loyalty": {
+      "title": "Programme Étoiles Fidélité",
+      "subtitle": "Cumulez des points à chaque séjour, débloquez des nuits offertes et un accès prioritaire en été.",
+      "tiers": ["Bronze", "Argent", "Or"],
+      "cta": "Découvrir le programme"
+    },
+    "testimonials": {
+      "title": "Ils ont séjourné chez nous",
+      "items": [
+        {
+          "name": "Karim B.",
+          "city": "Alger",
+          "quote": "Un cadre magnifique et un accueil chaleureux. Mes enfants ont adoré les chevaux."
+        },
+        {
+          "name": "Lila M.",
+          "city": "Constantine",
+          "quote": "Réservation simple, chalet propre, vue splendide. On reviendra cet été."
+        },
+        {
+          "name": "Yacine S.",
+          "city": "Annaba",
+          "quote": "Le forfait week-end avec activités est imbattable. Bravo à toute l'équipe."
+        }
+      ]
+    },
+    "installPwa": {
+      "title": "Installez L'Étoile sur votre téléphone",
+      "body": "Accès rapide à vos réservations, code QR d'entrée disponible hors ligne, notifications de vos activités.",
+      "cta": "Installer"
+    }
+  }
+}

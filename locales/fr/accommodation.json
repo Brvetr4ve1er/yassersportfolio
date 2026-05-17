@@ -1,0 +1,27 @@
+{
+  "accommodation": {
+    "listTitle": "Nos hébergements",
+    "listSubtitle": "De la simplicité chaleureuse au glamping étoilé.",
+    "filters": {
+      "all": "Tous",
+      "chalet": "Chalets",
+      "tent": "Tentes",
+      "glamping": "Glamping"
+    },
+    "details": {
+      "amenities": "Équipements",
+      "capacity": "Capacité",
+      "priceWeekday": "Semaine",
+      "priceWeekend": "Week-end",
+      "priceHoliday": "Jours fériés",
+      "perNight": "par nuit",
+      "bookFromHere": "Réserver cet hébergement",
+      "similar": "Hébergements similaires"
+    },
+    "types": {
+      "chalet": "Chalet",
+      "tent": "Tente",
+      "glamping": "Glamping"
+    }
+  }
+}

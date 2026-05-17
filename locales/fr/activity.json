@@ -1,0 +1,25 @@
+{
+  "activity": {
+    "listTitle": "Activités à L'Étoile de l'Est",
+    "listSubtitle": "Une journée ne suffira pas.",
+    "details": {
+      "duration": "Durée",
+      "participants": "Participants",
+      "availableDays": "Jours disponibles",
+      "pricePerPerson": "par personne",
+      "bookFromHere": "Réserver cette activité"
+    },
+    "minutes": "min",
+    "personMin": "min {{n}} pers.",
+    "personMax": "max {{n}} pers.",
+    "days": {
+      "monday": "Lundi",
+      "tuesday": "Mardi",
+      "wednesday": "Mercredi",
+      "thursday": "Jeudi",
+      "friday": "Vendredi",
+      "saturday": "Samedi",
+      "sunday": "Dimanche"
+    }
+  }
+}

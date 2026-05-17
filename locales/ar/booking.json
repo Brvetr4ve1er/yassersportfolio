@@ -1,0 +1,93 @@
+{
+  "booking": {
+    "title": "احجز إقامتك",
+    "steps": [
+      "النوع",
+      "التواريخ",
+      "الاختيار",
+      "الأشخاص",
+      "الدفع",
+      "التأكيد"
+    ],
+    "step1": {
+      "title": "ماذا تريد أن تحجز؟",
+      "subtitle": "اختر نوع الحجز للبدء.",
+      "options": {
+        "accommodation": {
+          "title": "إقامة",
+          "body": "ليلة في كوخ، خيمة أمازيغية أو غلامبينغ."
+        },
+        "activity": {
+          "title": "نشاط",
+          "body": "زيارة يومية، خيول، كواد، مسبح…"
+        },
+        "package": {
+          "title": "عرض",
+          "body": "إقامة + أنشطة بسعر تفضيلي."
+        }
+      }
+    },
+    "step2": {
+      "title": "اختر تواريخك",
+      "checkIn": "الوصول",
+      "checkOut": "المغادرة",
+      "nights": "{{count}} ليلة",
+      "nights_plural": "{{count}} ليلة",
+      "weekend": "نهاية الأسبوع",
+      "holiday": "عطلة",
+      "unavailable": "غير متاح"
+    },
+    "step3": {
+      "title": "اختر مكان الإقامة",
+      "titleActivity": "اختر نشاطك",
+      "capacity": "حتى {{n}} أشخاص",
+      "duration": "{{n}} د",
+      "addActivity": "أضف نشاطًا (+{{price}})"
+    },
+    "step4": {
+      "title": "تفاصيل الإقامة",
+      "fullName": "الاسم الكامل",
+      "phone": "رقم الهاتف",
+      "phoneHint": "الصيغة: 0X XX XX XX XX",
+      "guests": "عدد الأشخاص",
+      "adults": "بالغون",
+      "children": "أطفال (أقل من 12 سنة)",
+      "specialRequests": "طلبات خاصة",
+      "specialRequestsPlaceholder": "حساسية، احتفال، حيوان أليف…",
+      "redeemLoyalty": "استعمل {{points}} نقطة (-{{discount}} دج)"
+    },
+    "step5": {
+      "title": "الدفع",
+      "subtitle": "اختر طريقة الدفع.",
+      "baridi": {
+        "title": "بريدي موب (CCP)",
+        "body": "تحويل من حسابك CCP. تأكيد يدوي خلال ساعتين."
+      },
+      "cib": {
+        "title": "بطاقة CIB",
+        "body": "دفع آمن عبر بوابة GIE Monétique."
+      },
+      "cash": {
+        "title": "الدفع عند الوصول",
+        "body": "للزبائن الأوفياء بموافقة الإدارة."
+      },
+      "instructions": {
+        "baridi": "حوّل المبلغ إلى CCP {{ccp}} مع المرجع {{ref}}. ستتلقى رسالة واتساب عند التأكيد.",
+        "total": "المجموع",
+        "deposit": "تسبيق (30%)",
+        "balance": "الباقي عند الوصول"
+      }
+    },
+    "step6": {
+      "title": "تم تسجيل الحجز!",
+      "subtitle": "طلبك في انتظار تأكيد الدفع.",
+      "reference": "المرجع",
+      "qrInstructions": "أبرز رمز QR عند الاستقبال لتسهيل وصولك.",
+      "downloadQr": "تحميل QR",
+      "addCalendar": "إضافة للتقويم",
+      "whatsapp": "تم إرسال تأكيد واتساب إلى {{phone}}",
+      "loyaltyEarned": "ستربح {{points}} نقطة وفاء بعد إقامتك.",
+      "newBooking": "حجز جديد"
+    }
+  }
+}
