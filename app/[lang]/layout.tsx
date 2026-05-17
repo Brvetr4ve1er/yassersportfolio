@@ -1,9 +1,6 @@
 import { Cairo, Cormorant_Garamond, DM_Mono, Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import { I18nProvider } from "@/components/i18n/I18nProvider";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { MobileNav } from "@/components/layout/MobileNav";
 import { OfflineIndicator } from "@/components/pwa/OfflineIndicator";
 import { InstallPrompt } from "@/components/pwa/InstallPrompt";
 import { Toaster } from "@/components/ui/toaster";
@@ -23,13 +20,13 @@ const inter = Inter({
 });
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-cormorant",
   display: "swap",
 });
 const cairo = Cairo({
   subsets: ["arabic"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-cairo",
   display: "swap",
 });
@@ -79,10 +76,7 @@ export default async function LocaleLayout({
       <body className="min-h-dvh bg-background text-foreground">
         <I18nProvider locale={locale} dictionary={dictionary}>
           <OfflineIndicator />
-          <Header locale={locale} />
-          <main className="min-h-[60vh] pb-20 md:pb-0">{children}</main>
-          <Footer locale={locale} />
-          <MobileNav locale={locale} />
+          {children}
           <InstallPrompt />
           <Toaster />
         </I18nProvider>

@@ -4,65 +4,67 @@
 
 @layer base {
   :root {
-    --background: 42 36% 93%;
-    --foreground: 60 8% 10%;
+    /* Default (light) theme — used inside booking, account, admin */
+    --background: 42 36% 95%;
+    --foreground: 60 5% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 60 8% 10%;
+    --card-foreground: 60 5% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 60 8% 10%;
+    --popover-foreground: 60 5% 8%;
 
-    --primary: 130 51% 9%;
-    --primary-foreground: 42 36% 93%;
+    --primary: 60 5% 5%;
+    --primary-foreground: 42 36% 95%;
 
-    --secondary: 42 24% 90%;
-    --secondary-foreground: 60 8% 10%;
+    --secondary: 42 18% 92%;
+    --secondary-foreground: 60 5% 8%;
 
-    --muted: 42 24% 90%;
-    --muted-foreground: 40 6% 40%;
+    --muted: 42 12% 90%;
+    --muted-foreground: 40 6% 38%;
 
-    --accent: 41 48% 47%;
-    --accent-foreground: 42 36% 93%;
+    --accent: 38 49% 57%;
+    --accent-foreground: 60 5% 8%;
 
     --destructive: 9 75% 43%;
-    --destructive-foreground: 42 36% 93%;
+    --destructive-foreground: 42 36% 95%;
 
     --border: 42 18% 84%;
     --input: 42 18% 84%;
-    --ring: 41 48% 47%;
+    --ring: 38 49% 57%;
 
-    --radius: 0.625rem;
+    --radius: 0.5rem;
   }
 
-  .dark {
-    --background: 130 51% 6%;
+  /* Cinematic mode — applied on the homepage to swap the system into noir */
+  .theme-cinematic {
+    --background: 75 7% 5%;
     --foreground: 42 36% 93%;
 
-    --card: 130 40% 9%;
+    --card: 75 6% 7%;
     --card-foreground: 42 36% 93%;
 
-    --popover: 130 40% 9%;
+    --popover: 75 6% 7%;
     --popover-foreground: 42 36% 93%;
 
-    --primary: 41 48% 47%;
-    --primary-foreground: 130 51% 9%;
+    --primary: 38 49% 57%;
+    --primary-foreground: 75 7% 5%;
 
-    --secondary: 130 30% 14%;
+    --secondary: 75 4% 11%;
     --secondary-foreground: 42 36% 93%;
 
-    --muted: 130 24% 14%;
-    --muted-foreground: 40 14% 65%;
+    --muted: 75 4% 13%;
+    --muted-foreground: 42 12% 65%;
 
-    --accent: 41 48% 47%;
-    --accent-foreground: 130 51% 9%;
+    --accent: 38 49% 57%;
+    --accent-foreground: 75 7% 5%;
 
-    --destructive: 9 75% 43%;
+    --destructive: 9 75% 50%;
     --destructive-foreground: 42 36% 93%;
 
-    --border: 130 24% 18%;
-    --input: 130 24% 18%;
-    --ring: 41 48% 47%;
+    --border: 75 4% 17%;
+    --input: 75 4% 17%;
+    --ring: 38 49% 57%;
   }
 
   * {
@@ -72,11 +74,13 @@
   html {
     @apply scroll-smooth;
     -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
   }
 
   [dir="rtl"] body {
@@ -93,6 +97,11 @@
   [dir="rtl"] h4 {
     @apply font-arabic font-bold;
   }
+
+  ::selection {
+    background-color: rgba(201, 163, 91, 0.35);
+    color: #f1e9d6;
+  }
 }
 
 @layer components {
@@ -105,11 +114,86 @@
   }
 
   .badge-soft {
-    @apply inline-flex items-center gap-1 rounded-full bg-gold/10 px-2.5 py-0.5 text-xs font-medium text-gold-700;
+    @apply inline-flex items-center gap-1 rounded-full bg-bronze/10 px-2.5 py-0.5 text-xs font-medium text-bronze-700;
   }
 
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Eyebrow label — used as section preludes */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-eyebrow font-medium uppercase text-bronze;
+  }
+
+  .eyebrow-line::before {
+    content: "";
+    @apply h-px w-8 bg-bronze/50;
+  }
+
+  /* Chapter number badge */
+  .chapter-num {
+    @apply font-mono text-eyebrow text-bronze/70;
+  }
+
+  /* Editorial display heading */
+  .display-serif {
+    @apply font-serif font-light leading-[0.95] tracking-tightest;
+  }
+
+  /* Atmospheric photograph zone — replaces the bright SVG gradients */
+  .photo-zone {
+    @apply relative overflow-hidden bg-noir;
+    background-image:
+      radial-gradient(ellipse 80% 60% at 30% 30%, rgba(201, 163, 91, 0.18), transparent 60%),
+      radial-gradient(ellipse 60% 80% at 80% 75%, rgba(31, 80, 40, 0.30), transparent 60%),
+      linear-gradient(180deg, #161814 0%, #0c0d0a 100%);
+  }
+
+  .photo-zone::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.95  0 0 0 0 0.91  0 0 0 0 0.84  0 0 0 0.05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    opacity: 0.5;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  /* Sunset Pool atmosphere variant */
+  .photo-zone--sunset {
+    background-image:
+      radial-gradient(ellipse 70% 60% at 50% 35%, rgba(245, 162, 109, 0.45), transparent 60%),
+      radial-gradient(ellipse 60% 60% at 50% 80%, rgba(212, 99, 59, 0.55), transparent 60%),
+      linear-gradient(180deg, #2a1410 0%, #4a1d12 50%, #0c0d0a 100%);
+  }
+
+  /* Equestrian variant — colder, with bronze glow */
+  .photo-zone--equestrian {
+    background-image:
+      radial-gradient(ellipse 60% 70% at 70% 40%, rgba(201, 163, 91, 0.25), transparent 55%),
+      linear-gradient(180deg, #0c0d0a 0%, #15170f 50%, #0c0d0a 100%);
+  }
+
+  /* Verger / orchard variant */
+  .photo-zone--orchard {
+    background-image:
+      radial-gradient(ellipse 70% 50% at 50% 70%, rgba(45, 122, 79, 0.30), transparent 60%),
+      radial-gradient(ellipse 50% 50% at 50% 0%, rgba(201, 163, 91, 0.20), transparent 60%),
+      linear-gradient(180deg, #15170f 0%, #0c0d0a 100%);
+  }
+
+  /* Cinematic divider — gold hairline + center diamond */
+  .gold-rule {
+    @apply relative flex items-center justify-center;
+  }
+  .gold-rule::before,
+  .gold-rule::after {
+    content: "";
+    @apply h-px flex-1 bg-gradient-to-r from-transparent via-bronze/50 to-transparent;
+  }
+  .gold-rule > * {
+    @apply px-4 text-bronze;
   }
 }
 
@@ -119,7 +203,46 @@
     height: 6px;
   }
   .scrollbar-thin::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-gold/30;
+    @apply rounded-full bg-bronze/30;
+  }
+
+  /* Stage type — for very large editorial display headlines */
+  .text-stage {
+    font-size: clamp(3.5rem, 11vw, 9.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+    font-weight: 300;
+  }
+
+  .text-cinema {
+    font-size: clamp(2.5rem, 6.5vw, 5.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    font-weight: 300;
+  }
+
+  /* Slow Ken-Burns-style scaling for hero imagery */
+  .ken-burns {
+    animation: slow-zoom 24s ease-out infinite alternate;
+  }
+
+  /* Grain overlay — for full bleed photographic sections */
+  .grain-overlay {
+    position: relative;
+  }
+  .grain-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.95  0 0 0 0 0.91  0 0 0 0 0.84  0 0 0 0.07 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    opacity: 0.6;
+    mix-blend-mode: overlay;
+  }
+
+  /* Hair-thin gold bottom border */
+  .border-b-gold-hair {
+    border-bottom: 1px solid rgba(201, 163, 91, 0.25);
   }
 }
 
