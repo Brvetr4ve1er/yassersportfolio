@@ -8,9 +8,8 @@ import type { Locale } from "@/lib/i18n/config";
 
 export default async function AdminHome({ params }: { params: { lang: Locale } }) {
   const dict = (await getDictionary(params.lang, ["admin"])) as {
-    admin: { admin: Record<string, string> };
-  };
-  const a = dict.admin.admin;
+    admin: Record<string, string> };
+  const a = dict.admin;
 
   const today = new Date().toISOString().slice(0, 10);
   const arrivalsToday = mockBookings.filter((b) => b.check_in === today);

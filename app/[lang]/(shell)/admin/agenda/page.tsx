@@ -17,9 +17,9 @@ export default async function AdminAgenda({
   params: { lang: Locale };
 }) {
   const dict = (await getDictionary(params.lang, ["admin"])) as {
-    admin: { admin: { agenda: { title: string } } };
-  };
+    admin: { agenda: { title: string } };
 
+  };
   const days = Array.from({ length: 28 }, (_, i) => {
     const d = new Date();
     d.setDate(d.getDate() + i);
@@ -29,7 +29,7 @@ export default async function AdminAgenda({
   return (
     <section>
       <h1 className="mb-6 font-serif text-3xl font-semibold text-forest">
-        {dict.admin.admin.agenda.title}
+        {dict.admin.agenda.title}
       </h1>
       <Card>
         <CardContent className="p-4">

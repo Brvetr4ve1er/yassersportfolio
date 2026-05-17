@@ -11,11 +11,11 @@ export default async function AccountLayout({
   params: { lang: Locale };
 }) {
   const dict = (await getDictionary(params.lang, ["account", "common"])) as {
-    account: { account: { dashboard: { quickActions: Record<string, string> } } };
-    common: { common: { nav: Record<string, string> } };
+    account: { dashboard: { quickActions: Record<string, string> } };
+    common: { nav: Record<string, string> };
   };
-  const labels = dict.account.account.dashboard.quickActions;
-  const c = dict.common.common;
+  const labels = dict.account.dashboard.quickActions;
+  const c = dict.common;
 
   const links = [
     { href: `/${params.lang}/compte`, icon: User, label: c.nav.account },

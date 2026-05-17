@@ -23,16 +23,14 @@ export default async function ActivityDetailPage({
 
   const dict = (await getDictionary(params.lang, ["activity", "common"])) as {
     activity: {
-      activity: {
-        details: Record<string, string>;
-        minutes: string;
-        days: Record<string, string>;
-      };
+      details: Record<string, string>;
+      minutes: string;
+      days: Record<string, string>;
     };
-    common: { common: { cta: Record<string, string> } };
+    common: { cta: Record<string, string> };
   };
-  const a = dict.activity.activity;
-  const c = dict.common.common;
+  const a = dict.activity;
+  const c = dict.common;
   const name = params.lang === "ar" ? item.name_ar : item.name_fr;
   const description = params.lang === "ar" ? item.description_ar : item.description_fr;
 

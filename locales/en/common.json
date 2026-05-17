@@ -1,69 +1,67 @@
 {
-  "common": {
-    "brand": {
-      "name": "L'Étoile de l'Est",
-      "tagline": "Family Agritourism Estate — Ain Abid, Constantine"
-    },
-    "nav": {
-      "home": "Home",
-      "accommodations": "Stay",
-      "activities": "Activities",
-      "packages": "Packages",
-      "restaurant": "Table",
-      "gallery": "Gallery",
-      "blog": "Journal",
-      "account": "Account",
-      "admin": "Admin",
-      "book": "Book",
-      "login": "Sign in",
-      "logout": "Sign out"
-    },
-    "footer": {
-      "address": "Route nationale, Ain Abid, Constantine Province, Algeria",
-      "openHours": "Open every day · 8am – 10pm",
-      "contact": "Contact",
-      "follow": "Follow",
-      "legal": "Legal notices",
-      "privacy": "Privacy",
-      "rights": "© {{year}} L'Étoile de l'Est. All rights reserved."
-    },
-    "cta": {
-      "bookNow": "Book your stay",
-      "discover": "Discover",
-      "viewDetails": "See details",
-      "viewAll": "View all",
-      "learnMore": "Learn more",
-      "contact": "Get in touch",
-      "back": "Back",
-      "next": "Next",
-      "previous": "Previous",
-      "confirm": "Confirm",
-      "cancel": "Cancel",
-      "save": "Save",
-      "install": "Install app"
-    },
-    "actions": {
-      "switchLang": "Switch language",
-      "openMenu": "Open menu",
-      "closeMenu": "Close menu"
-    },
-    "states": {
-      "loading": "Loading…",
-      "empty": "No results",
-      "error": "Something went wrong",
-      "offline": "Offline mode"
-    },
-    "amenities": {
-      "wifi": "Wi-Fi",
-      "ac": "Air conditioning",
-      "heating": "Heating",
-      "kitchen": "Equipped kitchen",
-      "tv": "Television",
-      "parking": "Private parking",
-      "terrace": "Terrace",
-      "view": "Panoramic view",
-      "pool_access": "Pool access",
-      "breakfast": "Breakfast included"
-    }
+  "brand": {
+    "name": "L'Étoile de l'Est",
+    "tagline": "Family Agritourism Estate — Ain Abid, Constantine"
+  },
+  "nav": {
+    "home": "Home",
+    "accommodations": "Stay",
+    "activities": "Activities",
+    "packages": "Packages",
+    "restaurant": "Table",
+    "gallery": "Gallery",
+    "blog": "Journal",
+    "account": "Account",
+    "admin": "Admin",
+    "book": "Book",
+    "login": "Sign in",
+    "logout": "Sign out"
+  },
+  "footer": {
+    "address": "Route nationale, Ain Abid, Constantine Province, Algeria",
+    "openHours": "Open every day · 8am – 10pm",
+    "contact": "Contact",
+    "follow": "Follow",
+    "legal": "Legal notices",
+    "privacy": "Privacy",
+    "rights": "© {{year}} L'Étoile de l'Est. All rights reserved."
+  },
+  "cta": {
+    "bookNow": "Book your stay",
+    "discover": "Discover",
+    "viewDetails": "See details",
+    "viewAll": "View all",
+    "learnMore": "Learn more",
+    "contact": "Get in touch",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "save": "Save",
+    "install": "Install app"
+  },
+  "actions": {
+    "switchLang": "Switch language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "states": {
+    "loading": "Loading…",
+    "empty": "No results",
+    "error": "Something went wrong",
+    "offline": "Offline mode"
+  },
+  "amenities": {
+    "wifi": "Wi-Fi",
+    "ac": "Air conditioning",
+    "heating": "Heating",
+    "kitchen": "Equipped kitchen",
+    "tv": "Television",
+    "parking": "Private parking",
+    "terrace": "Terrace",
+    "view": "Panoramic view",
+    "pool_access": "Pool access",
+    "breakfast": "Breakfast included"
   }
 }

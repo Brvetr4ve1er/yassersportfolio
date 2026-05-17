@@ -18,9 +18,9 @@ export default async function AdminLayout({
   params: { lang: Locale };
 }) {
   const dict = (await getDictionary(params.lang, ["admin"])) as {
-    admin: { admin: { tabs: Record<string, string> } };
+    admin: { tabs: Record<string, string> };
   };
-  const tabs = dict.admin.admin.tabs;
+  const tabs = dict.admin.tabs;
 
   const links = [
     { href: `/${params.lang}/admin`, icon: LayoutDashboard, label: "Dashboard" },

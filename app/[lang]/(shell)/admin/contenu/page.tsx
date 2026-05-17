@@ -13,9 +13,9 @@ export default async function AdminContent({
   params: { lang: Locale };
 }) {
   const dict = (await getDictionary(params.lang, ["admin"])) as {
-    admin: { admin: { content: { title: string; accommodations: string; activities: string; packages: string } } };
+    admin: { content: { title: string; accommodations: string; activities: string; packages: string } };
   };
-  const c = dict.admin.admin.content;
+  const c = dict.admin.content;
 
   const list = <T extends { id: string; name_fr: string; name_ar: string }>(
     items: T[],

@@ -12,9 +12,9 @@ export default async function ProfilePage({
   params: { lang: Locale };
 }) {
   const dict = (await getDictionary(params.lang, ["account"])) as {
-    account: { account: { profile: Record<string, string> } };
+    account: { profile: Record<string, string> };
   };
-  const p = dict.account.account.profile;
+  const p = dict.account.profile;
 
   return (
     <section>

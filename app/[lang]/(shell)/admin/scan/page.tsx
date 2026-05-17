@@ -8,9 +8,9 @@ export default async function AdminScanPage({
   params: { lang: Locale };
 }) {
   const dict = (await getDictionary(params.lang, ["admin"])) as {
-    admin: { admin: { scan: { title: string; subtitle: string } } };
+    admin: { scan: { title: string; subtitle: string } };
   };
-  const s = dict.admin.admin.scan;
+  const s = dict.admin.scan;
 
   return (
     <section>

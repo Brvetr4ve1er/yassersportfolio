@@ -13,16 +13,14 @@ export default async function AdminReservations({
 }) {
   const dict = (await getDictionary(params.lang, ["admin"])) as {
     admin: {
-      admin: {
-        bookings: {
-          title: string;
-          columns: Record<string, string>;
-          actions: Record<string, string>;
-        };
+      bookings: {
+        title: string;
+        columns: Record<string, string>;
+        actions: Record<string, string>;
       };
     };
   };
-  const b = dict.admin.admin.bookings;
+  const b = dict.admin.bookings;
 
   return (
     <section>

@@ -15,20 +15,18 @@ export default async function LoyaltyPage({
 }) {
   const dict = (await getDictionary(params.lang, ["account"])) as {
     account: {
-      account: {
-        loyalty: {
-          title: string;
-          balance: string;
-          tier: string;
-          nextTier: string;
-          rewards: string;
-          rewardsList: Array<{ cost: number; label: string }>;
-          tiers: { bronze: string; silver: string; gold: string };
-        };
+      loyalty: {
+        title: string;
+        balance: string;
+        tier: string;
+        nextTier: string;
+        rewards: string;
+        rewardsList: Array<{ cost: number; label: string }>;
+        tiers: { bronze: string; silver: string; gold: string };
       };
     };
   };
-  const l = dict.account.account.loyalty;
+  const l = dict.account.loyalty;
   const nextThreshold = mockUser.tier === "bronze" ? 1000 : mockUser.tier === "silver" ? 5000 : 5000;
   const progress = Math.min(100, (mockUser.loyalty_points / nextThreshold) * 100);
 

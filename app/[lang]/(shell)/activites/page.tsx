@@ -9,9 +9,9 @@ export default async function ActivityListPage({
   params: { lang: Locale };
 }) {
   const dict = (await getDictionary(params.lang, ["activity"])) as {
-    activity: { activity: { listTitle: string; listSubtitle: string } };
+    activity: { listTitle: string; listSubtitle: string };
   };
-  const t = dict.activity.activity;
+  const t = dict.activity;
 
   return (
     <div className="container py-12">

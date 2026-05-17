@@ -1,93 +1,91 @@
 {
-  "booking": {
-    "title": "Réserver votre séjour",
-    "steps": [
-      "Type",
-      "Dates",
-      "Choix",
-      "Personnes",
-      "Paiement",
-      "Confirmation"
-    ],
-    "step1": {
-      "title": "Que souhaitez-vous réserver ?",
-      "subtitle": "Choisissez le type de réservation pour commencer.",
-      "options": {
-        "accommodation": {
-          "title": "Séjour",
-          "body": "Nuit en chalet, tente berbère ou glamping."
-        },
-        "activity": {
-          "title": "Activité",
-          "body": "Visite à la journée, équitation, quad, piscine…"
-        },
-        "package": {
-          "title": "Forfait",
-          "body": "Séjour + activités à prix avantageux."
-        }
+  "title": "Réserver votre séjour",
+  "steps": [
+    "Type",
+    "Dates",
+    "Choix",
+    "Personnes",
+    "Paiement",
+    "Confirmation"
+  ],
+  "step1": {
+    "title": "Que souhaitez-vous réserver ?",
+    "subtitle": "Choisissez le type de réservation pour commencer.",
+    "options": {
+      "accommodation": {
+        "title": "Séjour",
+        "body": "Nuit en chalet, tente berbère ou glamping."
+      },
+      "activity": {
+        "title": "Activité",
+        "body": "Visite à la journée, équitation, quad, piscine…"
+      },
+      "package": {
+        "title": "Forfait",
+        "body": "Séjour + activités à prix avantageux."
       }
-    },
-    "step2": {
-      "title": "Choisissez vos dates",
-      "checkIn": "Arrivée",
-      "checkOut": "Départ",
-      "nights": "{{count}} nuit",
-      "nights_plural": "{{count}} nuits",
-      "weekend": "Week-end",
-      "holiday": "Jour férié",
-      "unavailable": "Indisponible"
-    },
-    "step3": {
-      "title": "Choisissez votre hébergement",
-      "titleActivity": "Choisissez votre activité",
-      "capacity": "Jusqu'à {{n}} personnes",
-      "duration": "{{n}} min",
-      "addActivity": "Ajouter une activité (+{{price}})"
-    },
-    "step4": {
-      "title": "Détails du séjour",
-      "fullName": "Nom complet",
-      "phone": "Numéro de téléphone",
-      "phoneHint": "Format : 0X XX XX XX XX",
-      "guests": "Nombre de personnes",
-      "adults": "Adultes",
-      "children": "Enfants (-12 ans)",
-      "specialRequests": "Demandes particulières",
-      "specialRequestsPlaceholder": "Allergies alimentaires, célébration, animal de compagnie…",
-      "redeemLoyalty": "Utiliser {{points}} points (-{{discount}} DA)"
-    },
-    "step5": {
-      "title": "Paiement",
-      "subtitle": "Choisissez votre mode de paiement.",
-      "baridi": {
-        "title": "BaridiMob (CCP)",
-        "body": "Transfert depuis votre compte CCP. Confirmation manuelle sous 2h."
-      },
-      "cib": {
-        "title": "Carte CIB",
-        "body": "Paiement sécurisé via la passerelle GIE Monétique."
-      },
-      "cash": {
-        "title": "Payer sur place",
-        "body": "Réservé aux clients fidèles. Sur autorisation administrateur."
-      },
-      "instructions": {
-        "baridi": "Effectuez le virement vers le CCP {{ccp}} avec la référence {{ref}}. Vous recevrez un message WhatsApp dès confirmation.",
-        "total": "Total à payer",
-        "deposit": "Acompte (30%)",
-        "balance": "Solde à l'arrivée"
-      }
-    },
-    "step6": {
-      "title": "Réservation enregistrée !",
-      "subtitle": "Votre demande est en attente de confirmation de paiement.",
-      "reference": "Référence",
-      "qrInstructions": "Présentez ce code QR à l'accueil pour faciliter votre arrivée.",
-      "downloadQr": "Télécharger le QR",
-      "addCalendar": "Ajouter au calendrier",
-      "whatsapp": "Confirmation WhatsApp envoyée au {{phone}}",
-      "loyaltyEarned": "Vous gagnerez {{points}} points fidélité après votre séjour.",
-      "newBooking": "Faire une nouvelle réservation"
     }
+  },
+  "step2": {
+    "title": "Choisissez vos dates",
+    "checkIn": "Arrivée",
+    "checkOut": "Départ",
+    "nights": "{{count}} nuit",
+    "nights_plural": "{{count}} nuits",
+    "weekend": "Week-end",
+    "holiday": "Jour férié",
+    "unavailable": "Indisponible"
+  },
+  "step3": {
+    "title": "Choisissez votre hébergement",
+    "titleActivity": "Choisissez votre activité",
+    "capacity": "Jusqu'à {{n}} personnes",
+    "duration": "{{n}} min",
+    "addActivity": "Ajouter une activité (+{{price}})"
+  },
+  "step4": {
+    "title": "Détails du séjour",
+    "fullName": "Nom complet",
+    "phone": "Numéro de téléphone",
+    "phoneHint": "Format : 0X XX XX XX XX",
+    "guests": "Nombre de personnes",
+    "adults": "Adultes",
+    "children": "Enfants (-12 ans)",
+    "specialRequests": "Demandes particulières",
+    "specialRequestsPlaceholder": "Allergies alimentaires, célébration, animal de compagnie…",
+    "redeemLoyalty": "Utiliser {{points}} points (-{{discount}} DA)"
+  },
+  "step5": {
+    "title": "Paiement",
+    "subtitle": "Choisissez votre mode de paiement.",
+    "baridi": {
+      "title": "BaridiMob (CCP)",
+      "body": "Transfert depuis votre compte CCP. Confirmation manuelle sous 2h."
+    },
+    "cib": {
+      "title": "Carte CIB",
+      "body": "Paiement sécurisé via la passerelle GIE Monétique."
+    },
+    "cash": {
+      "title": "Payer sur place",
+      "body": "Réservé aux clients fidèles. Sur autorisation administrateur."
+    },
+    "instructions": {
+      "baridi": "Effectuez le virement vers le CCP {{ccp}} avec la référence {{ref}}. Vous recevrez un message WhatsApp dès confirmation.",
+      "total": "Total à payer",
+      "deposit": "Acompte (30%)",
+      "balance": "Solde à l'arrivée"
+    }
+  },
+  "step6": {
+    "title": "Réservation enregistrée !",
+    "subtitle": "Votre demande est en attente de confirmation de paiement.",
+    "reference": "Référence",
+    "qrInstructions": "Présentez ce code QR à l'accueil pour faciliter votre arrivée.",
+    "downloadQr": "Télécharger le QR",
+    "addCalendar": "Ajouter au calendrier",
+    "whatsapp": "Confirmation WhatsApp envoyée au {{phone}}",
+    "loyaltyEarned": "Vous gagnerez {{points}} points fidélité après votre séjour.",
+    "newBooking": "Faire une nouvelle réservation"
   }
 }

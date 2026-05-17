@@ -1,27 +1,25 @@
 {
-  "accommodation": {
-    "listTitle": "أماكن الإقامة",
-    "listSubtitle": "من البساطة الدافئة إلى الغلامبينغ تحت النجوم.",
-    "filters": {
-      "all": "الكل",
-      "chalet": "أكواخ",
-      "tent": "خيام",
-      "glamping": "غلامبينغ"
-    },
-    "details": {
-      "amenities": "التجهيزات",
-      "capacity": "السعة",
-      "priceWeekday": "أيام الأسبوع",
-      "priceWeekend": "نهاية الأسبوع",
-      "priceHoliday": "العطل",
-      "perNight": "في الليلة",
-      "bookFromHere": "احجز هذه الإقامة",
-      "similar": "إقامات مشابهة"
-    },
-    "types": {
-      "chalet": "كوخ",
-      "tent": "خيمة",
-      "glamping": "غلامبينغ"
-    }
+  "listTitle": "أماكن الإقامة",
+  "listSubtitle": "من البساطة الدافئة إلى الغلامبينغ تحت النجوم.",
+  "filters": {
+    "all": "الكل",
+    "chalet": "أكواخ",
+    "tent": "خيام",
+    "glamping": "غلامبينغ"
+  },
+  "details": {
+    "amenities": "التجهيزات",
+    "capacity": "السعة",
+    "priceWeekday": "أيام الأسبوع",
+    "priceWeekend": "نهاية الأسبوع",
+    "priceHoliday": "العطل",
+    "perNight": "في الليلة",
+    "bookFromHere": "احجز هذه الإقامة",
+    "similar": "إقامات مشابهة"
+  },
+  "types": {
+    "chalet": "كوخ",
+    "tent": "خيمة",
+    "glamping": "غلامبينغ"
   }
 }

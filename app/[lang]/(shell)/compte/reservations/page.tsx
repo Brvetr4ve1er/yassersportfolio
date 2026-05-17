@@ -14,9 +14,9 @@ export default async function ReservationsPage({
   params: { lang: Locale };
 }) {
   const dict = (await getDictionary(params.lang, ["account"])) as {
-    account: { account: { reservations: { title: string; upcoming: string; past: string; cancelled: string; empty: string } } };
+    account: { reservations: { title: string; upcoming: string; past: string; cancelled: string; empty: string } };
   };
-  const t = dict.account.account.reservations;
+  const t = dict.account.reservations;
   const today = new Date().toISOString().slice(0, 10);
 
   const upcoming = mockBookings.filter(

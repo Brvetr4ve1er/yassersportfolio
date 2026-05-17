@@ -13,9 +13,9 @@ export default async function AccountDashboardPage({
   params: { lang: Locale };
 }) {
   const dict = (await getDictionary(params.lang, ["account"])) as {
-    account: { account: { dashboard: { title: string; subtitle: string; upcoming: string; loyalty: string } } };
+    account: { dashboard: { title: string; subtitle: string; upcoming: string; loyalty: string } };
   };
-  const d = dict.account.account.dashboard;
+  const d = dict.account.dashboard;
   const upcoming = mockBookings.find(
     (b) => b.status === "confirmed" && b.check_in >= new Date().toISOString().slice(0, 10),
   );

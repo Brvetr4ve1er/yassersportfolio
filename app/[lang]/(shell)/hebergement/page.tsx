@@ -9,9 +9,9 @@ export default async function AccommodationListPage({
   params: { lang: Locale };
 }) {
   const dict = (await getDictionary(params.lang, ["accommodation"])) as {
-    accommodation: { accommodation: { listTitle: string; listSubtitle: string } };
+    accommodation: { listTitle: string; listSubtitle: string };
   };
-  const t = dict.accommodation.accommodation;
+  const t = dict.accommodation;
 
   return (
     <div className="container py-12">

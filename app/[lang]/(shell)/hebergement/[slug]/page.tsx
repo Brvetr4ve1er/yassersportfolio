@@ -23,20 +23,16 @@ export default async function AccommodationDetailPage({
 
   const dict = (await getDictionary(params.lang, ["accommodation", "common"])) as {
     accommodation: {
-      accommodation: {
-        details: Record<string, string>;
-        types: Record<string, string>;
-      };
+      details: Record<string, string>;
+      types: Record<string, string>;
     };
     common: {
-      common: {
-        amenities: Record<string, string>;
-        cta: Record<string, string>;
-      };
+      amenities: Record<string, string>;
+      cta: Record<string, string>;
     };
   };
-  const a = dict.accommodation.accommodation;
-  const c = dict.common.common;
+  const a = dict.accommodation;
+  const c = dict.common;
   const name = params.lang === "ar" ? item.name_ar : item.name_fr;
   const description = params.lang === "ar" ? item.description_ar : item.description_fr;
 
