@@ -4,18 +4,22 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin } from "lucide-react";
 import { BrandMark } from "@/components/brand/BrandMark";
+import { MagneticButton } from "@/components/motion/MagneticButton";
+import { RevealText } from "@/components/motion/RevealText";
 
 /**
  * CinematicHero — golden-hour atmospheric stage.
  *
- * Family-warm, not noir. The backdrop suggests late afternoon light
- * filtering through olive trees rather than midnight cinema. A trilingual
- * tag-line tells every visitor — French, English, Arabic speaker — that
- * this place was built for them.
+ * Family-warm, not noir. Word-by-word reveal on the display headline.
+ * Magnetic primary CTA. Trilingual welcome strip tells every visitor —
+ * French, English, Arabic speaker — that this place was built for them.
  */
 export function CinematicHero({ locale }: { locale: string }) {
   return (
-    <section className="relative isolate flex min-h-[94vh] flex-col overflow-hidden bg-terracotta text-cream">
+    <section
+      id="chapter-00"
+      className="relative isolate flex min-h-[94vh] flex-col overflow-hidden bg-terracotta text-cream"
+    >
       {/* Backdrop — warm photo zone with slow drift */}
       <div className="absolute inset-0 -z-10">
         <div className="photo-zone photo-zone--orchard ken-burns absolute inset-0" />
@@ -93,40 +97,47 @@ export function CinematicHero({ locale }: { locale: string }) {
         </motion.div>
 
         <div className="grid items-end gap-10 md:grid-cols-12">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-            className="md:col-span-9"
-          >
-            <h1 className="display-serif text-stage text-cream">
+          <div className="md:col-span-9">
+            <RevealText
+              as="h1"
+              className="display-serif text-stage text-cream"
+              stagger={0.07}
+              delay={0.2}
+            >
               <span className="block">Trois générations,</span>
               <span className="block italic text-bronze">
                 un seul ciel.
               </span>
-            </h1>
+            </RevealText>
 
-            <p className="mt-8 max-w-2xl text-base leading-relaxed text-cream/80 md:text-lg">
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 1.1 }}
+              className="mt-8 max-w-2xl text-base leading-relaxed text-cream/80 md:text-lg"
+            >
               Vingt-cinq hectares de vergers, d'écuries et de rires d'enfants —
               à trente minutes de Constantine, ouverts toute l'année à toutes
               les familles. Une vraie maison, pas un hôtel.
-            </p>
-          </motion.div>
+            </motion.p>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.7 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 1.3 }}
             className="md:col-span-3 md:text-end"
           >
             <div className="flex flex-col items-start gap-3 md:items-end">
-              <Link
+              <MagneticButton
                 href={`/${locale}/reservation`}
-                className="group inline-flex items-center gap-3 rounded-full bg-bronze px-6 py-3.5 text-[11px] uppercase tracking-[0.22em] text-terracotta transition hover:bg-cream"
+                strength={0.4}
+                radius={120}
+                className="group inline-flex items-center gap-3 rounded-full bg-bronze px-7 py-3.5 text-[11px] uppercase tracking-[0.22em] text-terracotta transition-colors hover:bg-cream"
               >
                 <span>Réserver vos nuits</span>
                 <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
-              </Link>
+              </MagneticButton>
               <Link
                 href={`/${locale}/hebergement`}
                 className="text-[10px] uppercase tracking-[0.22em] text-cream/55 hover:text-cream"

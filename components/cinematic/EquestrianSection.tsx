@@ -14,7 +14,10 @@ import { BrandMark } from "@/components/brand/BrandMark";
  */
 export function EquestrianSection({ locale }: { locale: string }) {
   return (
-    <section className="relative isolate overflow-hidden bg-terracotta text-cream">
+    <section
+      id="chapter-03"
+      className="relative isolate overflow-hidden bg-terracotta text-cream"
+    >
       {/* Full bleed atmospheric backdrop */}
       <div className="absolute inset-0 -z-10">
         <div className="photo-zone photo-zone--equestrian absolute inset-0" />

@@ -51,7 +51,10 @@ const MOMENTS = [
 
 export function PhilosophySection() {
   return (
-    <section className="relative bg-terracotta py-32 text-cream md:py-44">
+    <section
+      id="chapter-05"
+      className="relative bg-terracotta py-32 text-cream md:py-44"
+    >
       <div className="container">
         <div className="mb-20 grid items-end gap-8 md:grid-cols-12">
           <div className="md:col-span-7">

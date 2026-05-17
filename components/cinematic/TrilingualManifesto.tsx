@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { BrandMark } from "@/components/brand/BrandMark";
+import { RevealText } from "@/components/motion/RevealText";
 
 /**
  * 01 · The Manifesto — the centerpiece of the homepage.
@@ -61,7 +62,7 @@ const ESSAYS = [
 export function TrilingualManifesto() {
   return (
     <section
-      id="manifesto"
+      id="chapter-01"
       className="relative bg-sunlit-noon py-28 text-terracotta md:py-40"
     >
       {/* Sun glow */}
@@ -105,24 +106,26 @@ export function TrilingualManifesto() {
             </span>
           </motion.div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: 0.3 }}
+          <RevealText
+            as="h2"
             className="display-serif mt-6 max-w-3xl text-terracotta"
-            style={{
-              fontSize: "clamp(2.5rem, 6vw, 5.5rem)",
-              lineHeight: "0.95",
-              letterSpacing: "-0.025em",
-              fontWeight: 300,
-            }}
+            stagger={0.06}
           >
-            Trois générations.
-            <span className="block italic text-clay-600">
-              Un seul ciel.
+            <span
+              style={{
+                fontSize: "clamp(2.5rem, 6vw, 5.5rem)",
+                lineHeight: "0.95",
+                letterSpacing: "-0.025em",
+                fontWeight: 300,
+                display: "block",
+              }}
+            >
+              Trois générations.
+              <span className="block italic text-clay-600">
+                Un seul ciel.
+              </span>
             </span>
-          </motion.h2>
+          </RevealText>
 
           <motion.p
             initial={{ opacity: 0 }}

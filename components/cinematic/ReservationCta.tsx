@@ -4,6 +4,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { BrandMark } from "@/components/brand/BrandMark";
+import { MagneticButton } from "@/components/motion/MagneticButton";
+import { RevealText } from "@/components/motion/RevealText";
 
 /**
  * 08 · Réservation — the closing invitation.
@@ -23,7 +25,10 @@ const PROMISES = [
 
 export function ReservationCta({ locale }: { locale: string }) {
   return (
-    <section className="relative isolate overflow-hidden text-cream">
+    <section
+      id="chapter-08"
+      className="relative isolate overflow-hidden text-cream"
+    >
       <div className="absolute inset-0 -z-10">
         <div className="photo-zone photo-zone--orchard absolute inset-0 ken-burns" />
         <div
@@ -50,20 +55,26 @@ export function ReservationCta({ locale }: { locale: string }) {
               <span className="h-px w-12 bg-bronze/60" />
             </div>
 
-            <h2
+            <RevealText
+              as="h2"
               className="display-serif text-cream"
-              style={{
-                fontSize: "clamp(3rem, 8.5vw, 7rem)",
-                lineHeight: "0.92",
-                letterSpacing: "-0.03em",
-                fontWeight: 300,
-              }}
+              stagger={0.06}
             >
-              Réservez les vacances
-              <span className="block italic text-bronze">
-                qu'ils raconteront.
+              <span
+                style={{
+                  fontSize: "clamp(3rem, 8.5vw, 7rem)",
+                  lineHeight: "0.92",
+                  letterSpacing: "-0.03em",
+                  fontWeight: 300,
+                  display: "block",
+                }}
+              >
+                Réservez les vacances
+                <span className="block italic text-bronze">
+                  qu'ils raconteront.
+                </span>
               </span>
-            </h2>
+            </RevealText>
 
             <p className="mx-auto max-w-2xl text-base leading-relaxed text-cream/85 md:text-lg">
               Une vraie maison vous attend, ouverte à toutes les familles
@@ -89,15 +100,17 @@ export function ReservationCta({ locale }: { locale: string }) {
             </ul>
 
             <div className="flex flex-col items-center gap-6 pt-4">
-              <Link
+              <MagneticButton
                 href={`/${locale}/reservation`}
-                className="group relative inline-flex items-center gap-4 rounded-full border border-bronze bg-bronze px-10 py-4 text-[11px] uppercase tracking-[0.22em] text-terracotta transition hover:bg-cream hover:border-cream"
+                strength={0.45}
+                radius={140}
+                className="group relative inline-flex items-center gap-4 rounded-full border border-bronze bg-bronze px-10 py-4 text-[11px] uppercase tracking-[0.22em] text-terracotta transition-colors hover:bg-cream hover:border-cream"
               >
                 Commencer la réservation
                 <span className="transition-transform group-hover:translate-x-1 rtl:rotate-180">
                   →
                 </span>
-              </Link>
+              </MagneticButton>
 
               <div className="flex flex-wrap items-center justify-center gap-6 text-[10px] uppercase tracking-[0.22em] text-cream/55">
                 <Link

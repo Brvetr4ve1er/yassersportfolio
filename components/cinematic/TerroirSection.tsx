@@ -48,7 +48,10 @@ const PASSAGES = [
 
 export function TerroirSection({ locale }: { locale: string }) {
   return (
-    <section className="relative bg-sunlit-noon py-32 text-terracotta md:py-44">
+    <section
+      id="chapter-04"
+      className="relative bg-sunlit-noon py-32 text-terracotta md:py-44"
+    >
       {/* Sun glow */}
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-64"

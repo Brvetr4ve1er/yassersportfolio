@@ -42,7 +42,10 @@ const FAMILIES = [
 
 export function CinematicTestimonials() {
   return (
-    <section className="relative bg-terracotta py-32 text-cream md:py-44">
+    <section
+      id="chapter-07"
+      className="relative bg-terracotta py-32 text-cream md:py-44"
+    >
       <div className="container">
         <div className="mb-20 max-w-3xl">
           <div className="mb-6 flex items-center gap-4">

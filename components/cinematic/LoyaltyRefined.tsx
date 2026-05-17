@@ -35,7 +35,10 @@ const TIERS = [
 
 export function LoyaltyRefined({ locale }: { locale: string }) {
   return (
-    <section className="relative bg-sunlit-noon py-32 text-terracotta md:py-44">
+    <section
+      id="chapter-06"
+      className="relative bg-sunlit-noon py-32 text-terracotta md:py-44"
+    >
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-64"
         style={{

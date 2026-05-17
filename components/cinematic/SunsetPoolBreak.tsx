@@ -15,7 +15,10 @@ import { motion } from "framer-motion";
  */
 export function SunsetPoolBreak({ locale }: { locale: string }) {
   return (
-    <section className="relative isolate overflow-hidden text-cream">
+    <section
+      id="chapter-pool"
+      className="relative isolate overflow-hidden text-cream"
+    >
       {/* Atmospheric sunset backdrop */}
       <div className="absolute inset-0 -z-10">
         <div className="photo-zone photo-zone--sunset absolute inset-0 ken-burns" />

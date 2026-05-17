@@ -2,7 +2,7 @@ import { CinematicHeader } from "@/components/layout/CinematicHeader";
 import { CinematicFooter } from "@/components/layout/CinematicFooter";
 import { CinematicHero } from "@/components/cinematic/CinematicHero";
 import { TrilingualManifesto } from "@/components/cinematic/TrilingualManifesto";
-import { AccommodationsEditorial } from "@/components/cinematic/AccommodationsEditorial";
+import { AccommodationsHoverPreview } from "@/components/cinematic/AccommodationsHoverPreview";
 import { EquestrianSection } from "@/components/cinematic/EquestrianSection";
 import { SunsetPoolBreak } from "@/components/cinematic/SunsetPoolBreak";
 import { TerroirSection } from "@/components/cinematic/TerroirSection";
@@ -11,48 +11,95 @@ import { LoyaltyRefined } from "@/components/cinematic/LoyaltyRefined";
 import { CinematicTestimonials } from "@/components/cinematic/CinematicTestimonials";
 import { ReservationCta } from "@/components/cinematic/ReservationCta";
 import { MobileNav } from "@/components/layout/MobileNav";
+import { SmoothScrollProvider } from "@/components/motion/SmoothScrollProvider";
+import { ChapterProgressRail } from "@/components/motion/ChapterProgressRail";
+import { Marquee } from "@/components/motion/Marquee";
+import { CursorSpotlight } from "@/components/motion/CursorSpotlight";
 import type { Locale } from "@/lib/i18n/config";
 
+const CHAPTERS = [
+  { id: "chapter-00", num: "00", label: "Accueil" },
+  { id: "chapter-01", num: "01", label: "Bienvenue" },
+  { id: "chapter-02", num: "02", label: "Les maisons" },
+  { id: "chapter-03", num: "03", label: "L'écurie" },
+  { id: "chapter-pool", num: "·", label: "Sunset Pool" },
+  { id: "chapter-04", num: "04", label: "Le terroir" },
+  { id: "chapter-05", num: "05", label: "Une journée" },
+  { id: "chapter-06", num: "06", label: "Fidélité" },
+  { id: "chapter-07", num: "07", label: "Les familles" },
+  { id: "chapter-08", num: "08", label: "Réserver" },
+];
+
+const MARQUEE_KEYWORDS = [
+  "Hébergement",
+  "Équitation",
+  "Vergers",
+  "La table",
+  "Étoiles fidélité",
+  "Ruches d'abeilles",
+  "Sunset Pool",
+  "Quad",
+  "Camping",
+  "Familles bienvenues",
+];
+
 /**
- * The cinematic homepage — family-warm, multi-generational, trilingual.
+ * The cinematic homepage — Tier 1 motion upgrade.
  *
- * Eight chapters, paced like a film about a family weekend. Lives outside
- * the (shell) route group so it bypasses the standard light chrome and
- * renders its own warm cinematic chrome.
- *
- * Pacing alternates warm sunlit cream chapters with darker terracotta
- * passages, so the experience feels like a slideshow of golden-hour
- * memories rather than a uniform mood piece.
- *
- *  00 — Hero (warm golden-hour stage, trilingual welcome strip)
- *  01 — Trilingual manifesto (FR / EN / AR side by side — the centerpiece)
- *  02 — Les maisons (accommodations as family rooms for tribes)
- *  03 — L'écurie (children's first horse rides)
- *   ·  — Sunset Pool (kids by day, parents by evening)
- *  04 — Le terroir (verger → midi → table, traceable in one day)
- *  05 — Une journée chez nous (timeline of a family day, dawn to stars)
- *  06 — Étoiles fidélité (the maison's register, refined)
- *  07 — Les familles (multi-generational testimonials)
- *  08 — Réservation (closing invitation, concrete promises)
+ *  · Lenis momentum scroll throughout
+ *  · Fixed chapter progress rail on the right edge
+ *  · Word-by-word headline reveals on every chapter
+ *  · Magnetic CTAs (hero + reservation)
+ *  · Cursor spotlight on dark terracotta passages
+ *  · Marquee strip between hero and manifesto
+ *  · Hover-driven accommodation preview (replaces static grid)
  */
 export default function HomePage({ params }: { params: { lang: Locale } }) {
   return (
-    <div className="theme-cinematic bg-terracotta text-cream">
-      <CinematicHeader locale={params.lang} />
-      <main>
-        <CinematicHero locale={params.lang} />
-        <TrilingualManifesto />
-        <AccommodationsEditorial locale={params.lang} />
-        <EquestrianSection locale={params.lang} />
-        <SunsetPoolBreak locale={params.lang} />
-        <TerroirSection locale={params.lang} />
-        <PhilosophySection />
-        <LoyaltyRefined locale={params.lang} />
-        <CinematicTestimonials />
-        <ReservationCta locale={params.lang} />
-      </main>
-      <CinematicFooter locale={params.lang} />
-      <MobileNav locale={params.lang} />
-    </div>
+    <SmoothScrollProvider>
+      <div className="theme-cinematic bg-terracotta text-cream">
+        <CinematicHeader locale={params.lang} />
+        <ChapterProgressRail chapters={CHAPTERS} />
+        <main>
+          <CinematicHero locale={params.lang} />
+
+          {/* Kinetic strip — bridges hero into the manifesto */}
+          <div className="relative bg-terracotta-dark border-y border-bronze/20">
+            <Marquee
+              items={MARQUEE_KEYWORDS}
+              duration={50}
+              separator="✦"
+              tone="bronze"
+            />
+          </div>
+
+          <TrilingualManifesto />
+          <AccommodationsHoverPreview locale={params.lang} />
+
+          <CursorSpotlight color="rgba(201, 163, 91, 0.32)" size={520}>
+            <EquestrianSection locale={params.lang} />
+          </CursorSpotlight>
+
+          <SunsetPoolBreak locale={params.lang} />
+          <TerroirSection locale={params.lang} />
+
+          <CursorSpotlight color="rgba(201, 163, 91, 0.28)" size={480}>
+            <PhilosophySection />
+          </CursorSpotlight>
+
+          <LoyaltyRefined locale={params.lang} />
+
+          <CursorSpotlight color="rgba(201, 163, 91, 0.28)" size={500}>
+            <CinematicTestimonials />
+          </CursorSpotlight>
+
+          <CursorSpotlight color="rgba(245, 162, 109, 0.30)" size={600}>
+            <ReservationCta locale={params.lang} />
+          </CursorSpotlight>
+        </main>
+        <CinematicFooter locale={params.lang} />
+        <MobileNav locale={params.lang} />
+      </div>
+    </SmoothScrollProvider>
   );
 }
