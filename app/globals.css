@@ -149,6 +149,10 @@
       radial-gradient(ellipse 75% 60% at 30% 30%, rgba(245, 200, 130, 0.55), transparent 60%),
       radial-gradient(ellipse 65% 70% at 80% 75%, rgba(181, 110, 60, 0.45), transparent 60%),
       linear-gradient(180deg, #5a3625 0%, #3d2418 60%, #28160e 100%);
+    /* Promote to its own compositor layer to keep gradients sharp during
+       transform animations (Ken-Burns, page scroll) */
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 
   .photo-zone::after {
@@ -244,9 +248,18 @@
     font-weight: 300;
   }
 
-  /* Slow Ken-Burns-style scaling for hero imagery */
+  /* Slow Ken-Burns-style scaling for hero imagery — GPU-accelerated */
   .ken-burns {
     animation: slow-zoom 24s ease-out infinite alternate;
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
+  /* Reduced-motion: disable all animation-based motion */
+  .reduce-motion .ken-burns,
+  .reduce-motion .animate-slow-zoom,
+  .reduce-motion .animate-shimmer {
+    animation: none !important;
   }
 
   /* Grain overlay — for full bleed photographic sections */

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Clock } from "lucide-react";
+import { TiltCard } from "@/components/motion/TiltCard";
 
 /**
  * 04 · Du verger à la table — the day's harvest, the night's dinner.
@@ -111,9 +112,20 @@ export function TerroirSection({ locale }: { locale: string }) {
               }}
             >
               <Link href={`/${locale}${p.href}`} className="group block">
-                <div
-                  className={`relative aspect-[4/5] overflow-hidden rounded-sm ${p.photoClass}`}
+                <TiltCard
+                  maxTilt={4}
+                  hoverScale={1.02}
+                  hoverLift={-6}
+                  className={`relative aspect-[4/5] overflow-hidden rounded-sm shadow-2xl shadow-terracotta-dark/30 ${p.photoClass}`}
                 >
+                  {/* Inner zoom layer — the gradient image breathes on hover */}
+                  <motion.div
+                    className={`absolute inset-0 ${p.photoClass}`}
+                    style={{ willChange: "transform" }}
+                    whileHover={{ scale: 1.06 }}
+                    transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                  />
+
                   {/* Chapter numeral */}
                   <span className="absolute end-5 top-5 z-10 font-serif text-4xl font-light italic text-bronze">
                     {p.chapter}
@@ -143,7 +155,7 @@ export function TerroirSection({ locale }: { locale: string }) {
                       {p.enTitle}
                     </p>
                   </div>
-                </div>
+                </TiltCard>
                 <p className="mt-5 max-w-md text-sm leading-relaxed text-terracotta/70">
                   {p.body}
                 </p>

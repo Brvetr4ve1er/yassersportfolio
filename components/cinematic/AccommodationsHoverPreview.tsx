@@ -7,6 +7,7 @@ import { useState } from "react";
 import { mockAccommodations } from "@/lib/data/mock";
 import { formatCurrency } from "@/lib/i18n/format";
 import { RevealText } from "@/components/motion/RevealText";
+import { TiltCard } from "@/components/motion/TiltCard";
 import { cn } from "@/lib/utils";
 import type { Locale } from "@/types/domain";
 
@@ -191,14 +192,18 @@ export function AccommodationsHoverPreview({ locale }: { locale: Locale }) {
           {/* Shared preview */}
           <div className="md:col-span-6">
             <div className="sticky top-28">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
+              <motion.div
+                whileHover={{ scale: 1.015 }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                className="relative aspect-[4/5] overflow-hidden rounded-sm shadow-2xl shadow-terracotta-dark/40"
+              >
                 <AnimatePresence mode="sync">
                   <motion.div
                     key={active.id}
-                    initial={{ opacity: 0, scale: 1.04 }}
+                    initial={{ opacity: 0, scale: 1.06 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.98 }}
-                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
                     className={cn(
                       "absolute inset-0",
                       VARIANTS[active.id] ?? "photo-zone",
@@ -238,12 +243,12 @@ export function AccommodationsHoverPreview({ locale }: { locale: Locale }) {
                     </div>
                   </motion.div>
                 </AnimatePresence>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
 
-        {/* MOBILE : stacked cards */}
+        {/* MOBILE : stacked cards (with tilt on tablets that report mouse) */}
         <div className="grid gap-10 md:hidden">
           {items.map((item, idx) => {
             const name = locale === "ar" ? item.name_ar : item.name_fr;
@@ -253,8 +258,11 @@ export function AccommodationsHoverPreview({ locale }: { locale: Locale }) {
                 href={`/${locale}/hebergement/${item.slug}`}
                 className="block"
               >
-                <div
-                  className={`relative aspect-[4/5] overflow-hidden rounded-sm ${VARIANTS[item.id]}`}
+                <TiltCard
+                  maxTilt={3}
+                  hoverScale={1.015}
+                  hoverLift={-2}
+                  className={`relative aspect-[4/5] overflow-hidden rounded-sm shadow-xl shadow-terracotta-dark/30 ${VARIANTS[item.id]}`}
                 >
                   <span className="absolute end-4 top-4 z-10 font-serif text-2xl font-light italic text-bronze">
                     {PLATES[idx]}
@@ -289,7 +297,7 @@ export function AccommodationsHoverPreview({ locale }: { locale: Locale }) {
                       </span>
                     </div>
                   </div>
-                </div>
+                </TiltCard>
               </Link>
             );
           })}
