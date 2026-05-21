@@ -34,6 +34,7 @@ export function CinematicHeader({ locale }: { locale: Locale }) {
     { href: `/${locale}/activites`, label: t("common.nav.activities") },
     { href: `/${locale}/packages`, label: t("common.nav.packages") },
     { href: `/${locale}/restaurant`, label: t("common.nav.restaurant") },
+    { href: `/${locale}/carte`, label: locale === "ar" ? "الخريطة" : locale === "en" ? "Map" : "Carte" },
     { href: `/${locale}/galerie`, label: t("common.nav.gallery") },
   ];
 

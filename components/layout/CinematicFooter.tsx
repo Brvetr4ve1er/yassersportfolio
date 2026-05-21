@@ -88,6 +88,14 @@ export function CinematicFooter({ locale }: { locale: Locale }) {
                   </li>
                   <li>
                     <Link
+                      href={`/${locale}/carte`}
+                      className="text-cream/70 hover:text-cream"
+                    >
+                      Plan du domaine
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       href={`/${locale}/galerie`}
                       className="text-cream/70 hover:text-cream"
                     >
