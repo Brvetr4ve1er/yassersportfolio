@@ -4,16 +4,24 @@
  * plates, and the dual-button CTA on the homepage.
  */
 import { chromium } from "playwright-core";
+import { existsSync } from "node:fs";
 import { mkdirSync, readdirSync, renameSync } from "node:fs";
 
-const CHROME = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome";
+// Portable Chromium resolution:
+//  1. PLAYWRIGHT_CHROME_PATH env var, if set
+//  2. the sandbox bundled Chromium, if present
+//  3. undefined → Playwright resolves its own (run `npx playwright install chromium`)
+const SANDBOX_CHROME = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome";
+const CHROME =
+  process.env.PLAYWRIGHT_CHROME_PATH ||
+  (existsSync(SANDBOX_CHROME) ? SANDBOX_CHROME : undefined);
 const BASE = "http://localhost:3000";
 const OUT = "/tmp/etoile-video";
 
 mkdirSync(OUT, { recursive: true });
 
 const browser = await chromium.launch({
-  executablePath: CHROME,
+  ...(CHROME ? { executablePath: CHROME } : {}),
   args: ["--no-sandbox", "--disable-dev-shm-usage"],
 });
 

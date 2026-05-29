@@ -22,15 +22,44 @@ are absent.
 - **react-hook-form + Zod** for form validation
 - **qrcode** for QR generation · **@zxing/browser** for camera scanning
 
-## Quick start
+## Quick start (local development)
+
+Requirements: **Node 20+** (a `.nvmrc` pins 20 — run `nvm use` if you use nvm), npm 10+, git.
 
 ```bash
+# 1. Clone + switch to the working branch
+git clone https://github.com/Brvetr4ve1er/yassersportfolio.git
+cd yassersportfolio
+git checkout claude/build-tourism-pwa-LO512
+
+# 2. Match the Node version (optional, if you use nvm)
+nvm use            # reads .nvmrc → Node 20
+
+# 3. Environment — defaults work offline; the app runs in mock mode
+cp .env.example .env.local
+
+# 4. Install (~860 packages)
 npm install
-cp .env.example .env.local      # fill values as you wire each service
-npm run dev                     # → http://localhost:3000
+
+# 5. Run the dev server
+npm run dev        # → http://localhost:3000  (redirects to /fr)
 ```
 
-The root path redirects to `/fr` (French is the default; Arabic is at `/ar`).
+The root path redirects to `/fr` (default). Other locales: `/en`, `/ar` (RTL).
+
+To preview with the PWA service worker actually registering (it's disabled in `next dev`):
+
+```bash
+npm run build && npm run start
+```
+
+### Filling in real services (optional)
+
+The app runs fully in **mock mode** with an empty `.env.local`. Wire services incrementally by filling these in `.env.local`:
+
+- `NEXT_PUBLIC_WHATSAPP_BOOKING` / `NEXT_PUBLIC_WHATSAPP_POOL` — the wa.me booking numbers (digits only, e.g. `213XXXXXXXXX`)
+- `NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_ANON_KEY` — to swap mock data for the real database (see `supabase/README.md`)
+- Everything else is documented in `.env.example` and `docs/TECHNICAL_SHEET.md`
 
 ## Project layout
 
