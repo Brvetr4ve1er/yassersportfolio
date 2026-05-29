@@ -6,7 +6,6 @@ import { ZoneInfoSheet } from "./ZoneInfoSheet";
 import { CATEGORY_STYLE, COMPLEX_ZONES } from "@/lib/data/complex-zones";
 import type { ZoneCategory } from "@/lib/data/complex-zones";
 import type { Locale } from "@/types/domain";
-import { cn } from "@/lib/utils";
 
 /**
  * ComplexMapView — client wrapper that owns the active-zone state.

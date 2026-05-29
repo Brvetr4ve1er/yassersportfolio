@@ -8,6 +8,7 @@ import { mockAccommodations } from "@/lib/data/mock";
 import { formatCurrency } from "@/lib/i18n/format";
 import { RevealText } from "@/components/motion/RevealText";
 import { TiltCard } from "@/components/motion/TiltCard";
+import { ArrowCircle } from "@/components/ui/arrow-circle";
 import { cn } from "@/lib/utils";
 import type { Locale } from "@/types/domain";
 
@@ -306,10 +307,12 @@ export function AccommodationsHoverPreview({ locale }: { locale: Locale }) {
         <div className="mt-24 flex flex-col items-center gap-4">
           <Link
             href={`/${locale}/hebergement`}
-            className="group inline-flex items-center gap-3 border-b border-clay-600 pb-1 text-[11px] uppercase tracking-[0.22em] text-clay-700 transition-colors hover:text-terracotta"
+            className="group inline-flex items-center gap-4 text-[11px] uppercase tracking-[0.22em] text-clay-700 transition-colors hover:text-terracotta"
           >
-            <span>Voir toutes les maisons</span>
-            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 rtl:rotate-180" />
+            <span className="border-b border-clay-600 pb-1">
+              Voir toutes les maisons
+            </span>
+            <ArrowCircle size="sm" tone="terracotta" />
           </Link>
           <p className="text-[11px] uppercase tracking-[0.22em] text-terracotta/50">
             106 lits · Familles de 2 à 12 personnes
