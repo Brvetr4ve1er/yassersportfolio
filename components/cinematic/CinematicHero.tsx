@@ -6,6 +6,7 @@ import { ArrowRight, MapPin } from "lucide-react";
 import { BrandMark } from "@/components/brand/BrandMark";
 import { MagneticButton } from "@/components/motion/MagneticButton";
 import { RevealText } from "@/components/motion/RevealText";
+import { StatBlock } from "@/components/ui/stat-block";
 
 /**
  * CinematicHero — golden-hour atmospheric stage.
@@ -153,7 +154,7 @@ export function CinematicHero({ locale }: { locale: string }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.9 }}
-          className="mt-16 grid grid-cols-2 gap-6 border-t border-bronze/25 pt-7 text-cream/85 sm:grid-cols-4"
+          className="mt-16 grid grid-cols-2 gap-6 border-t border-bronze/25 pt-7 sm:grid-cols-4"
         >
           {[
             { v: "25", l: "Hectares", s: "Vergers · écuries · piscine" },
@@ -161,17 +162,13 @@ export function CinematicHero({ locale }: { locale: string }) {
             { v: "12", l: "Activités", s: "Équitation à quad" },
             { v: "37", l: "Ans", s: "Ouvert depuis 1989" },
           ].map((s) => (
-            <div key={s.l}>
-              <div className="font-serif text-3xl font-light text-cream md:text-4xl">
-                {s.v}
-              </div>
-              <div className="mt-1 text-[10px] uppercase tracking-[0.22em] text-bronze">
-                {s.l}
-              </div>
-              <div className="mt-0.5 hidden text-[10px] text-cream/45 md:block">
-                {s.s}
-              </div>
-            </div>
+            <StatBlock
+              key={s.l}
+              value={s.v}
+              label={s.l}
+              sublabel={s.s}
+              tone="dark"
+            />
           ))}
         </motion.div>
       </div>

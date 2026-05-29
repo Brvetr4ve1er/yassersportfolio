@@ -8,6 +8,7 @@ import { Minus, Plus } from "lucide-react";
 import { useI18n } from "@/components/i18n/I18nProvider";
 import { mockUser } from "@/lib/data/mock";
 import { LOYALTY_DISCOUNT_DZD, LOYALTY_DISCOUNT_POINTS } from "@/lib/booking/pricing";
+import { guestDetailsSchema } from "@/lib/booking/validation";
 import { cn } from "@/lib/utils";
 import type { BookingDraft } from "@/lib/booking/types";
 import type { Locale } from "@/types/domain";
@@ -26,6 +27,21 @@ export function Step4Guests({
 }) {
   const { t } = useI18n();
   const canRedeem = mockUser.loyalty_points >= LOYALTY_DISCOUNT_POINTS;
+
+  // Validate against the shared Zod schema so the phone format is actually
+  // enforced (Algerian +213 / 0X numbers) rather than just "non-empty".
+  const validation = guestDetailsSchema.safeParse({
+    fullName: draft.fullName,
+    phone: draft.phone,
+    guests: draft.guests,
+    adults: draft.adults,
+    children: draft.children,
+    specialRequests: draft.specialRequests,
+  });
+  const phoneError =
+    !validation.success && draft.phone.length > 0
+      ? validation.error.issues.find((i) => i.path[0] === "phone")?.message
+      : undefined;
 
   const counter = (label: string, value: number, onChange: (n: number) => void, min = 0) => (
     <div className="flex items-center justify-between rounded-lg border border-border/60 bg-card p-3">
@@ -76,8 +92,17 @@ export function Step4Guests({
             onChange={(e) => update({ phone: e.target.value })}
             placeholder="0555 12 34 56"
             inputMode="tel"
+            aria-invalid={phoneError ? "true" : undefined}
+            className={cn(phoneError && "border-danger focus-visible:ring-danger")}
           />
-          <p className="text-xs text-muted-foreground">{t("booking.step4.phoneHint")}</p>
+          <p
+            className={cn(
+              "text-xs",
+              phoneError ? "text-danger" : "text-muted-foreground",
+            )}
+          >
+            {phoneError ?? t("booking.step4.phoneHint")}
+          </p>
         </div>
       </div>
 
@@ -135,11 +160,7 @@ export function Step4Guests({
         <Button variant="ghost" onClick={back}>
           {t("common.cta.back")}
         </Button>
-        <Button
-          variant="gold"
-          onClick={next}
-          disabled={!draft.fullName || !draft.phone || draft.adults < 1}
-        >
+        <Button variant="gold" onClick={next} disabled={!validation.success}>
           {t("common.cta.next")}
         </Button>
       </div>

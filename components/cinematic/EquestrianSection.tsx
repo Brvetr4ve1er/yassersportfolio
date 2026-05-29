@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { BrandMark } from "@/components/brand/BrandMark";
+import { SectionIndex } from "@/components/ui/section-index";
+import { StatBlock } from "@/components/ui/stat-block";
 
 /**
  * 03 · L'écurie — the family heart.
@@ -39,25 +41,9 @@ export function EquestrianSection({ locale }: { locale: string }) {
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="space-y-8 md:col-span-7"
           >
-            <div className="flex items-center gap-4">
-              <span className="font-mono text-[11px] uppercase tracking-widest text-bronze/70">
-                03
-              </span>
-              <span className="h-px w-12 bg-bronze/40" />
-              <span className="text-[11px] uppercase tracking-[0.25em] text-bronze">
-                L'écurie · The stables
-              </span>
-            </div>
+            <SectionIndex index="03" label="L'écurie · The stables" tone="dark" />
 
-            <h2
-              className="display-serif text-cream"
-              style={{
-                fontSize: "clamp(2.5rem, 7vw, 6rem)",
-                lineHeight: "0.92",
-                letterSpacing: "-0.03em",
-                fontWeight: 300,
-              }}
-            >
+            <h2 className="h-display-2 text-cream">
               Le premier galop
               <span className="block italic text-bronze">
                 d'une vie.
@@ -74,30 +60,9 @@ export function EquestrianSection({ locale }: { locale: string }) {
             </p>
 
             <div className="grid max-w-2xl gap-6 border-t border-bronze/25 pt-8 sm:grid-cols-3">
-              <div>
-                <div className="font-serif text-3xl font-light text-bronze md:text-4xl">
-                  4
-                </div>
-                <div className="mt-1.5 text-[10px] uppercase tracking-[0.22em] text-cream/55">
-                  Moniteurs diplômés
-                </div>
-              </div>
-              <div>
-                <div className="font-serif text-3xl font-light text-bronze md:text-4xl">
-                  4+
-                </div>
-                <div className="mt-1.5 text-[10px] uppercase tracking-[0.22em] text-cream/55">
-                  Âge des cavaliers
-                </div>
-              </div>
-              <div>
-                <div className="font-serif text-3xl font-light text-bronze md:text-4xl">
-                  14
-                </div>
-                <div className="mt-1.5 text-[10px] uppercase tracking-[0.22em] text-cream/55">
-                  Chevaux & poneys
-                </div>
-              </div>
+              <StatBlock value="4" label="Moniteurs diplômés" tone="bronze" />
+              <StatBlock value="4+" label="Âge des cavaliers" tone="bronze" />
+              <StatBlock value="14" label="Chevaux & poneys" tone="bronze" />
             </div>
 
             {/* Family-specific reassurance */}

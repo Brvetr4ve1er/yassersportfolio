@@ -188,9 +188,44 @@ const config: Config = {
         mono: ["var(--font-dm-mono)", "ui-monospace", "monospace"],
       },
       fontSize: {
-        display: ["clamp(3rem, 9vw, 8rem)", { lineHeight: "0.95", letterSpacing: "-0.02em" }],
-        eyebrow: ["0.7rem", { letterSpacing: "0.22em", lineHeight: "1" }],
-        editorial: ["clamp(1.75rem, 3.5vw, 3.25rem)", { lineHeight: "1.05", letterSpacing: "-0.01em" }],
+        // ── Editorial type scale (extracted from the reference decks) ──
+        // Serif display for hero + section titles; tight tracking, low
+        // weight. Sans for body. Named so components stop hand-rolling
+        // clamp() inline styles.
+        "display-1": [
+          "clamp(3.25rem, 10vw, 9rem)",
+          { lineHeight: "0.9", letterSpacing: "-0.035em" },
+        ],
+        "display-2": [
+          "clamp(2.5rem, 7vw, 6rem)",
+          { lineHeight: "0.92", letterSpacing: "-0.03em" },
+        ],
+        headline: [
+          "clamp(2.25rem, 5.5vw, 4.5rem)",
+          { lineHeight: "0.95", letterSpacing: "-0.025em" },
+        ],
+        editorial: [
+          "clamp(1.75rem, 3.5vw, 3.25rem)",
+          { lineHeight: "1.1", letterSpacing: "-0.015em" },
+        ],
+        title: [
+          "clamp(1.5rem, 2.5vw, 2.25rem)",
+          { lineHeight: "1.1", letterSpacing: "-0.01em" },
+        ],
+        stat: [
+          "clamp(2.5rem, 4vw, 3.75rem)",
+          { lineHeight: "1", letterSpacing: "-0.02em" },
+        ],
+        "section-index": [
+          "clamp(3rem, 7vw, 6.5rem)",
+          { lineHeight: "0.8", letterSpacing: "-0.04em" },
+        ],
+        eyebrow: ["0.7rem", { letterSpacing: "0.24em", lineHeight: "1" }],
+        // Kept for back-compat with earlier markup
+        display: [
+          "clamp(3rem, 9vw, 8rem)",
+          { lineHeight: "0.95", letterSpacing: "-0.02em" },
+        ],
       },
       letterSpacing: {
         tightest: "-0.04em",

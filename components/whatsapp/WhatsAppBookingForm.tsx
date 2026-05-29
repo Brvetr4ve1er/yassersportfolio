@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLenis } from "lenis/react";
 import { motion } from "framer-motion";
 import { Calendar, ExternalLink, Phone, User, Users } from "lucide-react";
@@ -163,6 +163,18 @@ const STRINGS: Record<Locale, Record<string, string>> = {
 export function WhatsAppBookingForm({ locale }: { locale: Locale }) {
   const s = STRINGS[locale];
   const lenis = useLenis();
+
+  // Chat-bubble timestamp is computed only after mount. Rendering it during
+  // SSR would mismatch the client clock and trigger a hydration error.
+  const [sentTime, setSentTime] = useState("");
+  useEffect(() => {
+    setSentTime(
+      new Date().toLocaleTimeString(
+        locale === "ar" ? "ar-DZ" : locale === "en" ? "en-GB" : "fr-FR",
+        { hour: "2-digit", minute: "2-digit" },
+      ),
+    );
+  }, [locale]);
 
   const [type, setType] = useState<Type>("accommodation");
   const [subjectId, setSubjectId] = useState<string>(mockAccommodations[0].id);
@@ -446,10 +458,7 @@ export function WhatsAppBookingForm({ locale }: { locale: Locale }) {
                 {message}
               </pre>
               <div className="mt-1.5 flex items-center justify-end gap-1.5 text-[10px] text-[#667781]">
-                {new Date().toLocaleTimeString(
-                  locale === "ar" ? "ar-DZ" : locale === "en" ? "en-GB" : "fr-FR",
-                  { hour: "2-digit", minute: "2-digit" },
-                )}
+                <span suppressHydrationWarning>{sentTime}</span>
                 <span aria-hidden>✓✓</span>
               </div>
             </motion.div>

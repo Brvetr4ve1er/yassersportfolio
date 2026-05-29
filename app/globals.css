@@ -136,9 +136,45 @@
     @apply font-mono text-eyebrow text-bronze/70;
   }
 
-  /* Editorial display heading */
+  /* ── Editorial heading system ──────────────────────────────────────
+     One class per scale step. Components apply these instead of
+     hand-rolling inline clamp() styles. All serif, light weight, tight
+     tracking — the standard distilled from the reference decks. */
   .display-serif {
     @apply font-serif font-light leading-[0.95] tracking-tightest;
+  }
+  .h-display-1 {
+    @apply font-serif text-display-1 font-light;
+  }
+  .h-display-2 {
+    @apply font-serif text-display-2 font-light;
+  }
+  .h-headline {
+    @apply font-serif text-headline font-light;
+  }
+  .h-editorial {
+    @apply font-serif text-editorial font-light;
+  }
+  .h-title {
+    @apply font-serif text-title font-light;
+  }
+  /* RTL: Arabic headings use Cairo at a heavier weight */
+  [dir="rtl"] .h-display-1,
+  [dir="rtl"] .h-display-2,
+  [dir="rtl"] .h-headline,
+  [dir="rtl"] .h-editorial,
+  [dir="rtl"] .h-title {
+    @apply font-arabic font-semibold;
+  }
+
+  /* Stat numeral — large, light, tight (the >4M / 75% / 227 treatment) */
+  .stat-number {
+    @apply font-serif text-stat font-light tabular-nums;
+  }
+
+  /* Ghosted section index numeral (GreenSpace 1-4 / Emerald 01-07) */
+  .section-index {
+    @apply font-serif text-section-index font-extralight leading-none;
   }
 
   /* Atmospheric photograph zone — sun-warmed default (family canvas) */
@@ -233,18 +269,18 @@
     @apply rounded-full bg-bronze/30;
   }
 
-  /* Stage type — for very large editorial display headlines */
+  /* Stage type — alias kept for back-compat; maps to display-1 scale */
   .text-stage {
-    font-size: clamp(3.5rem, 11vw, 9.5rem);
-    line-height: 0.92;
+    font-size: clamp(3.25rem, 10vw, 9rem);
+    line-height: 0.9;
     letter-spacing: -0.035em;
     font-weight: 300;
   }
 
   .text-cinema {
-    font-size: clamp(2.5rem, 6.5vw, 5.5rem);
-    line-height: 0.95;
-    letter-spacing: -0.025em;
+    font-size: clamp(2.5rem, 7vw, 6rem);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
     font-weight: 300;
   }
 
