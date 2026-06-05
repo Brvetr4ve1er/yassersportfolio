@@ -1,7 +1,10 @@
+import { publicEnv } from "@/lib/env.public";
+
 export function isMockMode(): boolean {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  return !url || !anon;
+  return (
+    !publicEnv.NEXT_PUBLIC_SUPABASE_URL ||
+    !publicEnv.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  );
 }
 
 if (typeof window === "undefined" && isMockMode()) {

@@ -1,14 +1,13 @@
+import { publicEnv } from "@/lib/env.public";
 import type { Locale } from "@/types/domain";
 
 /**
  * Two WhatsApp numbers from the Étoile de l'Est Instagram bios.
- * REPLACE these with the real numbers from @etoiledelest.dz +
- * the Sunset Pool bio before going live. Format: digits only (no +).
+ * Set NEXT_PUBLIC_WHATSAPP_BOOKING and NEXT_PUBLIC_WHATSAPP_POOL in
+ * .env.local. The validated env.public.ts enforces digits-only format.
  */
-const FALLBACK_NUMBER_ETOILE =
-  process.env.NEXT_PUBLIC_WHATSAPP_BOOKING ?? "213555000000";
-const FALLBACK_NUMBER_POOL =
-  process.env.NEXT_PUBLIC_WHATSAPP_POOL ?? FALLBACK_NUMBER_ETOILE;
+const FALLBACK_NUMBER_ETOILE = publicEnv.NEXT_PUBLIC_WHATSAPP_BOOKING;
+const FALLBACK_NUMBER_POOL = publicEnv.NEXT_PUBLIC_WHATSAPP_POOL;
 
 export type WhatsAppContext = "booking" | "pool";
 

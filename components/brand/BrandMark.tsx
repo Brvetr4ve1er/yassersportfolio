@@ -123,30 +123,60 @@ export function BrandMark({
         </textPath>
       </text>
 
-      {/* Center — abstracted horse silhouette with flowing mane */}
-      <g transform="translate(100, 105)" fill={fill}>
-        {/* Horse head */}
+      {/* Center — horse silhouette, faithful to the photographed seal:
+          powerful flowing mane backward/upward, head pointing right,
+          neck and chest visible below the head. */}
+      <g transform="translate(100, 100)" fill={fill}>
+        {/* Flowing mane — multiple overlapping curves for volume */}
         <path
-          d="M-10 -18 C -18 -16, -22 -8, -20 0 C -18 8, -10 14, -2 14 L 12 14 C 16 14, 18 10, 18 6 L 18 -2 C 18 -6, 16 -10, 12 -12 L 4 -14 C 4 -18, 0 -22, -4 -22 C -8 -22, -10 -20, -10 -18 Z"
+          d="M-2 -22 C -10 -28 -22 -26 -28 -18 C -22 -22 -16 -22 -12 -20 Z
+             M-6 -16 C -16 -22 -30 -18 -32 -8 C -24 -16 -16 -16 -10 -14 Z
+             M-8 -10 C -22 -12 -32 -4 -30 6 C -22 -4 -14 -8 -8 -6 Z
+             M-6 -2 C -20 0 -28 8 -24 16 C -18 6 -12 4 -6 4 Z"
           opacity="0.95"
         />
-        {/* Eye */}
-        <circle cx="8" cy="-2" r="1" fill={tone === "noir" ? "#f1e9d6" : "#0c0d0a"} />
-        {/* Mane wisps */}
+        {/* Horse head + neck */}
         <path
-          d="M-12 -18 C -20 -22, -28 -18, -30 -10 M-14 -14 C -24 -16, -30 -8, -28 -2 M-12 -10 C -22 -8, -26 -2, -24 4"
-          stroke={fill}
-          strokeWidth="1.5"
-          fill="none"
-          opacity="0.85"
+          d="M-4 -20
+             C 4 -22 12 -18 14 -12
+             L 18 -8
+             C 22 -6 22 -2 18 0
+             L 14 2
+             C 12 6 8 8 4 8
+             L 4 14
+             C 8 16 12 18 14 22
+             L 0 22
+             C -6 18 -8 12 -8 6
+             L -10 0
+             C -12 -6 -10 -14 -4 -20 Z"
+          opacity="0.95"
         />
-        {/* Tiny stars under */}
-        <g transform="translate(0, 22)" opacity="0.7">
-          <circle cx="-14" cy="0" r="1" />
-          <circle cx="-7" cy="2" r="1.2" />
-          <circle cx="0" cy="0" r="1" />
-          <circle cx="7" cy="2" r="1.2" />
-          <circle cx="14" cy="0" r="1" />
+        {/* Inner eye highlight (negative space) */}
+        <ellipse
+          cx="6"
+          cy="-6"
+          rx="1.2"
+          ry="1.6"
+          fill={tone === "noir" ? "#f1e9d6" : "#0c0d0a"}
+        />
+        {/* Nostril */}
+        <ellipse
+          cx="15"
+          cy="-3"
+          rx="1"
+          ry="0.6"
+          fill={tone === "noir" ? "#f1e9d6" : "#0c0d0a"}
+        />
+        {/* Bottom row — five 5-pointed stars (true to the photographed seal) */}
+        <g transform="translate(0, 32)" opacity="0.85">
+          {[-16, -8, 0, 8, 16].map((x, i) => (
+            <g key={i} transform={`translate(${x}, ${i % 2 === 0 ? 0 : 1.5})`}>
+              <path
+                d="M0 -2.4 L0.7 -0.7 L2.4 -0.7 L1 0.4 L1.5 2.1 L0 1.1 L-1.5 2.1 L-1 0.4 L-2.4 -0.7 L-0.7 -0.7 Z"
+                fill={fill}
+              />
+            </g>
+          ))}
         </g>
       </g>
     </svg>

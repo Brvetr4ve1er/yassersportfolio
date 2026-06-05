@@ -177,6 +177,30 @@
     @apply font-serif text-section-index font-extralight leading-none;
   }
 
+  /* Glass-card overlay (Verdant-style) — translucent cream with backdrop blur
+     for use over dark/photographic backdrops. */
+  .glass-card {
+    background-color: rgba(241, 233, 214, 0.06);
+    border: 1px solid rgba(241, 233, 214, 0.16);
+    backdrop-filter: blur(14px) saturate(115%);
+    -webkit-backdrop-filter: blur(14px) saturate(115%);
+    box-shadow:
+      0 10px 40px -10px rgba(0, 0, 0, 0.55),
+      inset 0 1px 0 rgba(241, 233, 214, 0.08);
+  }
+
+  /* Cream stroked text — outlined rather than solid, for the hero "un seul"
+     accent on the third headline line (gives a third color tier). */
+  .text-clay-stroke {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(241, 233, 214, 0.78);
+  }
+  @supports not (-webkit-text-stroke: 1px black) {
+    .text-clay-stroke {
+      color: rgba(241, 233, 214, 0.78);
+    }
+  }
+
   /* Atmospheric photograph zone — sun-warmed default (family canvas) */
   .photo-zone {
     @apply relative overflow-hidden;
