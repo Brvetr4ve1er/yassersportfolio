@@ -77,12 +77,12 @@ export function Header({ locale }: { locale: Locale }) {
           <div className="hidden md:block">
             <LangSwitcher current={locale} tone="dark" />
           </div>
-          <a
-            href="#pass"
+          <Link
+            href={`/${locale}/reservation`}
             className="hidden rounded-full bg-coral px-5 py-2 text-[11px] uppercase tracking-[0.22em] text-deepwater transition hover:bg-coral-light sm:inline-flex"
           >
             Réserver
-          </a>
+          </Link>
           <button
             type="button"
             onClick={() => setOpen(true)}
@@ -116,13 +116,13 @@ export function Header({ locale }: { locale: Locale }) {
                 {item.label}
               </a>
             ))}
-            <a
-              href="#pass"
+            <Link
+              href={`/${locale}/reservation`}
               onClick={() => setOpen(false)}
               className="mt-8 inline-flex w-fit rounded-full bg-coral px-6 py-3 text-xs uppercase tracking-widest text-deepwater"
             >
               Réserver
-            </a>
+            </Link>
             <div className="mt-8">
               <LangSwitcher current={locale} tone="dark" />
             </div>

@@ -38,6 +38,11 @@ create table if not exists public.bookings (
   payment_method  payment_method not null,
   payment_status  payment_status not null default 'pending',
   qr_code_token   uuid unique not null default gen_random_uuid(),
+  -- Walk-in guest contact captured at checkout. A booker need not be a
+  -- registered user (beach-club day passes are mostly anonymous), so the
+  -- name + phone are stored on the booking itself rather than via user_id.
+  guest_name      text,
+  guest_phone     text,
   special_requests text,
   created_at      timestamptz not null default now(),
   updated_at      timestamptz not null default now(),

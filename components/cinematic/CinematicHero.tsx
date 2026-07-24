@@ -173,14 +173,14 @@ export function CinematicHero({ locale }: { locale: Locale }) {
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-4">
                 <Link
-                  href="#pass"
+                  href={`/${locale}/reservation?type=pass&id=pass-adult`}
                   className="group inline-flex items-center gap-3 rounded-full bg-coral px-7 py-3.5 text-[11px] uppercase tracking-[0.22em] text-deepwater transition hover:bg-coral-light"
                 >
                   <span>{c.cta1}</span>
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
                 </Link>
                 <Link
-                  href="#cabanas"
+                  href={`/${locale}/reservation?type=cabana&id=cabana-lagoon`}
                   className="border-b border-sand/30 pb-0.5 text-[11px] uppercase tracking-[0.22em] text-sand/70 hover:border-sand hover:text-sand"
                 >
                   {c.cta2}

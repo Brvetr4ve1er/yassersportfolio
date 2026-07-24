@@ -155,6 +155,17 @@ const VARIANT_CLASS = {
   sunset: "photo-sunset",
 } as const;
 
+/**
+ * Deep-links from the three offer cards (ordered identically in every
+ * locale) into the booking wizard, pre-selecting product + specific option.
+ *   0 → Pass Adulte · 1 → Pass Enfant · 2 → Cabana Lagon
+ */
+const OFFER_BOOKING = [
+  { type: "pass", id: "pass-adult" },
+  { type: "pass", id: "pass-child" },
+  { type: "cabana", id: "cabana-lagoon" },
+] as const;
+
 export function OffersSection({ locale }: { locale: Locale }) {
   const c = COPY[locale];
 
@@ -242,7 +253,7 @@ export function OffersSection({ locale }: { locale: Locale }) {
                   ))}
                 </ul>
                 <Link
-                  href="#contact"
+                  href={`/${locale}/reservation?type=${OFFER_BOOKING[i]?.type ?? "pass"}&id=${OFFER_BOOKING[i]?.id ?? ""}`}
                   className="group inline-flex items-center gap-2 self-start rounded-full bg-coral px-5 py-2.5 text-[10px] uppercase tracking-[0.22em] text-deepwater transition hover:bg-coral-light"
                 >
                   {o.cta}
